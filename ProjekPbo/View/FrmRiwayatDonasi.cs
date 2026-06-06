@@ -43,9 +43,11 @@ namespace ProjekPbo.View
                             " k.nama_kategori," +
                             " b.kondisi," +
                             " b.status," +
-                            " b.tanggal_upload " +
+                            " b.tanggal_upload, " +
+                            " COALESCE(NULLIF(TRIM(v.catatan), ' '), 'Tidak ada Catatan') AS catatan "+
                      "FROM barang b " +
                      "JOIN kategori k ON b.id_kategori = k.id_kategori " +
+                     "LEFT JOIN verifikasi v ON b.id_barang = v.id_barang " +
                      "WHERE b.id_donatur = @id" +
                      " ORDER BY b.tanggal_upload DESC";
 
@@ -65,6 +67,7 @@ namespace ProjekPbo.View
                             dr["nama_kategori"].ToString(),
                             dr["kondisi"].ToString(),
                             dr["status"].ToString(),
+                            dr["catatan"].ToString(),
                             Convert.ToDateTime(dr["tanggal_upload"]).ToString("dd-MM-yyyy")
                         );
                     }
@@ -88,11 +91,11 @@ namespace ProjekPbo.View
             }
         }
 
-        private void Nambah(string nama, string kategori, string kondisi, string status, string tanggal)
+        private void Nambah(string nama, string kategori, string kondisi, string status, string catatan, string tanggal)
         {
             Panel card = new Panel();
             card.Width = 300;
-            card.Height = 120;
+            card.Height = 145;
             card.BorderStyle = BorderStyle.FixedSingle;
 
             Label lblNama = new Label();
@@ -118,14 +121,26 @@ namespace ProjekPbo.View
 
             Label lblTanggal = new Label();
             lblTanggal.Text = tanggal;
-            lblTanggal.Location = new Point(200, 90);
+            lblTanggal.Location = new Point(210, 120);
             lblTanggal.AutoSize = true;
+
+            if (String.IsNullOrEmpty(catatan))
+            {
+                catatan = "Tidak ada Catatan";
+            }
+
+            Label lblCatatan = new Label();
+            lblCatatan.Text = "Catatan : " + catatan;
+            lblCatatan.MaximumSize = new Size(270, 0);
+            lblCatatan.AutoSize = true;
+            lblCatatan.Location = new Point(10, 95);
 
             card.Controls.Add(lblNama);
             card.Controls.Add(lblKategori);
             card.Controls.Add(lblKondisi);
             card.Controls.Add(lblStatus);
             card.Controls.Add(lblTanggal);
+            card.Controls.Add(lblCatatan);
 
             flpRiwayat.Controls.Add(card);
         }

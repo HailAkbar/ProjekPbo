@@ -130,7 +130,7 @@ namespace ProjekPbo.View
 
         private void btnProfil_Click(object sender, EventArgs e)
         {
-            // Tambahkan navigasi form profil Anda di sini jika diperlukan kelak
+
         }
 
         private void FrmDonatur_Load_1(object sender, EventArgs e)

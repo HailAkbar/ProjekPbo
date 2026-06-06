@@ -30,7 +30,7 @@ namespace ProjekPbo
         {
             try
             {
-                using (var conn = Database.Koneksi.GetConnection())
+                using (var conn = Koneksi.GetConnection())
                 {
                     conn.Open();
 
@@ -84,9 +84,9 @@ namespace ProjekPbo
                             dr.Close();
                             MessageBox.Show("Login berhasil! Selamat datang, " + pengelola.GetRole());
 
-                            //FrmDashboardPengelola frm = new FrmDashboardPengelola(pengelola);
-                            //frm.Show();
-                            //this.Hide();
+                            FrmPengelola frm = new FrmPengelola(pengelola);
+                            frm.Show();
+                            this.Hide();
                             return;
                         }
                         dr.Close();
