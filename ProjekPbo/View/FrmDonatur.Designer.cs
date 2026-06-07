@@ -115,7 +115,7 @@
             // 
             // btnRiwayat
             // 
-            btnRiwayat.Location = new Point(147, 405);
+            btnRiwayat.Location = new Point(125, 405);
             btnRiwayat.Name = "btnRiwayat";
             btnRiwayat.Size = new Size(94, 29);
             btnRiwayat.TabIndex = 9;
@@ -131,6 +131,7 @@
             btnProfil.TabIndex = 10;
             btnProfil.Text = "Profil";
             btnProfil.UseVisualStyleBackColor = true;
+            btnProfil.Click += btnProfil_Click_1;
             // 
             // FrmDonatur
             // 

@@ -106,5 +106,12 @@ namespace ProjekPbo
             frm.Show();
             this.Hide();
         }
+
+        private void lblLupaPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmLupaPassword frm = new FrmLupaPassword();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

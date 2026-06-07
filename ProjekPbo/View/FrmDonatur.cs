@@ -84,7 +84,7 @@ namespace ProjekPbo.View
 
                         using (NpgsqlDataReader dr = cmd.ExecuteReader())
                         {
-                            if (dr.Read()) 
+                            if (dr.Read())
                             {
                                 Label lblBarang = new Label();
                                 lblBarang.AutoSize = true;
@@ -128,17 +128,19 @@ namespace ProjekPbo.View
             this.Close();
         }
 
-        private void btnProfil_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmDonatur_Load_1(object sender, EventArgs e)
         {
             lblNama.Text = donatur.nama;
 
             StatistiknyaDonatur();
             TampilkanBarangTerbaru();
+        }
+
+        private void btnProfil_Click_1(object sender, EventArgs e)
+        {
+            FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
+            frm.Show();
+            this.Close();
         }
     }
 }

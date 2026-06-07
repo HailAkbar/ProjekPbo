@@ -79,6 +79,7 @@
             lblLupaPassword.TabIndex = 4;
             lblLupaPassword.TabStop = true;
             lblLupaPassword.Text = "Lupa Password?";
+            lblLupaPassword.LinkClicked += lblLupaPassword_LinkClicked;
             // 
             // FrmLogin
             // 

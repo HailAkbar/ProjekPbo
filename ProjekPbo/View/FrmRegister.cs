@@ -38,6 +38,11 @@ namespace ProjekPbo.View
                 MessageBox.Show("Email tidak boleh kosong");
                 return false;
             }
+            if (!txtEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Format email tidak sesuai");
+                return false;
+            }
             if (txtSandi.Text.Trim() == "")
             {
                 MessageBox.Show("Password tidak boleh kosong");

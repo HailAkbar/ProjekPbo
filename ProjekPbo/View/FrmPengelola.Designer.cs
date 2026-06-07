@@ -38,8 +38,10 @@
             lblDitolak = new Label();
             panel4 = new Panel();
             lblSelesai = new Label();
-            btnKelola = new Button();
+            btnverifikasi = new Button();
             btnStatistik = new Button();
+            btnKelola = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -67,7 +69,7 @@
             // panel1
             // 
             panel1.Controls.Add(lblMenunggu);
-            panel1.Location = new Point(59, 115);
+            panel1.Location = new Point(46, 90);
             panel1.Name = "panel1";
             panel1.Size = new Size(178, 49);
             panel1.TabIndex = 6;
@@ -84,7 +86,7 @@
             // panel2
             // 
             panel2.Controls.Add(lblDiterima);
-            panel2.Location = new Point(59, 170);
+            panel2.Location = new Point(46, 145);
             panel2.Name = "panel2";
             panel2.Size = new Size(178, 49);
             panel2.TabIndex = 7;
@@ -101,7 +103,7 @@
             // panel3
             // 
             panel3.Controls.Add(lblDitolak);
-            panel3.Location = new Point(59, 225);
+            panel3.Location = new Point(46, 200);
             panel3.Name = "panel3";
             panel3.Size = new Size(178, 49);
             panel3.TabIndex = 7;
@@ -118,7 +120,7 @@
             // panel4
             // 
             panel4.Controls.Add(lblSelesai);
-            panel4.Location = new Point(59, 280);
+            panel4.Location = new Point(46, 255);
             panel4.Name = "panel4";
             panel4.Size = new Size(178, 49);
             panel4.TabIndex = 7;
@@ -132,19 +134,19 @@
             lblSelesai.TabIndex = 3;
             lblSelesai.Text = "label5";
             // 
-            // btnKelola
+            // btnverifikasi
             // 
-            btnKelola.Location = new Point(31, 398);
-            btnKelola.Name = "btnKelola";
-            btnKelola.Size = new Size(94, 29);
-            btnKelola.TabIndex = 8;
-            btnKelola.Text = "Kelola Barang";
-            btnKelola.UseVisualStyleBackColor = true;
-            btnKelola.Click += btnKelola_Click;
+            btnverifikasi.Location = new Point(46, 381);
+            btnverifikasi.Name = "btnverifikasi";
+            btnverifikasi.Size = new Size(94, 29);
+            btnverifikasi.TabIndex = 8;
+            btnverifikasi.Text = "Verifikasi";
+            btnverifikasi.UseVisualStyleBackColor = true;
+            btnverifikasi.Click += btnVerifikasi_Click;
             // 
             // btnStatistik
             // 
-            btnStatistik.Location = new Point(187, 398);
+            btnStatistik.Location = new Point(245, 381);
             btnStatistik.Name = "btnStatistik";
             btnStatistik.Size = new Size(94, 29);
             btnStatistik.TabIndex = 9;
@@ -152,13 +154,35 @@
             btnStatistik.UseVisualStyleBackColor = true;
             btnStatistik.Click += btnStatistik_Click;
             // 
+            // btnKelola
+            // 
+            btnKelola.Location = new Point(146, 381);
+            btnKelola.Name = "btnKelola";
+            btnKelola.Size = new Size(94, 29);
+            btnKelola.TabIndex = 10;
+            btnKelola.Text = "Kelola";
+            btnKelola.UseVisualStyleBackColor = true;
+            btnKelola.Click += btnkelola_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(345, 381);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 11;
+            button1.Text = "Profil";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FrmPengelola
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(485, 450);
-            Controls.Add(btnStatistik);
+            Controls.Add(button1);
             Controls.Add(btnKelola);
+            Controls.Add(btnStatistik);
+            Controls.Add(btnverifikasi);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -192,7 +216,9 @@
         private Label lblDiterima;
         private Label lblDitolak;
         private Label lblSelesai;
-        private Button btnKelola;
+        private Button btnverifikasi;
         private Button btnStatistik;
+        private Button btnKelola;
+        private Button button1;
     }
 }

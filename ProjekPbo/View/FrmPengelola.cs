@@ -51,7 +51,7 @@ namespace ProjekPbo.View
             lblSelesai.Text = "Selesai: " + HitungStatusnya("Selesai").ToString();
         }
 
-        private void btnKelola_Click(object sender, EventArgs e)
+        private void btnVerifikasi_Click(object sender, EventArgs e)
         {
             FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
             frm.ShowDialog();
@@ -64,6 +64,22 @@ namespace ProjekPbo.View
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.ShowDialog();
             this.Hide();
+            return;
+        }
+
+        private void btnkelola_Click(object sender, EventArgs e)
+        {
+            FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
+            frm.Show();
+            this.Hide();
+            return;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Hide(); 
             return;
         }
     }
