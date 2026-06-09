@@ -93,6 +93,7 @@
             Controls.Add(txtEmail);
             Name = "FrmLogin";
             Text = "Form1";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

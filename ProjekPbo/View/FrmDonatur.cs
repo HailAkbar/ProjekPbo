@@ -76,7 +76,7 @@ namespace ProjekPbo.View
                                      FROM barang 
                                      WHERE id_donatur = @id_donatur 
                                      ORDER BY tanggal_upload DESC 
-                                     LIMIT 1";
+                                     LIMIT 24";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {

@@ -58,6 +58,7 @@
             txtNamaBarang.Name = "txtNamaBarang";
             txtNamaBarang.Size = new Size(125, 27);
             txtNamaBarang.TabIndex = 1;
+            txtNamaBarang.TextChanged += txtNamaBarang_TextChanged;
             // 
             // rbBaik
             // 
@@ -161,6 +162,7 @@
             Controls.Add(cbKategori);
             Name = "FrmUploadBarang";
             Text = "UploadBarang";
+            Load += FrmUploadBarang_Load; 
             ((System.ComponentModel.ISupportInitialize)picFotoBarang).EndInit();
             ResumeLayout(false);
             PerformLayout();

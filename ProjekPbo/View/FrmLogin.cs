@@ -35,7 +35,7 @@ namespace ProjekPbo
                     conn.Open();
 
                     //login donatur
-                    string queryDonatur = "SELECT * FROM donatur WHERE email = @Email AND sandi = @Sandi";
+                    string queryDonatur = "SELECT * FROM donatur WHERE email = @Email AND sandi = @Sandi"; //inisialisasi
                     NpgsqlCommand cmd = new NpgsqlCommand(queryDonatur, conn);
                     {
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
@@ -105,6 +105,7 @@ namespace ProjekPbo
             FrmRegister frm = new FrmRegister();
             frm.Show();
             this.Hide();
+            return ;
         }
 
         private void lblLupaPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -112,6 +113,12 @@ namespace ProjekPbo
             FrmLupaPassword frm = new FrmLupaPassword();
             frm.Show();
             this.Hide();
+            return;
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

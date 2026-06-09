@@ -6,11 +6,11 @@ namespace ProjekPbo.Models
 {
     public abstract class User
     {
-        private int Id { get; set; }
-        public int id
+        private int Id { get; set; } //enkap soale ben gaiso diganti
+        public int id //ini buat ngakses doang bukan buat ganti
         {
             get {  return Id; }
-            set { Id = value; }
+            set { Id = value; } //buat nambah gaiso ganti
         }
         private string Nama { get; set; }
         public string nama

@@ -189,5 +189,10 @@ namespace ProjekPbo.View
             frmDonatur.Show();
             this.Close();
         }
+
+        private void txtNamaBarang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace ProjekPbo.View
         {
             InitializeComponent();
         }
+
         private void btnDaftar_Click(object sender, EventArgs e)
         {
             if (!ValidasiInput())
@@ -28,7 +29,7 @@ namespace ProjekPbo.View
 
         private bool ValidasiInput()
         {
-            if (txtNama.Text.Trim() == "")
+            if (txtNama.Text.Trim() == "") //trim buat menghapus spasi dan constains gak harus urut
             {
                 MessageBox.Show("Nama tidak boleh kosong");
                 return false;
@@ -38,7 +39,7 @@ namespace ProjekPbo.View
                 MessageBox.Show("Email tidak boleh kosong");
                 return false;
             }
-            if (!txtEmail.Text.Contains("@"))
+            if (!txtEmail.Text.Contains("@gmail.com"))
             {
                 MessageBox.Show("Format email tidak sesuai");
                 return false;
@@ -51,6 +52,11 @@ namespace ProjekPbo.View
             if (txtNoHP.Text.Trim() == "")
             {
                 MessageBox.Show("Nomor HP tidak boleh kosong");
+                return false;
+            }
+            if (txtNoHP.Text.Contains("qwertyuiopasdfghjklzxcvbnm~!@#$%^&*()_+-=[];,./{}|:<>?"))
+            {
+                MessageBox.Show("Format nomor hp harus angka");
                 return false;
             }
             if (txtAlamat.Text.Trim() == "")
@@ -81,7 +87,8 @@ namespace ProjekPbo.View
                 {
                     conn.Open();
 
-                    string query = "INSERT INTO donatur (" +
+                    string query = "INSERT INTO donatur " +
+                        "( " +
                         "nama, " +
                         "email, " +
                         "sandi, " +
@@ -114,6 +121,11 @@ namespace ProjekPbo.View
             {
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
+        }
+
+        private void FrmRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
