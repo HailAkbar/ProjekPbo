@@ -130,7 +130,7 @@ namespace ProjekPbo.View
 
         private void FrmRegister_Load(object sender, EventArgs e)
         {
-
+            txtNoHP.MaxLength = 12;
         }
     }
 }
