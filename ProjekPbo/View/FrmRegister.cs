@@ -54,9 +54,14 @@ namespace ProjekPbo.View
                 MessageBox.Show("Nomor HP tidak boleh kosong");
                 return false;
             }
-            if (txtNoHP.Text.Contains("qwertyuiopasdfghjklzxcvbnm~!@#$%^&*()_+-=[];,./{}|:<>?"))
+            if (!long.TryParse(txtNoHP.Text, out _)) //ngecek apakah dia isinya hanya angka atau tidak, kalo selain angka bakal gagal
             {
                 MessageBox.Show("Format nomor hp harus angka");
+                return false;
+            }
+            if ((txtNoHP.Text.Trim().Length > 12)) //ngecek kalo nomor hp harus dibawah 12 digit
+            {
+                MessageBox.Show("Nomor Hp harus dibawah 12 angka");
                 return false;
             }
             if (txtAlamat.Text.Trim() == "")
