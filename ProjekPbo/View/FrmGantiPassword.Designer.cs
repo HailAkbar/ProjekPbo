@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGantiPassword));
             btnSimpan = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             btnKembali = new Button();
             txtPasswordLama = new TextBox();
             txtPasswordBaru = new TextBox();
@@ -40,46 +38,21 @@
             // 
             // btnSimpan
             // 
-            btnSimpan.Location = new Point(127, 291);
+            btnSimpan.Location = new Point(202, 448);
+            btnSimpan.Margin = new Padding(3, 2, 3, 2);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(94, 29);
+            btnSimpan.Size = new Size(143, 50);
             btnSimpan.TabIndex = 0;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = true;
             btnSimpan.Click += btnSimpan_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(110, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Password Lama";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 122);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Password Baru";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 207);
-            label3.Name = "label3";
-            label3.Size = new Size(151, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Ulangi Password Baru";
-            // 
             // btnKembali
             // 
-            btnKembali.Location = new Point(32, 384);
+            btnKembali.Location = new Point(41, 448);
+            btnKembali.Margin = new Padding(3, 2, 3, 2);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(94, 29);
+            btnKembali.Size = new Size(146, 50);
             btnKembali.TabIndex = 4;
             btnKembali.Text = "Kembali";
             btnKembali.UseVisualStyleBackColor = true;
@@ -87,40 +60,48 @@
             // 
             // txtPasswordLama
             // 
-            txtPasswordLama.Location = new Point(32, 75);
+            txtPasswordLama.Location = new Point(45, 195);
+            txtPasswordLama.Margin = new Padding(3, 2, 3, 2);
+            txtPasswordLama.Multiline = true;
             txtPasswordLama.Name = "txtPasswordLama";
-            txtPasswordLama.Size = new Size(279, 27);
+            txtPasswordLama.Size = new Size(291, 47);
             txtPasswordLama.TabIndex = 5;
             // 
             // txtPasswordBaru
             // 
-            txtPasswordBaru.Location = new Point(32, 157);
+            txtPasswordBaru.Location = new Point(45, 289);
+            txtPasswordBaru.Margin = new Padding(3, 2, 3, 2);
+            txtPasswordBaru.Multiline = true;
             txtPasswordBaru.Name = "txtPasswordBaru";
-            txtPasswordBaru.Size = new Size(279, 27);
+            txtPasswordBaru.Size = new Size(291, 44);
             txtPasswordBaru.TabIndex = 6;
+            txtPasswordBaru.TextChanged += txtPasswordBaru_TextChanged;
             // 
             // txtKonfirmasi
             // 
-            txtKonfirmasi.Location = new Point(32, 239);
+            txtKonfirmasi.Location = new Point(45, 382);
+            txtKonfirmasi.Margin = new Padding(3, 2, 3, 2);
+            txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
-            txtKonfirmasi.Size = new Size(279, 27);
+            txtKonfirmasi.Size = new Size(291, 46);
             txtKonfirmasi.TabIndex = 7;
             // 
             // FrmGantiPassword
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(401, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(386, 749);
             Controls.Add(txtKonfirmasi);
             Controls.Add(txtPasswordBaru);
             Controls.Add(txtPasswordLama);
             Controls.Add(btnKembali);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(btnSimpan);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmGantiPassword";
             Text = "FrmGantiPassword";
+            Load += FrmGantiPassword_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,9 +109,6 @@
         #endregion
 
         private Button btnSimpan;
-        private Label label1;
-        private Label label2;
-        private Label label3;
         private Button btnKembali;
         private TextBox txtPasswordLama;
         private TextBox txtPasswordBaru;

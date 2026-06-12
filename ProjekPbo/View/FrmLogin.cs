@@ -105,7 +105,7 @@ namespace ProjekPbo
             FrmRegister frm = new FrmRegister();
             frm.Show();
             this.Hide();
-            return ;
+            return;
         }
 
         private void lblLupaPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -117,6 +117,11 @@ namespace ProjekPbo
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
         }

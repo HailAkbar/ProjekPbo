@@ -132,5 +132,10 @@ namespace ProjekPbo.View
         {
             txtNoHP.MaxLength = 12;
         }
+
+        private void txtNoHP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

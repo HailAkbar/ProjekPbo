@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegister));
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             txtNama = new TextBox();
             txtEmail = new TextBox();
             txtNoHP = new TextBox();
@@ -47,105 +44,80 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 38);
+            label1.Location = new Point(32, 28);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 0;
-            label1.Text = "Nama";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(37, 96);
+            label2.Location = new Point(32, 72);
             label2.Name = "label2";
-            label2.Size = new Size(46, 20);
+            label2.Size = new Size(0, 15);
             label2.TabIndex = 1;
-            label2.Text = "Email";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(37, 149);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 20);
-            label3.TabIndex = 2;
-            label3.Text = "No HP";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(37, 208);
-            label4.Name = "label4";
-            label4.Size = new Size(57, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Alamat";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(37, 286);
-            label5.Name = "label5";
-            label5.Size = new Size(70, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Password";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(37, 356);
-            label6.Name = "label6";
-            label6.Size = new Size(145, 20);
-            label6.TabIndex = 5;
-            label6.Text = "Konfirmasi Password";
             // 
             // txtNama
             // 
-            txtNama.Location = new Point(42, 63);
+            txtNama.Location = new Point(45, 240);
+            txtNama.Margin = new Padding(3, 2, 3, 2);
+            txtNama.Multiline = true;
             txtNama.Name = "txtNama";
-            txtNama.Size = new Size(125, 27);
+            txtNama.Size = new Size(296, 46);
             txtNama.TabIndex = 6;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(40, 123);
+            txtEmail.Location = new Point(45, 301);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(125, 27);
+            txtEmail.Size = new Size(296, 46);
             txtEmail.TabIndex = 7;
             // 
             // txtNoHP
             // 
-            txtNoHP.Location = new Point(49, 179);
+            txtNoHP.Location = new Point(45, 365);
+            txtNoHP.Margin = new Padding(3, 2, 3, 2);
+            txtNoHP.Multiline = true;
             txtNoHP.Name = "txtNoHP";
-            txtNoHP.Size = new Size(125, 27);
+            txtNoHP.Size = new Size(296, 45);
             txtNoHP.TabIndex = 8;
+            txtNoHP.TextChanged += txtNoHP_TextChanged;
             // 
             // txtAlamat
             // 
-            txtAlamat.Location = new Point(49, 234);
+            txtAlamat.Location = new Point(45, 425);
+            txtAlamat.Margin = new Padding(3, 2, 3, 2);
             txtAlamat.Name = "txtAlamat";
-            txtAlamat.Size = new Size(233, 49);
+            txtAlamat.Size = new Size(296, 72);
             txtAlamat.TabIndex = 9;
             txtAlamat.Text = "";
             // 
             // txtSandi
             // 
-            txtSandi.Location = new Point(43, 310);
+            txtSandi.Location = new Point(45, 516);
+            txtSandi.Margin = new Padding(3, 2, 3, 2);
+            txtSandi.Multiline = true;
             txtSandi.Name = "txtSandi";
-            txtSandi.Size = new Size(125, 27);
+            txtSandi.Size = new Size(296, 40);
             txtSandi.TabIndex = 10;
             // 
             // txtKonfirmasi
             // 
-            txtKonfirmasi.Location = new Point(42, 391);
+            txtKonfirmasi.Location = new Point(45, 578);
+            txtKonfirmasi.Margin = new Padding(3, 2, 3, 2);
+            txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
-            txtKonfirmasi.Size = new Size(125, 27);
+            txtKonfirmasi.Size = new Size(296, 43);
             txtKonfirmasi.TabIndex = 11;
             // 
             // btnDaftar
             // 
-            btnDaftar.Location = new Point(125, 434);
+            btnDaftar.Location = new Point(43, 636);
+            btnDaftar.Margin = new Padding(3, 2, 3, 2);
             btnDaftar.Name = "btnDaftar";
-            btnDaftar.Size = new Size(94, 29);
+            btnDaftar.Size = new Size(300, 52);
             btnDaftar.TabIndex = 13;
             btnDaftar.Text = "DAFTAR";
             btnDaftar.UseVisualStyleBackColor = true;
@@ -154,7 +126,8 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Location = new Point(64, 479);
+            lblLogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLogin.Location = new Point(239, 704);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(46, 20);
             lblLogin.TabIndex = 14;
@@ -163,9 +136,11 @@
             // 
             // FrmRegister
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(365, 520);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(386, 749);
             Controls.Add(lblLogin);
             Controls.Add(btnDaftar);
             Controls.Add(txtKonfirmasi);
@@ -174,12 +149,9 @@
             Controls.Add(txtNoHP);
             Controls.Add(txtEmail);
             Controls.Add(txtNama);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmRegister";
             Text = "FrmRegister";
             Load += FrmRegister_Load;
@@ -191,10 +163,6 @@
 
         private Label label1;
         private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
         private TextBox txtNama;
         private TextBox txtEmail;
         private TextBox txtNoHP;

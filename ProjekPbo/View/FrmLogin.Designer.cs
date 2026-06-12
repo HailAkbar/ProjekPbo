@@ -28,43 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtEmail = new TextBox();
+            TextBox txtEmail;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             txtPassword = new TextBox();
             btnLogin = new Button();
             lblDaftar = new LinkLabel();
             lblLupaPassword = new LinkLabel();
+            txtEmail = new TextBox();
             SuspendLayout();
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(75, 143);
+            txtEmail.BackColor = Color.White;
+            txtEmail.Location = new Point(47, 255);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(125, 27);
+            txtEmail.ShortcutsEnabled = false;
+            txtEmail.Size = new Size(293, 43);
             txtEmail.TabIndex = 0;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(81, 219);
+            txtPassword.Location = new Point(47, 319);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
+            txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(125, 27);
+            txtPassword.Size = new Size(293, 47);
             txtPassword.TabIndex = 1;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(134, 291);
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.ForeColor = Color.Transparent;
+            btnLogin.Location = new Point(46, 420);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(299, 51);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "LOGIN";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // lblDaftar
             // 
             lblDaftar.AutoSize = true;
-            lblDaftar.Location = new Point(145, 368);
+            lblDaftar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDaftar.Location = new Point(239, 492);
             lblDaftar.Name = "lblDaftar";
-            lblDaftar.Size = new Size(84, 20);
+            lblDaftar.Size = new Size(73, 17);
             lblDaftar.TabIndex = 3;
             lblDaftar.TabStop = true;
             lblDaftar.Text = "Daftar dulu";
@@ -73,9 +86,10 @@
             // lblLupaPassword
             // 
             lblLupaPassword.AutoSize = true;
-            lblLupaPassword.Location = new Point(147, 405);
+            lblLupaPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLupaPassword.Location = new Point(216, 385);
             lblLupaPassword.Name = "lblLupaPassword";
-            lblLupaPassword.Size = new Size(113, 20);
+            lblLupaPassword.Size = new Size(121, 21);
             lblLupaPassword.TabIndex = 4;
             lblLupaPassword.TabStop = true;
             lblLupaPassword.Text = "Lupa Password?";
@@ -83,14 +97,18 @@
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(397, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(386, 749);
             Controls.Add(lblLupaPassword);
             Controls.Add(lblDaftar);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
+            DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmLogin";
             Text = "Form1";
             Load += FrmLogin_Load;

@@ -108,5 +108,20 @@ namespace ProjekPbo.View
             frm.Show();
             this.Close();
         }
+
+        private void FrmGantiPassword_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPasswordBaru_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

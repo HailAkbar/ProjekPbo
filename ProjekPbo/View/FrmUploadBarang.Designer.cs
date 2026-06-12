@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUploadBarang));
             cbKategori = new ComboBox();
             txtNamaBarang = new TextBox();
             rbBaik = new RadioButton();
@@ -38,7 +39,6 @@
             btnPilihFoto = new Button();
             btnSimpan = new Button();
             openFileDialog1 = new OpenFileDialog();
-            btnKembaliKeHome = new Button();
             ((System.ComponentModel.ISupportInitialize)picFotoBarang).BeginInit();
             SuspendLayout();
             // 
@@ -46,26 +46,30 @@
             // 
             cbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cbKategori.FormattingEnabled = true;
-            cbKategori.Location = new Point(37, 48);
+            cbKategori.Location = new Point(45, 133);
+            cbKategori.Margin = new Padding(3, 2, 3, 2);
             cbKategori.Name = "cbKategori";
-            cbKategori.Size = new Size(151, 28);
+            cbKategori.Size = new Size(295, 23);
             cbKategori.TabIndex = 0;
             cbKategori.Click += FrmUploadBarang_Load;
             // 
             // txtNamaBarang
             // 
-            txtNamaBarang.Location = new Point(43, 97);
+            txtNamaBarang.Location = new Point(45, 204);
+            txtNamaBarang.Margin = new Padding(3, 2, 3, 2);
+            txtNamaBarang.Multiline = true;
             txtNamaBarang.Name = "txtNamaBarang";
-            txtNamaBarang.Size = new Size(125, 27);
+            txtNamaBarang.Size = new Size(297, 34);
             txtNamaBarang.TabIndex = 1;
             txtNamaBarang.TextChanged += txtNamaBarang_TextChanged;
             // 
             // rbBaik
             // 
             rbBaik.AutoSize = true;
-            rbBaik.Location = new Point(46, 146);
+            rbBaik.Location = new Point(48, 285);
+            rbBaik.Margin = new Padding(3, 2, 3, 2);
             rbBaik.Name = "rbBaik";
-            rbBaik.Size = new Size(58, 24);
+            rbBaik.Size = new Size(47, 19);
             rbBaik.TabIndex = 2;
             rbBaik.TabStop = true;
             rbBaik.Text = "baik";
@@ -74,9 +78,10 @@
             // rbCukup
             // 
             rbCukup.AutoSize = true;
-            rbCukup.Location = new Point(169, 146);
+            rbCukup.Location = new Point(159, 285);
+            rbCukup.Margin = new Padding(3, 2, 3, 2);
             rbCukup.Name = "rbCukup";
-            rbCukup.Size = new Size(69, 24);
+            rbCukup.Size = new Size(58, 19);
             rbCukup.TabIndex = 3;
             rbCukup.TabStop = true;
             rbCukup.Text = "cukub";
@@ -85,9 +90,10 @@
             // rbRusak
             // 
             rbRusak.AutoSize = true;
-            rbRusak.Location = new Point(292, 146);
+            rbRusak.Location = new Point(275, 285);
+            rbRusak.Margin = new Padding(3, 2, 3, 2);
             rbRusak.Name = "rbRusak";
-            rbRusak.Size = new Size(64, 24);
+            rbRusak.Size = new Size(53, 19);
             rbRusak.TabIndex = 4;
             rbRusak.TabStop = true;
             rbRusak.Text = "rusak";
@@ -95,27 +101,30 @@
             // 
             // txtDeskripsi
             // 
-            txtDeskripsi.Location = new Point(52, 180);
+            txtDeskripsi.Location = new Point(43, 356);
+            txtDeskripsi.Margin = new Padding(3, 2, 3, 2);
             txtDeskripsi.Name = "txtDeskripsi";
-            txtDeskripsi.Size = new Size(307, 82);
+            txtDeskripsi.Size = new Size(297, 75);
             txtDeskripsi.TabIndex = 6;
             txtDeskripsi.Text = "";
             // 
             // picFotoBarang
             // 
             picFotoBarang.BorderStyle = BorderStyle.FixedSingle;
-            picFotoBarang.Location = new Point(52, 268);
+            picFotoBarang.Location = new Point(44, 569);
+            picFotoBarang.Margin = new Padding(3, 2, 3, 2);
             picFotoBarang.Name = "picFotoBarang";
-            picFotoBarang.Size = new Size(136, 70);
+            picFotoBarang.Size = new Size(56, 45);
             picFotoBarang.SizeMode = PictureBoxSizeMode.Zoom;
             picFotoBarang.TabIndex = 7;
             picFotoBarang.TabStop = false;
             // 
             // btnPilihFoto
             // 
-            btnPilihFoto.Location = new Point(194, 296);
+            btnPilihFoto.Location = new Point(43, 478);
+            btnPilihFoto.Margin = new Padding(3, 2, 3, 2);
             btnPilihFoto.Name = "btnPilihFoto";
-            btnPilihFoto.Size = new Size(94, 29);
+            btnPilihFoto.Size = new Size(298, 74);
             btnPilihFoto.TabIndex = 8;
             btnPilihFoto.Text = "pilih poto";
             btnPilihFoto.UseVisualStyleBackColor = true;
@@ -123,9 +132,11 @@
             // 
             // btnSimpan
             // 
-            btnSimpan.Location = new Point(244, 378);
+            btnSimpan.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSimpan.Location = new Point(44, 641);
+            btnSimpan.Margin = new Padding(3, 2, 3, 2);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(94, 29);
+            btnSimpan.Size = new Size(296, 34);
             btnSimpan.TabIndex = 9;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = true;
@@ -135,22 +146,13 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnKembaliKeHome
-            // 
-            btnKembaliKeHome.Location = new Point(63, 378);
-            btnKembaliKeHome.Name = "btnKembaliKeHome";
-            btnKembaliKeHome.Size = new Size(94, 29);
-            btnKembaliKeHome.TabIndex = 10;
-            btnKembaliKeHome.Text = "Kembali";
-            btnKembaliKeHome.UseVisualStyleBackColor = true;
-            btnKembaliKeHome.Click += btnKembaliKeHome_Click;
-            // 
             // FrmUploadBarang
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(406, 450);
-            Controls.Add(btnKembaliKeHome);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(386, 749);
             Controls.Add(btnSimpan);
             Controls.Add(btnPilihFoto);
             Controls.Add(picFotoBarang);
@@ -160,9 +162,11 @@
             Controls.Add(rbBaik);
             Controls.Add(txtNamaBarang);
             Controls.Add(cbKategori);
+            DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmUploadBarang";
             Text = "UploadBarang";
-            Load += FrmUploadBarang_Load; 
+            Load += FrmUploadBarang_Load;
             ((System.ComponentModel.ISupportInitialize)picFotoBarang).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -180,6 +184,5 @@
         private Button btnPilihFoto;
         private Button btnSimpan;
         private OpenFileDialog openFileDialog1;
-        private Button btnKembaliKeHome;
     }
 }
