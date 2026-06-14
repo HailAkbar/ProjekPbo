@@ -42,7 +42,7 @@ namespace ProjekPbo.View
                                       "b.kondisi, " +
                                       "k.nama_kategori, " +
                                       "b.deskripsi, " +
-                                      "b.tanggal_upload, "+
+                                      "b.tanggal_upload, " +
                                       "d.nama AS donatur, " +
                                       "f.foto_barang " +
                                       "FROM barang b " +
@@ -146,6 +146,11 @@ namespace ProjekPbo.View
             {
                 MessageBox.Show("Gagal menyimpan data verifikasi: " + ex.Message);
             }
+        }
+
+        private void picBarang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

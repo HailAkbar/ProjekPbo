@@ -28,197 +28,154 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPengelola));
             lblNama = new Label();
-            panel1 = new Panel();
-            lblMenunggu = new Label();
-            panel2 = new Panel();
             lblDiterima = new Label();
-            panel3 = new Panel();
             lblDitolak = new Label();
-            panel4 = new Panel();
-            lblSelesai = new Label();
             btnverifikasi = new Button();
             btnStatistik = new Button();
             btnKelola = new Button();
-            button1 = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
+            btnProfil = new Button();
+            lblMenunggu = new Label();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(150, 54);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Halo,";
             // 
             // lblNama
             // 
             lblNama.AutoSize = true;
-            lblNama.Location = new Point(245, 54);
+            lblNama.Font = new Font("Segoe UI", 10F);
+            lblNama.Location = new Point(35, 128);
             lblNama.Name = "lblNama";
-            lblNama.Size = new Size(53, 20);
+            lblNama.Size = new Size(60, 23);
             lblNama.TabIndex = 1;
             lblNama.Text = "NAMA";
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(lblMenunggu);
-            panel1.Location = new Point(46, 90);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(178, 49);
-            panel1.TabIndex = 6;
-            // 
-            // lblMenunggu
-            // 
-            lblMenunggu.AutoSize = true;
-            lblMenunggu.Location = new Point(16, 17);
-            lblMenunggu.Name = "lblMenunggu";
-            lblMenunggu.Size = new Size(50, 20);
-            lblMenunggu.TabIndex = 0;
-            lblMenunggu.Text = "label2";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(lblDiterima);
-            panel2.Location = new Point(46, 145);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(178, 49);
-            panel2.TabIndex = 7;
             // 
             // lblDiterima
             // 
             lblDiterima.AutoSize = true;
-            lblDiterima.Location = new Point(16, 15);
+            lblDiterima.Location = new Point(150, 294);
             lblDiterima.Name = "lblDiterima";
-            lblDiterima.Size = new Size(50, 20);
+            lblDiterima.Size = new Size(17, 20);
             lblDiterima.TabIndex = 1;
-            lblDiterima.Text = "label3";
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(lblDitolak);
-            panel3.Location = new Point(46, 200);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(178, 49);
-            panel3.TabIndex = 7;
+            lblDiterima.Text = "0";
             // 
             // lblDitolak
             // 
             lblDitolak.AutoSize = true;
-            lblDitolak.Location = new Point(16, 14);
+            lblDitolak.Location = new Point(150, 361);
             lblDitolak.Name = "lblDitolak";
-            lblDitolak.Size = new Size(50, 20);
+            lblDitolak.Size = new Size(17, 20);
             lblDitolak.TabIndex = 2;
-            lblDitolak.Text = "label4";
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(lblSelesai);
-            panel4.Location = new Point(46, 255);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(178, 49);
-            panel4.TabIndex = 7;
-            // 
-            // lblSelesai
-            // 
-            lblSelesai.AutoSize = true;
-            lblSelesai.Location = new Point(16, 13);
-            lblSelesai.Name = "lblSelesai";
-            lblSelesai.Size = new Size(50, 20);
-            lblSelesai.TabIndex = 3;
-            lblSelesai.Text = "label5";
+            lblDitolak.Text = "0";
             // 
             // btnverifikasi
             // 
-            btnverifikasi.Location = new Point(46, 381);
+            btnverifikasi.BackColor = Color.Transparent;
+            btnverifikasi.FlatAppearance.BorderSize = 0;
+            btnverifikasi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnverifikasi.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnverifikasi.FlatStyle = FlatStyle.Flat;
+            btnverifikasi.Font = new Font("Segoe UI", 7F);
+            btnverifikasi.ForeColor = Color.Transparent;
+            btnverifikasi.Location = new Point(30, 674);
             btnverifikasi.Name = "btnverifikasi";
-            btnverifikasi.Size = new Size(94, 29);
-            btnverifikasi.TabIndex = 8;
-            btnverifikasi.Text = "Verifikasi";
-            btnverifikasi.UseVisualStyleBackColor = true;
+            btnverifikasi.Size = new Size(65, 55);
+            btnverifikasi.TabIndex = 5;
+            btnverifikasi.TabStop = false;
+            btnverifikasi.UseVisualStyleBackColor = false;
             btnverifikasi.Click += btnVerifikasi_Click;
             // 
             // btnStatistik
             // 
-            btnStatistik.Location = new Point(245, 381);
+            btnStatistik.BackColor = Color.Transparent;
+            btnStatistik.FlatAppearance.BorderSize = 0;
+            btnStatistik.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnStatistik.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnStatistik.FlatStyle = FlatStyle.Flat;
+            btnStatistik.Font = new Font("Segoe UI", 7F);
+            btnStatistik.ForeColor = Color.Transparent;
+            btnStatistik.Location = new Point(195, 673);
             btnStatistik.Name = "btnStatistik";
-            btnStatistik.Size = new Size(94, 29);
+            btnStatistik.Size = new Size(75, 56);
             btnStatistik.TabIndex = 9;
-            btnStatistik.Text = "Statistik";
+            btnStatistik.TabStop = false;
             btnStatistik.UseVisualStyleBackColor = true;
             btnStatistik.Click += btnStatistik_Click;
             // 
             // btnKelola
             // 
-            btnKelola.Location = new Point(146, 381);
+            btnKelola.BackColor = Color.Transparent;
+            btnKelola.FlatAppearance.BorderSize = 0;
+            btnKelola.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKelola.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnKelola.FlatStyle = FlatStyle.Flat;
+            btnKelola.Font = new Font("Segoe UI", 7F);
+            btnKelola.ForeColor = Color.Transparent;
+            btnKelola.Location = new Point(101, 674);
             btnKelola.Name = "btnKelola";
-            btnKelola.Size = new Size(94, 29);
+            btnKelola.Size = new Size(88, 55);
             btnKelola.TabIndex = 10;
-            btnKelola.Text = "Kelola";
+            btnKelola.TabStop = false;
             btnKelola.UseVisualStyleBackColor = true;
             btnKelola.Click += btnkelola_Click;
             // 
-            // button1
+            // btnProfil
             // 
-            button1.Location = new Point(345, 381);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 11;
-            button1.Text = "Profil";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnProfil.BackColor = Color.Transparent;
+            btnProfil.FlatAppearance.BorderSize = 0;
+            btnProfil.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnProfil.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnProfil.FlatStyle = FlatStyle.Flat;
+            btnProfil.Font = new Font("Segoe UI", 7F);
+            btnProfil.ForeColor = Color.Transparent;
+            btnProfil.Location = new Point(287, 673);
+            btnProfil.Name = "btnProfil";
+            btnProfil.Size = new Size(64, 56);
+            btnProfil.TabIndex = 11;
+            btnProfil.TabStop = false;
+            btnProfil.UseVisualStyleBackColor = true;
+            btnProfil.Click += button1_Click;
+            // 
+            // lblMenunggu
+            // 
+            lblMenunggu.AutoSize = true;
+            lblMenunggu.Location = new Point(174, 217);
+            lblMenunggu.Name = "lblMenunggu";
+            lblMenunggu.Size = new Size(17, 20);
+            lblMenunggu.TabIndex = 0;
+            lblMenunggu.Text = "0";
             // 
             // FrmPengelola
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(485, 450);
-            Controls.Add(button1);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(384, 741);
+            Controls.Add(lblMenunggu);
+            Controls.Add(lblDiterima);
+            Controls.Add(lblDitolak);
+            Controls.Add(btnProfil);
             Controls.Add(btnKelola);
             Controls.Add(btnStatistik);
             Controls.Add(btnverifikasi);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             Controls.Add(lblNama);
-            Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "FrmPengelola";
+            RightToLeft = RightToLeft.No;
             Text = "FrmPengelola";
             Load += FrmPengelola_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Label lblNama;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Label lblMenunggu;
         private Label lblDiterima;
         private Label lblDitolak;
-        private Label lblSelesai;
         private Button btnverifikasi;
         private Button btnStatistik;
         private Button btnKelola;
-        private Button button1;
+        private Button btnProfil;
+        private Label lblMenunggu;
     }
 }

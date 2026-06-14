@@ -177,13 +177,5 @@ namespace ProjekPbo.View
             idKategori = 0;
             TampilinKategori();
         }
-
-        private void btnKembali_Click(object sender, EventArgs e)
-        {
-            FrmPengelola frm = new FrmPengelola(pengelola);
-            frm.ShowDialog();
-            this.Close();
-            return;
-        }
     }
 }

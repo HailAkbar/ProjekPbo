@@ -59,5 +59,45 @@ namespace ProjekPbo.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pengelola__Kelola {
+            get {
+                object obj = ResourceManager.GetObject("Pengelola, Kelola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pengelola__Verifikasi {
+            get {
+                object obj = ResourceManager.GetObject("Pengelola, Verifikasi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pengelola__Verifikasi__4_ {
+            get {
+                object obj = ResourceManager.GetObject("Pengelola, Verifikasi (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pengelola__Verifikasi__5_ {
+            get {
+                object obj = ResourceManager.GetObject("Pengelola, Verifikasi (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

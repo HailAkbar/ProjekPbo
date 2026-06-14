@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailVerifikasi));
             picBarang = new PictureBox();
             lblNamaBarang = new Label();
             lblNamaDonatur = new Label();
@@ -35,25 +36,26 @@
             lblKondisi = new Label();
             lblTanggal = new Label();
             rtbDeskripsi = new RichTextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnTerima = new Button();
+            btnTolak = new Button();
+            btnKembali = new Button();
             txtCatatan = new TextBox();
             ((System.ComponentModel.ISupportInitialize)picBarang).BeginInit();
             SuspendLayout();
             // 
             // picBarang
             // 
-            picBarang.Location = new Point(129, 30);
+            picBarang.Location = new Point(72, 123);
             picBarang.Name = "picBarang";
-            picBarang.Size = new Size(162, 68);
+            picBarang.Size = new Size(238, 119);
             picBarang.TabIndex = 0;
             picBarang.TabStop = false;
+            picBarang.Click += picBarang_Click;
             // 
             // lblNamaBarang
             // 
             lblNamaBarang.AutoSize = true;
-            lblNamaBarang.Location = new Point(51, 116);
+            lblNamaBarang.Location = new Point(182, 263);
             lblNamaBarang.Name = "lblNamaBarang";
             lblNamaBarang.Size = new Size(50, 20);
             lblNamaBarang.TabIndex = 1;
@@ -62,7 +64,7 @@
             // lblNamaDonatur
             // 
             lblNamaDonatur.AutoSize = true;
-            lblNamaDonatur.Location = new Point(51, 147);
+            lblNamaDonatur.Location = new Point(182, 292);
             lblNamaDonatur.Name = "lblNamaDonatur";
             lblNamaDonatur.Size = new Size(50, 20);
             lblNamaDonatur.TabIndex = 2;
@@ -71,7 +73,7 @@
             // lblKategori
             // 
             lblKategori.AutoSize = true;
-            lblKategori.Location = new Point(51, 178);
+            lblKategori.Location = new Point(182, 322);
             lblKategori.Name = "lblKategori";
             lblKategori.Size = new Size(50, 20);
             lblKategori.TabIndex = 3;
@@ -80,7 +82,7 @@
             // lblKondisi
             // 
             lblKondisi.AutoSize = true;
-            lblKondisi.Location = new Point(51, 208);
+            lblKondisi.Location = new Point(182, 351);
             lblKondisi.Name = "lblKondisi";
             lblKondisi.Size = new Size(50, 20);
             lblKondisi.TabIndex = 4;
@@ -89,7 +91,7 @@
             // lblTanggal
             // 
             lblTanggal.AutoSize = true;
-            lblTanggal.Location = new Point(51, 240);
+            lblTanggal.Location = new Point(182, 381);
             lblTanggal.Name = "lblTanggal";
             lblTanggal.Size = new Size(50, 20);
             lblTanggal.TabIndex = 5;
@@ -97,57 +99,79 @@
             // 
             // rtbDeskripsi
             // 
-            rtbDeskripsi.Location = new Point(51, 273);
+            rtbDeskripsi.BorderStyle = BorderStyle.None;
+            rtbDeskripsi.Location = new Point(41, 435);
             rtbDeskripsi.Name = "rtbDeskripsi";
-            rtbDeskripsi.Size = new Size(348, 53);
+            rtbDeskripsi.Size = new Size(301, 60);
             rtbDeskripsi.TabIndex = 6;
             rtbDeskripsi.Text = "";
             // 
-            // button1
+            // btnTerima
             // 
-            button1.Location = new Point(74, 370);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 7;
-            button1.Text = "TERIMA";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnTerima.BackColor = Color.Transparent;
+            btnTerima.FlatAppearance.BorderSize = 0;
+            btnTerima.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnTerima.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnTerima.FlatStyle = FlatStyle.Flat;
+            btnTerima.ForeColor = Color.Transparent;
+            btnTerima.Location = new Point(150, 597);
+            btnTerima.Name = "btnTerima";
+            btnTerima.Size = new Size(94, 29);
+            btnTerima.TabIndex = 7;
+            btnTerima.TabStop = false;
+            btnTerima.UseVisualStyleBackColor = false;
+            btnTerima.Click += button1_Click;
             // 
-            // button2
+            // btnTolak
             // 
-            button2.Location = new Point(305, 370);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 8;
-            button2.Text = "TOLAK";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnTolak.BackColor = Color.Transparent;
+            btnTolak.FlatAppearance.BorderSize = 0;
+            btnTolak.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnTolak.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnTolak.FlatStyle = FlatStyle.Flat;
+            btnTolak.ForeColor = Color.Transparent;
+            btnTolak.Location = new Point(263, 597);
+            btnTolak.Name = "btnTolak";
+            btnTolak.Size = new Size(94, 29);
+            btnTolak.TabIndex = 8;
+            btnTolak.TabStop = false;
+            btnTolak.UseVisualStyleBackColor = false;
+            btnTolak.Click += button2_Click;
             // 
-            // button3
+            // btnKembali
             // 
-            button3.Location = new Point(177, 409);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 9;
-            button3.Text = "KEMBALI";
-            button3.UseVisualStyleBackColor = true;
+            btnKembali.BackColor = Color.Transparent;
+            btnKembali.FlatAppearance.BorderSize = 0;
+            btnKembali.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnKembali.FlatStyle = FlatStyle.Flat;
+            btnKembali.ForeColor = Color.Transparent;
+            btnKembali.Location = new Point(41, 597);
+            btnKembali.Name = "btnKembali";
+            btnKembali.Size = new Size(94, 29);
+            btnKembali.TabIndex = 9;
+            btnKembali.TabStop = false;
+            btnKembali.UseVisualStyleBackColor = false;
             // 
             // txtCatatan
             // 
-            txtCatatan.Location = new Point(53, 331);
+            txtCatatan.BorderStyle = BorderStyle.None;
+            txtCatatan.Location = new Point(41, 552);
             txtCatatan.Name = "txtCatatan";
-            txtCatatan.Size = new Size(238, 27);
+            txtCatatan.Size = new Size(301, 20);
             txtCatatan.TabIndex = 10;
             // 
-            // FrmVerivikasi
+            // FrmDetailVerifikasi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(439, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(384, 741);
             Controls.Add(txtCatatan);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnKembali);
+            Controls.Add(btnTolak);
+            Controls.Add(btnTerima);
             Controls.Add(rtbDeskripsi);
             Controls.Add(lblTanggal);
             Controls.Add(lblKondisi);
@@ -155,7 +179,8 @@
             Controls.Add(lblNamaDonatur);
             Controls.Add(lblNamaBarang);
             Controls.Add(picBarang);
-            Name = "FrmVerivikasi";
+            DoubleBuffered = true;
+            Name = "FrmDetailVerifikasi";
             Text = "FrmVerivikasi";
             Load += FrmVerivikasi_Load;
             ((System.ComponentModel.ISupportInitialize)picBarang).EndInit();
@@ -172,9 +197,9 @@
         private Label lblKondisi;
         private Label lblTanggal;
         private RichTextBox rtbDeskripsi;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnTerima;
+        private Button btnTolak;
+        private Button btnKembali;
         private Label lblNamaBarang;
         private TextBox txtCatatan;
     }

@@ -45,10 +45,9 @@ namespace ProjekPbo.View
 
         private void TampilkanBarangnya()
         {
-            lblMenunggu.Text = "Menunggu: " + HitungStatusnya("Menunggu Verifikasi").ToString();
-            lblDiterima.Text = "Diterima: " + HitungStatusnya("Diterima").ToString();
-            lblDitolak.Text = "Ditolak: " + HitungStatusnya("Ditolak").ToString();
-            lblSelesai.Text = "Selesai: " + HitungStatusnya("Selesai").ToString();
+            lblMenunggu.Text = HitungStatusnya("Menunggu Verifikasi").ToString();
+            lblDiterima.Text = HitungStatusnya("Diterima").ToString();
+            lblDitolak.Text = HitungStatusnya("Ditolak").ToString();
         }
 
         private void btnVerifikasi_Click(object sender, EventArgs e)
