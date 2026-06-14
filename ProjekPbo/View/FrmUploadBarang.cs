@@ -194,5 +194,10 @@ namespace ProjekPbo.View
         {
 
         }
+
+        private void cbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

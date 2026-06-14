@@ -121,6 +121,7 @@
             Controls.Add(btnSimpan);
             Name = "FrmGantiPassword";
             Text = "FrmGantiPassword";
+            Load += FrmGantiPassword_Load;
             ResumeLayout(false);
             PerformLayout();
         }

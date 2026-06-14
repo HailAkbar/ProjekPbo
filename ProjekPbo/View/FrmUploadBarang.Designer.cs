@@ -50,6 +50,7 @@
             cbKategori.Name = "cbKategori";
             cbKategori.Size = new Size(151, 28);
             cbKategori.TabIndex = 0;
+            cbKategori.SelectedIndexChanged += cbKategori_SelectedIndexChanged;
             cbKategori.Click += FrmUploadBarang_Load;
             // 
             // txtNamaBarang
@@ -162,7 +163,7 @@
             Controls.Add(cbKategori);
             Name = "FrmUploadBarang";
             Text = "UploadBarang";
-            Load += FrmUploadBarang_Load; 
+            Load += FrmUploadBarang_Load;
             ((System.ComponentModel.ISupportInitialize)picFotoBarang).EndInit();
             ResumeLayout(false);
             PerformLayout();

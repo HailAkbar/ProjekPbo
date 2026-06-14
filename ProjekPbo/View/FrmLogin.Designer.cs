@@ -39,6 +39,7 @@
             // 
             txtEmail.Location = new Point(75, 143);
             txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(125, 27);
             txtEmail.TabIndex = 0;
             // 
@@ -46,6 +47,7 @@
             // 
             txtPassword.Location = new Point(81, 219);
             txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(125, 27);
             txtPassword.TabIndex = 1;
             // 
@@ -85,7 +87,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(397, 450);
+            ClientSize = new Size(384, 827);
             Controls.Add(lblLupaPassword);
             Controls.Add(lblDaftar);
             Controls.Add(btnLogin);

@@ -108,5 +108,10 @@ namespace ProjekPbo.View
             frm.Show();
             this.Close();
         }
+
+        private void FrmGantiPassword_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
