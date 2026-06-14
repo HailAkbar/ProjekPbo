@@ -143,6 +143,7 @@ namespace ProjekPbo.View
             btnHapus.BackColor = Color.Red;
             btnHapus.ForeColor = Color.White;
             if (status != "Menunggu Verifikasi")
+            if(status !="Menunggu Verifikasi")
             {
                 btnHapus.Visible = false;
             }

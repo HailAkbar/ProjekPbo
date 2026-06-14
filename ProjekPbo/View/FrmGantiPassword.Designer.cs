@@ -75,7 +75,6 @@
             txtPasswordBaru.Name = "txtPasswordBaru";
             txtPasswordBaru.Size = new Size(291, 44);
             txtPasswordBaru.TabIndex = 6;
-            txtPasswordBaru.TextChanged += txtPasswordBaru_TextChanged;
             // 
             // txtKonfirmasi
             // 
