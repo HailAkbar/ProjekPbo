@@ -6,19 +6,19 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using ProjekPbo.Models;
-using ProjekPbo.Database;
-using ProjekPbo.View;
-using Npgsql;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmDaftarBarangPengelola : Form
     {
         private Pengelola pengelola;
+        private C_DaftarBarangPengelola controler;
         public FrmDaftarBarangPengelola(Pengelola p)
         {
             InitializeComponent();
             pengelola = p;
+            controler = new C_DaftarBarangPengelola();
         }
 
         private void FrmDaftarBarangPengelola_Load(object sender, EventArgs e)
@@ -31,33 +31,10 @@ namespace ProjekPbo.View
             try
             {
                 flpBarang.Controls.Clear();
-
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                DataTable dt = controler.Tampilkanbarangnya();
+                foreach (DataRow row in dt.Rows)
                 {
-                    conn.Open();
-
-                    string query =
-                        @"SELECT" +
-                            " b.id_barang, " +
-                            " b.nama_barang, " +
-                            " b.kondisi, " +
-                            " b.tanggal_upload, " +
-                            " d.nama, " +
-                            " k.nama_kategori " +
-                        "FROM barang b " +
-                        "JOIN donatur d ON b.id_donatur = d.id_donatur " +
-                        "JOIN kategori k ON b.id_kategori = k.id_kategori " +
-                        "WHERE b.status = 'Menunggu Verifikasi' " +
-                        " ORDER BY b.tanggal_upload desc ";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-
-                    NpgsqlDataReader dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        Cardnya(dr);
-                    }
+                    Cardnya(row);
                 }
             }
             catch (Exception ex)
@@ -65,9 +42,9 @@ namespace ProjekPbo.View
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Cardnya(NpgsqlDataReader dr)
+        private void Cardnya(DataRow row)
         {
-            int idBarang = Convert.ToInt32(dr["id_barang"]);
+            int idBarang = Convert.ToInt32(row["id_barang"]);
             Panel card = new Panel();
 
             card.Width = 320;
@@ -77,18 +54,18 @@ namespace ProjekPbo.View
 
 
             Label lblNama = new Label();
-            lblNama.Text = dr["nama_barang"].ToString();
+            lblNama.Text = row["nama_barang"].ToString();
             lblNama.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             lblNama.Location = new Point(10, 10);
             lblNama.AutoSize = true;
 
             Label lblDonatur = new Label();
-            lblDonatur.Text = "Donatur : " + dr["nama"].ToString();
+            lblDonatur.Text = "Donatur : " + row["nama"].ToString();
             lblDonatur.Location = new Point(10, 40);
             lblDonatur.AutoSize = true;
 
             Label lblKategori = new Label();
-            lblKategori.Text = "Kategori : " + dr["nama_kategori"].ToString();
+            lblKategori.Text = "Kategori : " + row["nama_kategori"].ToString();
             lblKategori.Location = new Point(10, 65);
             lblKategori.AutoSize = true;
 
@@ -96,7 +73,7 @@ namespace ProjekPbo.View
             btnDetail.Text = "Verifikasi";
             btnDetail.Width = 100;
             btnDetail.Height = 35;
-            btnDetail.Location = new Point(200, 80);
+            btnDetail.Location = new Point(210, 90);
 
             btnDetail.Click += (s, e) =>
             {
@@ -122,38 +99,17 @@ namespace ProjekPbo.View
         {
             CariBarang();
         }
-
+        
         private void CariBarang()
         {
             try
             {
                 flpBarang.Controls.Clear();
+                DataTable dt = controler.CariBarangnya(txtCari.Text);
 
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                foreach (DataRow row in dt.Rows)
                 {
-                    conn.Open();
-
-                    string query =
-                        @"SELECT" +
-                            " b.id_barang, " +
-                            " b.nama_barang," +
-                            " d.nama," +
-                            " k.nama_kategori " +
-                        "FROM barang b " +
-                        "JOIN donatur d ON b.id_donatur=d.id_donatur " +
-                        "JOIN kategori k ON b.id_kategori=k.id_kategori " +
-                        "WHERE b.status='Menunggu Verifikasi' AND LOWER(b.nama_barang) LIKE LOWER(@nama) ";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-
-                    cmd.Parameters.AddWithValue("@nama", "%" + txtCari.Text + "%");
-
-                    NpgsqlDataReader dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        Cardnya(dr);
-                    }
+                    Cardnya(row);
                 }
             }
             catch (Exception ex)
@@ -161,6 +117,7 @@ namespace ProjekPbo.View
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnKembali_Click(object sender, EventArgs e)
         {
             FrmPengelola frm = new FrmPengelola(pengelola);

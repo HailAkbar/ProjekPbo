@@ -51,6 +51,7 @@
             cbKategori.Name = "cbKategori";
             cbKategori.Size = new Size(295, 23);
             cbKategori.TabIndex = 0;
+            cbKategori.SelectedIndexChanged += cbKategori_SelectedIndexChanged;
             cbKategori.Click += FrmUploadBarang_Load;
             // 
             // txtNamaBarang
