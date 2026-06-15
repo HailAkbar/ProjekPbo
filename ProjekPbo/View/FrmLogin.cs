@@ -55,7 +55,7 @@ namespace ProjekPbo
                             dr.Close();
                             MessageBox.Show("Login berhasil! Selamat datang, " + donatur.GetRole());
 
-                            FrmDonatur frm = new FrmDonatur(donatur);
+                            FrmUploadBarang frm = new FrmUploadBarang(donatur);
                             frm.Show();
                             this.Hide();
                             return;
