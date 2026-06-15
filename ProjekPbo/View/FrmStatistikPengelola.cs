@@ -11,16 +11,19 @@ using Npgsql;
 using System.Threading.Tasks.Dataflow;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing.Text;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmStatistikPengelola : Form
     {
         private Pengelola pengelola;
+        private C_StatistikPengelola controller;
         public FrmStatistikPengelola(Pengelola p)
         {
             InitializeComponent();
             pengelola = p;
+            controller = new C_StatistikPengelola();
         }
 
         private void FrmStatistikPengelola_Load(object sender, EventArgs e)
@@ -29,41 +32,14 @@ namespace ProjekPbo.View
             MunculinKategori();
         }
 
-        private int NgitungJumlah(string status)
-        {
-            using (NpgsqlConnection conn = Koneksi.GetConnection())
-            {
-                conn.Open();
-                string query = @"SELECT COUNT(*) FROM barang WHERE status=@status";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@status", status);
-
-                return Convert.ToInt32(cmd.ExecuteScalar());
-            }
-        }
-
-        private int NgitungTotal()
-        {
-            using (NpgsqlConnection conn = Koneksi.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT COUNT(*) FROM barang";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                return Convert.ToInt32(cmd.ExecuteScalar());
-            }
-        }
-
         private void MunculinStatus()
         {
             flpStatus.Controls.Clear();
 
-            MunculinStatusnya("Menunggu", NgitungJumlah("Menunggu Verifikasi"));
-            MunculinStatusnya("Diterima", NgitungJumlah("Diterima"));
-            MunculinStatusnya("Ditolak", NgitungJumlah("Ditolak"));
-            MunculinStatusnya("Selesai", NgitungJumlah("Selesai"));
-            MunculinStatusnya("Total", NgitungTotal());
+            MunculinStatusnya("Menunggu", controller.HitungJumlah("Menunggu Verifikasi"));
+            MunculinStatusnya("Diterima", controller.HitungJumlah("Diterima"));
+            MunculinStatusnya("Ditolak", controller.HitungJumlah("Ditolak"));
+            MunculinStatusnya("Total", controller.HitungTotal());
         }
 
         private void MunculinStatusnya(string judul, int jumlah)
@@ -102,27 +78,10 @@ namespace ProjekPbo.View
             try
             {
                 flpKategori.Controls.Clear();
-
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                DataTable dt = controller.StatistikKategori();
+                foreach (DataRow dr in dt.Rows)
                 {
-                    conn.Open();
-
-                    string query =
-                        @"SELECT " +
-                            "k.nama_kategori, " +
-                            "COUNT(*) AS jumlah " +
-                            "FROM barang b " +
-                            "JOIN kategori k ON b.id_kategori = k.id_kategori " +
-                            "GROUP BY k.nama_kategori " +
-                            "ORDER BY k.nama_kategori DESC";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-
-                    NpgsqlDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        MunculinKategorinya(dr["nama_kategori"].ToString(), Convert.ToInt32(dr["jumlah"]));
-                    }
+                    MunculinKategorinya(dr["nama_kategori"].ToString(), Convert.ToInt32(dr["jumlah"]));
                 }
             }
             catch (Exception ex)

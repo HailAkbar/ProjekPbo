@@ -7,21 +7,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Npgsql;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmLupaPassword : Form
     {
+        private C_LupaPasswordDonatur controller;
         public FrmLupaPassword()
         {
             InitializeComponent();
+            controller = new C_LupaPasswordDonatur();
         }
-
-        private void FrmLupaPassword_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSimpan_Click(object sender, EventArgs e)
         {
             if (!Validasi())
@@ -62,37 +59,16 @@ namespace ProjekPbo.View
         {
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                bool berhasil = controller.LupaPassword(txtEmail.Text.Trim(), txtPasswordBaru.Text);
+                if (!berhasil)
                 {
-                    conn.Open();
-
-                    string cekEmail = @"SELECT COUNT(*) FROM donatur WHERE email = @email";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(cekEmail, conn);
-
-                    cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
-                    int jumlah = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (jumlah == 0)
-                    {
-                        MessageBox.Show("Email tidak Ditemukan!");
-                        return;
-                    }
-
-                    string updatepassword = @"UPDATE donatur SET sandi = @sandi WHERE email = @email";
-
-                    cmd = new NpgsqlCommand(updatepassword, conn);
-                    cmd.Parameters.AddWithValue("@sandi", txtPasswordBaru.Text);
-                    cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Password berhasil diubah!");
-
-                    FrmLogin frm = new FrmLogin();
-                    frm.Show();
-                    this.Close();
-
+                    MessageBox.Show("Email Tidak Ditemukan!");
                 }
+
+                MessageBox.Show("Password Berhasil Diubah!");
+                FrmLogin frm = new FrmLogin();
+                frm.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -105,11 +81,6 @@ namespace ProjekPbo.View
             FrmLogin frm = new FrmLogin();
             frm.Show();
             this.Close();
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

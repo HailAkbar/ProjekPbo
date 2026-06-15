@@ -54,7 +54,6 @@
             picBarang.Size = new Size(238, 119);
             picBarang.TabIndex = 0;
             picBarang.TabStop = false;
-            picBarang.Click += picBarang_Click;
             // 
             // lblNamaBarang
             // 

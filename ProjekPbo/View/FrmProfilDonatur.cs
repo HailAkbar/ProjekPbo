@@ -43,7 +43,7 @@ namespace ProjekPbo.View
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
-            FrmDonatur frm = new FrmDonatur(donatur);
+            FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
             frm.Show();
             this.Close();
         }

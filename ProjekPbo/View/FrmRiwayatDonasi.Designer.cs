@@ -31,11 +31,15 @@
             btnRefresh = new Button();
             btnKembali = new Button();
             flpRiwayat = new FlowLayoutPanel();
+            btnSemua = new Button();
+            btnDiterima = new Button();
+            btnDitolak = new Button();
+            btnMenunggu = new Button();
             SuspendLayout();
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(51, 333);
+            btnRefresh.Location = new Point(278, 623);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(94, 29);
             btnRefresh.TabIndex = 1;
@@ -45,7 +49,7 @@
             // 
             // btnKembali
             // 
-            btnKembali.Location = new Point(51, 378);
+            btnKembali.Location = new Point(266, 695);
             btnKembali.Name = "btnKembali";
             btnKembali.Size = new Size(94, 29);
             btnKembali.TabIndex = 2;
@@ -57,17 +61,61 @@
             // 
             flpRiwayat.AutoScroll = true;
             flpRiwayat.FlowDirection = FlowDirection.TopDown;
-            flpRiwayat.Location = new Point(40, 12);
+            flpRiwayat.Location = new Point(-1, 200);
             flpRiwayat.Name = "flpRiwayat";
-            flpRiwayat.Size = new Size(347, 315);
+            flpRiwayat.Size = new Size(385, 356);
             flpRiwayat.TabIndex = 3;
             flpRiwayat.WrapContents = false;
+            // 
+            // btnSemua
+            // 
+            btnSemua.Location = new Point(-1, 165);
+            btnSemua.Name = "btnSemua";
+            btnSemua.Size = new Size(94, 29);
+            btnSemua.TabIndex = 4;
+            btnSemua.Text = "Semua";
+            btnSemua.UseVisualStyleBackColor = true;
+            btnSemua.Click += btnSemua_Click;
+            // 
+            // btnDiterima
+            // 
+            btnDiterima.Location = new Point(99, 165);
+            btnDiterima.Name = "btnDiterima";
+            btnDiterima.Size = new Size(94, 29);
+            btnDiterima.TabIndex = 5;
+            btnDiterima.Text = "Diterima";
+            btnDiterima.UseVisualStyleBackColor = true;
+            btnDiterima.Click += btnDiterima_Click;
+            // 
+            // btnDitolak
+            // 
+            btnDitolak.Location = new Point(190, 165);
+            btnDitolak.Name = "btnDitolak";
+            btnDitolak.Size = new Size(94, 29);
+            btnDitolak.TabIndex = 6;
+            btnDitolak.Text = "Ditolak";
+            btnDitolak.UseVisualStyleBackColor = true;
+            btnDitolak.Click += btnDitolak_Click;
+            // 
+            // btnMenunggu
+            // 
+            btnMenunggu.Location = new Point(290, 165);
+            btnMenunggu.Name = "btnMenunggu";
+            btnMenunggu.Size = new Size(94, 29);
+            btnMenunggu.TabIndex = 7;
+            btnMenunggu.Text = "menunggu";
+            btnMenunggu.UseVisualStyleBackColor = true;
+            btnMenunggu.Click += btnMenunggu_Click;
             // 
             // FrmRiwayatDonasi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(423, 450);
+            ClientSize = new Size(384, 741);
+            Controls.Add(btnMenunggu);
+            Controls.Add(btnDitolak);
+            Controls.Add(btnDiterima);
+            Controls.Add(btnSemua);
             Controls.Add(flpRiwayat);
             Controls.Add(btnKembali);
             Controls.Add(btnRefresh);
@@ -81,5 +129,9 @@
         private Button btnRefresh;
         private Button btnKembali;
         private FlowLayoutPanel flpRiwayat;
+        private Button btnSemua;
+        private Button btnDiterima;
+        private Button btnDitolak;
+        private Button btnMenunggu;
     }
 }

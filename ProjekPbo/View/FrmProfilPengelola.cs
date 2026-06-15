@@ -23,9 +23,9 @@ namespace ProjekPbo.View
         private void FrmProfilPengelola_Load(object sender, EventArgs e)
         {
             lblNamaAtas.Text = pengelola.nama.ToString();
-            lblNama.Text = "Nama Anda: " + pengelola.nama.ToString();
-            lblEmail.Text = "Email: " + pengelola.email.ToString();
-            lblNoHp.Text = "Nomor HP: " + pengelola.nomorHp.ToString();
+            lblNama.Text = pengelola.nama.ToString();
+            lblEmail.Text = pengelola.email.ToString();
+            lblNoHp.Text = pengelola.nomorHp.ToString();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

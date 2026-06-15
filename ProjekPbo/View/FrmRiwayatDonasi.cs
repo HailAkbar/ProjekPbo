@@ -8,17 +8,21 @@ using System.Text;
 using System.Windows.Forms;
 using Npgsql;
 using ProjekPbo.Database;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmRiwayatDonasi : Form
     {
         public Donatur donatur;
+        private string filterStatus = "";
+        private C_RiwayatDonasiDonatur controller;
 
         public FrmRiwayatDonasi(Donatur d)
         {
             InitializeComponent();
             donatur = d;
+            controller = new C_RiwayatDonasiDonatur();
         }
 
         private void FrmRiwayatDonasi_Load(object sender, EventArgs e)
@@ -30,39 +34,24 @@ namespace ProjekPbo.View
         {
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                flpRiwayat.Controls.Clear();
+                DataTable dt = controller.ambilRiwayat(donatur.id, filterStatus);
+                if(dt.Rows.Count == 0)
                 {
-                    conn.Open();
+                    Label lblKosong = new Label();
+                    lblKosong.Text = "Belum ada riwayat donasi.";
+                    lblKosong.Font = new Font("Segoe UI", 11, FontStyle.Italic);
+                    lblKosong.ForeColor = Color.Gray;
+                    lblKosong.AutoSize = true;
+                    lblKosong.Margin = new Padding(20, 20, 0, 0);
 
-                    flpRiwayat.Controls.Clear();
+                    flpRiwayat.Controls.Add(lblKosong);
+                    return;
+                }
 
-                    string query =
-                     @"SELECT" +
-                            " b.id_barang," +
-                            " b.nama_barang," +
-                            " k.nama_kategori," +
-                            " b.kondisi," +
-                            " b.status," +
-                            " b.tanggal_upload, " +
-                            " COALESCE(NULLIF(TRIM(v.catatan), ' '), 'Tidak ada Catatan') AS catatan " +
-                     "FROM barang b " +
-                     "JOIN kategori k ON b.id_kategori = k.id_kategori " +
-                     "LEFT JOIN verifikasi v ON b.id_barang = v.id_barang " +
-                     "WHERE b.id_donatur = @id" +
-                     " ORDER BY b.tanggal_upload DESC";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@id", donatur.id);
-
-                    NpgsqlDataReader dr = cmd.ExecuteReader();
-
-                    bool adaData = false;
-
-                    while (dr.Read())
-                    {
-                        adaData = true;
-
-                        Nambah(
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Nambah(
                             Convert.ToInt32(dr["id_barang"]),
                             dr["nama_barang"].ToString(),
                             dr["nama_kategori"].ToString(),
@@ -71,19 +60,6 @@ namespace ProjekPbo.View
                             dr["catatan"].ToString(),
                             Convert.ToDateTime(dr["tanggal_upload"]).ToString("dd-MM-yyyy")
                         );
-                    }
-
-                    if (!adaData)
-                    {
-                        Label lblKosong = new Label();
-                        lblKosong.Text = "Belum ada riwayat donasi.";
-                        lblKosong.Font = new Font("Segoe UI", 11, FontStyle.Italic);
-                        lblKosong.ForeColor = Color.Gray;
-                        lblKosong.AutoSize = true;
-                        lblKosong.Margin = new Padding(20, 20, 0, 0);
-
-                        flpRiwayat.Controls.Add(lblKosong);
-                    }
                 }
             }
             catch (Exception ex)
@@ -143,10 +119,10 @@ namespace ProjekPbo.View
             btnHapus.BackColor = Color.Red;
             btnHapus.ForeColor = Color.White;
             if (status != "Menunggu Verifikasi")
-            if(status !="Menunggu Verifikasi")
-            {
-                btnHapus.Visible = false;
-            }
+                if (status != "Menunggu Verifikasi")
+                {
+                    btnHapus.Visible = false;
+                }
 
             btnHapus.Click += (s, e) =>
             {
@@ -166,64 +142,33 @@ namespace ProjekPbo.View
 
         private void HapusBarang(int idBarang, string status)
         {
+            if (status != "Menunggu Verifikasi")
+            {
+                MessageBox.Show("Barang yang sudah diverifikasi tidak bisa dihapus");
+                return;
+            }
+
+            DialogResult hasil = MessageBox.Show("Yakin ingin menghapus barang ini?", "Konfirmasi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hasil == DialogResult.No)
+                return;
+
             try
             {
-                if (status != "Menunggu Verifikasi")
+                bool berhasil = controller.HapusBarang(idBarang);
+                if (berhasil)
                 {
-                    MessageBox.Show("Barang yang sudah diverifikasi tidak bisa dihapus");
-                    return;
+                    MessageBox.Show("Barang berhasil dihapus.");
+                    TampilinRiwayatDonasi();
                 }
-
-                DialogResult hasil = MessageBox.Show("Yakin ingin menghapus barang ini?", "Konfirmasi",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (hasil == DialogResult.No)
-                    return;
-
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                else
                 {
-                    conn.Open();
-
-                    using (NpgsqlTransaction trans = conn.BeginTransaction())
-                    {
-                        try
-                        {
-                            string queryFoto = @"DELETE FROM foto_barang WHERE id_barang = @id";
-                            using (NpgsqlCommand cmdFoto = new NpgsqlCommand(queryFoto, conn, trans))
-                            {
-                                cmdFoto.Parameters.AddWithValue("@id", idBarang);
-                                cmdFoto.ExecuteNonQuery();
-                            }
-
-                            string queryVerifikasi = @"DELETE FROM verifikasi WHERE id_barang = @id";
-                            using (NpgsqlCommand cmdVerifikasi = new NpgsqlCommand(queryVerifikasi, conn, trans))
-                            {
-                                cmdVerifikasi.Parameters.AddWithValue("@id", idBarang);
-                                cmdVerifikasi.ExecuteNonQuery();
-                            }
-
-                            string queryBarang = @"DELETE FROM barang WHERE id_barang = @id";
-                            using (NpgsqlCommand cmdBarang = new NpgsqlCommand(queryBarang, conn, trans))
-                            {
-                                cmdBarang.Parameters.AddWithValue("@id", idBarang);
-                                cmdBarang.ExecuteNonQuery();
-                            }
-
-                            trans.Commit();
-                            MessageBox.Show("Barang berhasil dihapus.");
-
-                            TampilinRiwayatDonasi();
-                        }
-                        catch (Exception ex)
-                        {
-                            trans.Rollback();
-                            MessageBox.Show("Gagal menghapus data: " + ex.Message);
-                        }
-                    }
+                    MessageBox.Show("Gagal menghapus barang.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -234,13 +179,37 @@ namespace ProjekPbo.View
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
-            FrmDonatur frmDonatur = new FrmDonatur(donatur);
+            FrmRiwayatDonasi frmDonatur = new FrmRiwayatDonasi(donatur);
             frmDonatur.Show();
             this.Close();
         }
 
         private void FrmRiwayatDonasi_Load_1(object sender, EventArgs e)
         {
+            TampilinRiwayatDonasi();
+        }
+
+        private void btnSemua_Click(object sender, EventArgs e)
+        {
+            filterStatus = "";
+            TampilinRiwayatDonasi();
+        }
+
+        private void btnDiterima_Click(object sender, EventArgs e)
+        {
+            filterStatus = "Diterima";
+            TampilinRiwayatDonasi();
+        }
+
+        private void btnDitolak_Click(object sender, EventArgs e)
+        {
+            filterStatus = "Ditolak";
+            TampilinRiwayatDonasi();
+        }
+
+        private void btnMenunggu_Click(object sender, EventArgs e)
+        {
+            filterStatus = "Menunggu Verifikasi";
             TampilinRiwayatDonasi();
         }
     }

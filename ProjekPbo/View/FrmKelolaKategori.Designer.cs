@@ -35,6 +35,10 @@
             btnHapus = new Button();
             btnRefresh = new Button();
             txtKategori = new TextBox();
+            btnKeProfil = new Button();
+            btnKeStatistik = new Button();
+            btnKeKelola = new Button();
+            btnKeVerifikasi = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKategori).BeginInit();
             SuspendLayout();
             // 
@@ -125,6 +129,54 @@
             txtKategori.Size = new Size(315, 20);
             txtKategori.TabIndex = 6;
             // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(285, 678);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(72, 51);
+            btnKeProfil.TabIndex = 22;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
+            // 
+            // btnKeStatistik
+            // 
+            btnKeStatistik.BackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatStyle = FlatStyle.Flat;
+            btnKeStatistik.Location = new Point(194, 678);
+            btnKeStatistik.Name = "btnKeStatistik";
+            btnKeStatistik.Size = new Size(72, 51);
+            btnKeStatistik.TabIndex = 21;
+            btnKeStatistik.UseVisualStyleBackColor = false;
+            btnKeStatistik.Click += btnKeStatistik_Click;
+            // 
+            // btnKeKelola
+            // 
+            btnKeKelola.BackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatStyle = FlatStyle.Flat;
+            btnKeKelola.Location = new Point(116, 678);
+            btnKeKelola.Name = "btnKeKelola";
+            btnKeKelola.Size = new Size(72, 51);
+            btnKeKelola.TabIndex = 20;
+            btnKeKelola.UseVisualStyleBackColor = false;
+            btnKeKelola.Click += btnKeKelola_Click;
+            // 
+            // btnKeVerifikasi
+            // 
+            btnKeVerifikasi.BackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
+            btnKeVerifikasi.Location = new Point(23, 678);
+            btnKeVerifikasi.Name = "btnKeVerifikasi";
+            btnKeVerifikasi.Size = new Size(85, 51);
+            btnKeVerifikasi.TabIndex = 19;
+            btnKeVerifikasi.UseVisualStyleBackColor = false;
+            btnKeVerifikasi.Click += btnKeVerifikasi_Click;
+            // 
             // FrmKelolaKategori
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -132,6 +184,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeStatistik);
+            Controls.Add(btnKeKelola);
+            Controls.Add(btnKeVerifikasi);
             Controls.Add(txtKategori);
             Controls.Add(btnRefresh);
             Controls.Add(btnHapus);
@@ -155,5 +211,9 @@
         private Button btnHapus;
         private Button btnRefresh;
         private TextBox txtKategori;
+        private Button btnKeProfil;
+        private Button btnKeStatistik;
+        private Button btnKeKelola;
+        private Button btnKeVerifikasi;
     }
 }

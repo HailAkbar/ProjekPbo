@@ -9,14 +9,17 @@ using System.Windows.Forms;
 using Npgsql;
 using ProjekPbo.Database;
 using ProjekPbo.View;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmRegister : Form
     {
+        private C_Register controller;
         public FrmRegister()
         {
             InitializeComponent();
+            controller = new C_Register();
         }
 
         private void btnDaftar_Click(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace ProjekPbo.View
                 MessageBox.Show("Format nomor hp harus angka");
                 return false;
             }
-            if ((txtNoHP.Text.Trim().Length > 12)) //ngecek kalo nomor hp harus dibawah 12 digit
+            if (txtNoHP.Text.Trim().Length > 12) //ngecek kalo nomor hp harus dibawah 12 digit
             {
                 MessageBox.Show("Nomor Hp harus dibawah 12 angka");
                 return false;
@@ -81,46 +84,20 @@ namespace ProjekPbo.View
         {
             try
             {
-                Donatur donatur = new Donatur();
-                donatur.nama = txtNama.Text.Trim();
-                donatur.email = txtEmail.Text.Trim();
-                donatur.sandi = txtSandi.Text.Trim();
-                donatur.nomorHp = txtNoHP.Text.Trim();
-                donatur.Alamat = txtAlamat.Text.Trim();
-
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                Donatur donatur = new Donatur()
                 {
-                    conn.Open();
+                    nama = txtNama.Text.Trim(),
+                    email = txtEmail.Text.Trim(),
+                    sandi = txtSandi.Text.Trim(),
+                    nomorHp = txtNoHP.Text.Trim(),
+                    Alamat = txtAlamat.Text.Trim()
+                };
 
-                    string query = "INSERT INTO donatur " +
-                        "( " +
-                        "nama, " +
-                        "email, " +
-                        "sandi, " +
-                        "nomor_hp, " +
-                        "alamat" +
-                        ")" +
-                        "VALUES " +
-                        "(@nama, " +
-                        "@email, " +
-                        "@sandi, " +
-                        "@nomor_hp, " +
-                        "@alamat)";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("nama", donatur.nama);
-                    cmd.Parameters.AddWithValue("email", donatur.email);
-                    cmd.Parameters.AddWithValue("sandi", donatur.sandi);
-                    cmd.Parameters.AddWithValue("nomor_hp", donatur.nomorHp);
-                    cmd.Parameters.AddWithValue("alamat", donatur.Alamat);
-
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Pendaftaran berhasil!");
-                    FrmLogin frmLogin = new FrmLogin();
-                    frmLogin.Show();
-                    this.Close();
-                }
+                controller.register(donatur);
+                MessageBox.Show("Register Berhasil!");
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -131,16 +108,6 @@ namespace ProjekPbo.View
         private void FrmRegister_Load(object sender, EventArgs e)
         {
             txtNoHP.MaxLength = 12;
-        }
-
-        private void txtNoHP_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKonfirmasi_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

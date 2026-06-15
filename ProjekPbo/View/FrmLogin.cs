@@ -2,14 +2,17 @@ using Npgsql;
 using ProjekPbo.Models;
 using ProjekPbo.Database;
 using ProjekPbo.View;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo
 {
     public partial class FrmLogin : Form
     {
+        private C_Login controller;
         public FrmLogin()
         {
             InitializeComponent();
+            controller = new C_Login();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -30,68 +33,26 @@ namespace ProjekPbo
         {
             try
             {
-                using (var conn = Koneksi.GetConnection())
+                object user = controller.LoginUser(txtEmail.Text.Trim(), txtPassword.Text.Trim());
+
+                if (user is Donatur donatur)
                 {
-                    conn.Open();
+                    MessageBox.Show("Login Berhasil! Selamat Datang, " + donatur.GetRole());
+                    FrmUploadBarang frm = new FrmUploadBarang(donatur);
+                    frm.ShowDialog();
+                    this.Hide();
+                }
 
-                    //login donatur
-                    string queryDonatur = "SELECT * FROM donatur WHERE email = @Email AND sandi = @Sandi"; //inisialisasi
-                    NpgsqlCommand cmd = new NpgsqlCommand(queryDonatur, conn);
-                    {
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        cmd.Parameters.AddWithValue("@Sandi", txtPassword.Text);
-
-                        NpgsqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            Donatur donatur = new Donatur();
-                            donatur.id = Convert.ToInt32(dr["id_donatur"]);
-                            donatur.nama = dr["nama"].ToString();
-                            donatur.email = dr["email"].ToString();
-                            donatur.sandi = dr["sandi"].ToString();
-                            donatur.nomorHp = dr["nomor_hp"].ToString();
-                            donatur.Alamat = dr["alamat"].ToString();
-
-                            dr.Close();
-                            MessageBox.Show("Login berhasil! Selamat datang, " + donatur.GetRole());
-
-                            FrmUploadBarang frm = new FrmUploadBarang(donatur);
-                            frm.Show();
-                            this.Hide();
-                            return;
-                        }
-
-                        dr.Close();
-
-                        //login pengelola
-
-                        string queryPengelola = "SELECT * FROM pengelola WHERE email = @Email AND sandi = @Sandi";
-                        cmd = new NpgsqlCommand(queryPengelola, conn);
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        cmd.Parameters.AddWithValue("@Sandi", txtPassword.Text);
-
-                        dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            Pengelola pengelola = new Pengelola();
-                            pengelola.id = Convert.ToInt32(dr["id_pengelola"]);
-                            pengelola.nama = dr["nama"].ToString();
-                            pengelola.email = dr["email"].ToString();
-                            pengelola.sandi = dr["sandi"].ToString();
-                            pengelola.nomorHp = dr["nomor_hp"].ToString();
-
-                            dr.Close();
-                            MessageBox.Show("Login berhasil! Selamat datang, " + pengelola.GetRole());
-
-                            FrmPengelola frm = new FrmPengelola(pengelola);
-                            frm.Show();
-                            this.Hide();
-                            return;
-                        }
-                        dr.Close();
-
-                        MessageBox.Show("Login gagal! Pastikan email dan password benar.");
-                    }
+                else if (user is Pengelola pengelola)
+                {
+                    MessageBox.Show("Login Berhasil! Selamat Datang, " + pengelola.GetRole());
+                    FrmPengelola frm = new FrmPengelola(pengelola);
+                    frm.ShowDialog();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Login gagal! Pastikan Email dan Password Benar!");
                 }
             }
             catch (Exception ex)
@@ -113,16 +74,6 @@ namespace ProjekPbo
             frm.Show();
             this.Hide();
             return;
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

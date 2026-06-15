@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
@@ -17,10 +18,12 @@ namespace ProjekPbo.View
     {
         private Donatur donatur;
         private string fotoPath = "";
+        private C_UploadBarangDonatur controller;
         public FrmUploadBarang(Donatur d)
         {
             InitializeComponent();
             donatur = d;
+            controller = new C_UploadBarangDonatur();
         }
 
         private void FrmUploadBarang_Load(object sender, EventArgs e)
@@ -32,22 +35,10 @@ namespace ProjekPbo.View
         {
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
-                {
-                    conn.Open();
-
-                    string query = "SELECT * FROM kategori";
-
-                    NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conn);
-
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    cbKategori.DisplayMember = "nama_kategori";
-                    cbKategori.ValueMember = "id_kategori";
-
-                    cbKategori.DataSource = dt;
-                }
+                DataTable dt = new DataTable();
+                cbKategori.DisplayMember = "nama_kategori";
+                cbKategori.ValueMember = "id_kategori";
+                cbKategori.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -77,7 +68,7 @@ namespace ProjekPbo.View
             else if (rbCukup.Checked)
                 return "Cukup";
             else if (rbRusak.Checked)
-                return "Cukup Rusak";
+                return "Sedikit Rusak";
             else
                 return "";
         }
@@ -121,62 +112,11 @@ namespace ProjekPbo.View
         {
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
-                {
-                    conn.Open();
-                    NpgsqlTransaction transaction = conn.BeginTransaction();
-
-                    string querybarang = "INSERT INTO barang " +
-                        "(" +
-                        "nama_barang, " +
-                        "kondisi, " +
-                        "deskripsi, " +
-                        "status, " +
-                        "tanggal_upload, " +
-                        "id_donatur, " +
-                        "id_kategori" +
-                        ") " +
-                        "VALUES " +
-                        "(" +
-                        "@nama, " +
-                        "@kondisi, " +
-                        "@deskripsi, " +
-                        "@status, " +
-                        "NOW(), " +
-                        "@id_donatur, " +
-                        "@id_kategori" +
-                        ") " +
-                        "RETURNING id_barang";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(querybarang, conn);
-                    cmd.Transaction = transaction;
-
-                    cmd.Parameters.AddWithValue("@nama", txtNamaBarang.Text);
-                    cmd.Parameters.AddWithValue("@kondisi", ambilKondisi());
-                    cmd.Parameters.AddWithValue("@deskripsi", txtDeskripsi.Text);
-                    cmd.Parameters.AddWithValue("@status", "Menunggu Verifikasi");
-                    cmd.Parameters.AddWithValue("@id_donatur", donatur.id);
-                    cmd.Parameters.AddWithValue("@id_kategori", Convert.ToInt32(cbKategori.SelectedValue));
-
-                    int idBarang = Convert.ToInt32(cmd.ExecuteScalar());
-
-
-                    //nambah foto
-                    byte[] fotoBytes = File.ReadAllBytes(fotoPath);
-                    string queryfoto_barang = "INSERT INTO foto_barang (id_barang, foto_barang) VALUES (@id_barang, @foto_barang)";
-
-                    cmd = new NpgsqlCommand(queryfoto_barang, conn);
-                    cmd.Transaction = transaction;
-                    cmd.Parameters.AddWithValue("@id_barang", idBarang);
-                    cmd.Parameters.AddWithValue("@foto_barang", fotoBytes);
-                    cmd.ExecuteNonQuery();
-                    transaction.Commit();
-                    MessageBox.Show("Barang berhasil diupload!");
-
-                    FrmDonatur frmDonatur = new FrmDonatur(donatur);
-                    frmDonatur.Show();
-                    this.Close();
-                }
+                controller.SimpanBarang(txtNamaBarang.Text.Trim(), ambilKondisi(), txtDeskripsi.Text.Trim(), donatur.id, Convert.ToInt32(cbKategori.SelectedValue), fotoPath);
+                MessageBox.Show("Barang berhasil diupload!");
+                FrmDonatur frmDonatur = new FrmDonatur(donatur);
+                frmDonatur.Show();
+                this.Close();
             }
             catch (Exception ex)
             {

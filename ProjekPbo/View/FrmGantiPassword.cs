@@ -8,16 +8,19 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Npgsql;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmGantiPassword : Form
     {
         private Pengelola pengelola;
+        private C_GantiPasswordPengelola controller;
         public FrmGantiPassword(Pengelola p)
         {
             InitializeComponent();
             pengelola = p;
+            controller = new C_GantiPasswordPengelola();
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -61,40 +64,18 @@ namespace ProjekPbo.View
         {
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
+                bool berhasil = controller.gantiPassword(pengelola, txtPasswordLama.Text, txtPasswordBaru.Text);
+                if (!berhasil)
                 {
-                    conn.Open();
-
-                    string cekPassword = @"SELECT * FROM pengelola WHERE id_pengelola = @id AND sandi = @sandi";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(cekPassword, conn);
-                    cmd.Parameters.AddWithValue("@id", pengelola.id);
-                    cmd.Parameters.AddWithValue("@sandi", txtPasswordLama.Text);
-                    NpgsqlDataReader dr = cmd.ExecuteReader();
-
-                    if (!dr.Read())
-                    {
-                        dr.Close();
-
-                        MessageBox.Show("Password lama salah!");
-                        return;
-                    }
-
-                    dr.Close();
-
-                    string updatePassword = @"UPDATE pengelola SET sandi = @sandibaru WHERE id_pengelola = @id";
-
-                    cmd = new NpgsqlCommand(updatePassword, conn);
-                    cmd.Parameters.AddWithValue("@sandibaru", txtPasswordBaru.Text);
-                    cmd.Parameters.AddWithValue("@id", pengelola.id);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Password Berhasil diubah!");
-
-                    FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
-                    frm.Show();
-                    this.Close();
+                    MessageBox.Show("Password Lama Salah!");
+                    return;
                 }
+
+                MessageBox.Show("Password Berhasil Diubah!");
+
+                FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+                frm.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -107,16 +88,6 @@ namespace ProjekPbo.View
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
             this.Close();
-        }
-
-        private void FrmGantiPassword_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKonfirmasi_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

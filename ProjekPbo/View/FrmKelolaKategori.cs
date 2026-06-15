@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Npgsql;
 using System.Net.Http.Headers;
 using ProjekPbo.Models;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
@@ -16,10 +17,12 @@ namespace ProjekPbo.View
     {
         private int idKategori = 0;
         private Pengelola pengelola;
+        private C_KelolaKategoriPengelola controller;
         public FrmKelolaKategori(Pengelola p)
         {
             InitializeComponent();
             pengelola = p;
+            controller = new C_KelolaKategoriPengelola();
         }
 
         private void FrmKelolaKategori_Load(object sender, EventArgs e)
@@ -31,22 +34,10 @@ namespace ProjekPbo.View
         {
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
-                {
-                    conn.Open();
-
-                    string query =
-                        @"SELECT id_kategori, nama_kategori " +
-                         "FROM kategori " +
-                         "ORDER BY id_kategori";
-
-                    NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                DataTable dt = controller.ambilkategori();
                     dgvKategori.DataSource = dt;
                     dgvKategori.Columns[0].HeaderText = "ID";
                     dgvKategori.Columns[1].HeaderText = "Nama Kategori";
-                }
             }
             catch (Exception ex)
             {
@@ -71,19 +62,10 @@ namespace ProjekPbo.View
             }
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
-                {
-                    conn.Open();
-
-                    string query = @"INSERT INTO kategori (nama_kategori) VALUES (@nama)";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@nama", txtKategori.Text);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Kategori Baru Berhasil Ditambahkan!");
-                    txtKategori.Clear();
-                    TampilinKategori();
-                }
+                controller.TambahKategori(txtKategori.Text);
+                MessageBox.Show("Kategori Baru Berhasil Ditambahkan!");
+                txtKategori.Clear();
+                TampilinKategori();
             }
             catch (Exception ex)
             {
@@ -101,26 +83,11 @@ namespace ProjekPbo.View
 
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
-                {
-                    conn.Open();
-
-                    string query =
-                        @"UPDATE kategori " +
-                         "SET nama_kategori = @nama " +
-                         "WHERE id_kategori = @id ";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-
-                    cmd.Parameters.AddWithValue("@nama", txtKategori.Text);
-                    cmd.Parameters.AddWithValue("@id", idKategori);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Kategori berhasil diubah");
-                    txtKategori.Clear();
-                    idKategori = 0;
-                    TampilinKategori();
-                }
+                controller.EditKategori(idKategori, txtKategori.Text);
+                MessageBox.Show("Kategori berhasil diubah");
+                txtKategori.Clear();
+                idKategori = 0;
+                TampilinKategori();
             }
             catch (Exception ex)
             {
@@ -145,25 +112,11 @@ namespace ProjekPbo.View
 
             try
             {
-                using (NpgsqlConnection conn = Koneksi.GetConnection())
-                {
-                    conn.Open();
-
-                    string query =
-                        @"DELETE FROM kategori " +
-                         "WHERE id_kategori=@id";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-
-                    cmd.Parameters.AddWithValue("@id", idKategori);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Kategori berhasil dihapus");
-                    txtKategori.Clear();
-                    idKategori = 0;
-
-                    TampilinKategori();
-                }
+                controller.HapusKategori(idKategori);
+                MessageBox.Show("Kategori berhasil dihapus");
+                txtKategori.Clear();
+                idKategori = 0;
+                TampilinKategori();
             }
             catch (Exception ex)
             {
@@ -176,6 +129,33 @@ namespace ProjekPbo.View
             txtKategori.Clear();
             idKategori = 0;
             TampilinKategori();
+        }
+
+        private void btnKeVerifikasi_Click(object sender, EventArgs e)
+        {
+            FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+        private void btnKeKelola_Click(object sender, EventArgs e)
+        {
+            FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeStatistik_Click(object sender, EventArgs e)
+        {
+            FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeProfil_Click(object sender, EventArgs e)
+        {
+            FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Close();
         }
     }
 }

@@ -9,16 +9,19 @@ using System.Windows.Forms;
 using Npgsql;
 using ProjekPbo.View;
 using ProjekPbo.Database;
+using ProjekPbo.Controllers;
 
 namespace ProjekPbo.View
 {
     public partial class FrmPengelola : Form
     {
         private Pengelola pengelola;
+        private C_Pengelola controller;
         public FrmPengelola(Pengelola p)
         {
             InitializeComponent();
             pengelola = p;
+            controller = new C_Pengelola();
         }
 
         private void FrmPengelola_Load(object sender, EventArgs e)
@@ -28,26 +31,18 @@ namespace ProjekPbo.View
             TampilkanBarangnya();
         }
 
-        private int HitungStatusnya(string status)
-        {
-            using (NpgsqlConnection conn = Koneksi.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT COUNT(*) FROM barang WHERE status = @status";
-                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@status", status);
-
-                    return Convert.ToInt32(cmd.ExecuteScalar());
-                }
-            }
-        }
-
         private void TampilkanBarangnya()
         {
-            lblMenunggu.Text = HitungStatusnya("Menunggu Verifikasi").ToString();
-            lblDiterima.Text = HitungStatusnya("Diterima").ToString();
-            lblDitolak.Text = HitungStatusnya("Ditolak").ToString();
+            try
+            {
+                lblMenunggu.Text = controller.HitungStatusnyaa("Menunggu Verifikasi").ToString();
+                lblDiterima.Text = controller.HitungStatusnyaa("Diterima").ToString();
+                lblDitolak.Text = controller.HitungStatusnyaa("Ditolak").ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnVerifikasi_Click(object sender, EventArgs e)
