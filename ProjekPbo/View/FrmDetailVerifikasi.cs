@@ -152,5 +152,33 @@ namespace ProjekPbo.View
         {
 
         }
+
+        private void btnKeVerifikasi_Click(object sender, EventArgs e)
+        {
+            FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeKelola_Click(object sender, EventArgs e)
+        {
+            FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeStatistik_Click(object sender, EventArgs e)
+        {
+            FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeProfil_Click(object sender, EventArgs e)
+        {
+            FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
     }
 }

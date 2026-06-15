@@ -40,6 +40,10 @@
             btnTolak = new Button();
             btnKembali = new Button();
             txtCatatan = new TextBox();
+            btnKeProfil = new Button();
+            btnKeStatistik = new Button();
+            btnKeKelola = new Button();
+            btnKeVerifikasi = new Button();
             ((System.ComponentModel.ISupportInitialize)picBarang).BeginInit();
             SuspendLayout();
             // 
@@ -161,6 +165,54 @@
             txtCatatan.Size = new Size(301, 20);
             txtCatatan.TabIndex = 10;
             // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(280, 678);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(72, 51);
+            btnKeProfil.TabIndex = 14;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
+            // 
+            // btnKeStatistik
+            // 
+            btnKeStatistik.BackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatStyle = FlatStyle.Flat;
+            btnKeStatistik.Location = new Point(189, 678);
+            btnKeStatistik.Name = "btnKeStatistik";
+            btnKeStatistik.Size = new Size(72, 51);
+            btnKeStatistik.TabIndex = 13;
+            btnKeStatistik.UseVisualStyleBackColor = false;
+            btnKeStatistik.Click += btnKeStatistik_Click;
+            // 
+            // btnKeKelola
+            // 
+            btnKeKelola.BackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatStyle = FlatStyle.Flat;
+            btnKeKelola.Location = new Point(111, 678);
+            btnKeKelola.Name = "btnKeKelola";
+            btnKeKelola.Size = new Size(72, 51);
+            btnKeKelola.TabIndex = 12;
+            btnKeKelola.UseVisualStyleBackColor = false;
+            btnKeKelola.Click += btnKeKelola_Click;
+            // 
+            // btnKeVerifikasi
+            // 
+            btnKeVerifikasi.BackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
+            btnKeVerifikasi.Location = new Point(18, 678);
+            btnKeVerifikasi.Name = "btnKeVerifikasi";
+            btnKeVerifikasi.Size = new Size(85, 51);
+            btnKeVerifikasi.TabIndex = 11;
+            btnKeVerifikasi.UseVisualStyleBackColor = false;
+            btnKeVerifikasi.Click += btnKeVerifikasi_Click;
+            // 
             // FrmDetailVerifikasi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -168,6 +220,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeStatistik);
+            Controls.Add(btnKeKelola);
+            Controls.Add(btnKeVerifikasi);
             Controls.Add(txtCatatan);
             Controls.Add(btnKembali);
             Controls.Add(btnTolak);
@@ -202,5 +258,9 @@
         private Button btnKembali;
         private Label lblNamaBarang;
         private TextBox txtCatatan;
+        private Button btnKeProfil;
+        private Button btnKeStatistik;
+        private Button btnKeKelola;
+        private Button btnKeVerifikasi;
     }
 }

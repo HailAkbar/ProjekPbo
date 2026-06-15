@@ -113,5 +113,10 @@ namespace ProjekPbo.View
         {
 
         }
+
+        private void txtKonfirmasi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

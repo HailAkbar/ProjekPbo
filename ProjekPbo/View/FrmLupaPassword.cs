@@ -106,5 +106,10 @@ namespace ProjekPbo.View
             frm.Show();
             this.Close();
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,80 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStatistikPengelola));
             btnRefresh = new Button();
-            btnKembali = new Button();
             flpStatus = new FlowLayoutPanel();
             flpKategori = new FlowLayoutPanel();
+            btnKeProfil = new Button();
+            btnKeStatistik = new Button();
+            btnKeKelola = new Button();
+            btnKeVerifikasi = new Button();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(159, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(74, 20);
-            label1.TabIndex = 1;
-            label1.Text = "STATISTIK";
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(43, 308);
+            btnRefresh.BackColor = Color.Transparent;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Location = new Point(142, 116);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(94, 29);
+            btnRefresh.Size = new Size(111, 38);
             btnRefresh.TabIndex = 2;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
-            // 
-            // btnKembali
-            // 
-            btnKembali.Location = new Point(150, 395);
-            btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(94, 29);
-            btnKembali.TabIndex = 3;
-            btnKembali.Text = "Kembali";
-            btnKembali.UseVisualStyleBackColor = true;
-            btnKembali.Click += btnKembali_Click;
             // 
             // flpStatus
             // 
             flpStatus.AutoScroll = true;
-            flpStatus.Location = new Point(43, 32);
+            flpStatus.Location = new Point(29, 160);
             flpStatus.Name = "flpStatus";
-            flpStatus.Size = new Size(330, 132);
+            flpStatus.Size = new Size(327, 264);
             flpStatus.TabIndex = 4;
             // 
             // flpKategori
             // 
             flpKategori.AutoScroll = true;
-            flpKategori.Location = new Point(43, 170);
+            flpKategori.Location = new Point(29, 464);
             flpKategori.Name = "flpKategori";
-            flpKategori.Size = new Size(330, 132);
+            flpKategori.Size = new Size(327, 175);
             flpKategori.TabIndex = 5;
+            // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(291, 678);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(65, 51);
+            btnKeProfil.TabIndex = 18;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
+            // 
+            // btnKeStatistik
+            // 
+            btnKeStatistik.BackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatStyle = FlatStyle.Flat;
+            btnKeStatistik.Location = new Point(200, 678);
+            btnKeStatistik.Name = "btnKeStatistik";
+            btnKeStatistik.Size = new Size(65, 51);
+            btnKeStatistik.TabIndex = 17;
+            btnKeStatistik.UseVisualStyleBackColor = false;
+            btnKeStatistik.Click += btnKeStatistik_Click;
+            // 
+            // btnKeKelola
+            // 
+            btnKeKelola.BackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatStyle = FlatStyle.Flat;
+            btnKeKelola.Location = new Point(122, 678);
+            btnKeKelola.Name = "btnKeKelola";
+            btnKeKelola.Size = new Size(56, 51);
+            btnKeKelola.TabIndex = 16;
+            btnKeKelola.UseVisualStyleBackColor = false;
+            btnKeKelola.Click += btnKeKelola_Click;
+            // 
+            // btnKeVerifikasi
+            // 
+            btnKeVerifikasi.BackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
+            btnKeVerifikasi.Location = new Point(29, 678);
+            btnKeVerifikasi.Name = "btnKeVerifikasi";
+            btnKeVerifikasi.Size = new Size(73, 51);
+            btnKeVerifikasi.TabIndex = 15;
+            btnKeVerifikasi.UseVisualStyleBackColor = false;
+            btnKeVerifikasi.Click += btnKeVerifikasi_Click;
             // 
             // FrmStatistikPengelola
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(415, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeStatistik);
+            Controls.Add(btnKeKelola);
+            Controls.Add(btnKeVerifikasi);
             Controls.Add(flpKategori);
             Controls.Add(flpStatus);
-            Controls.Add(btnKembali);
             Controls.Add(btnRefresh);
-            Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "FrmStatistikPengelola";
             Text = "FrmStatistikPengelola";
             Load += FrmStatistikPengelola_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Label label1;
         private Button btnRefresh;
-        private Button btnKembali;
         private FlowLayoutPanel flpStatus;
         private FlowLayoutPanel flpKategori;
+        private Button btnKeProfil;
+        private Button btnKeStatistik;
+        private Button btnKeKelola;
+        private Button btnKeVerifikasi;
     }
 }

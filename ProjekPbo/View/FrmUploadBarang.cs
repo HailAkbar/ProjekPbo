@@ -77,7 +77,7 @@ namespace ProjekPbo.View
             else if (rbCukup.Checked)
                 return "Cukup";
             else if (rbRusak.Checked)
-                return "Rusak";
+                return "Cukup Rusak";
             else
                 return "";
         }
@@ -190,14 +190,32 @@ namespace ProjekPbo.View
             this.Close();
         }
 
-        private void txtNamaBarang_TextChanged(object sender, EventArgs e)
+        private void btnKeProfil_Click(object sender, EventArgs e)
         {
-
+            FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
+            frm.ShowDialog();
+            this.Close();
         }
 
-        private void cbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnKeberanda_Click(object sender, EventArgs e)
         {
+            FrmDonatur frm = new FrmDonatur(donatur);
+            frm.ShowDialog();
+            this.Close();
+        }
 
+        private void btnKeUpload_Click(object sender, EventArgs e)
+        {
+            FrmUploadBarang frm = new FrmUploadBarang(donatur);
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnKeRiwayat_Click(object sender, EventArgs e)
+        {
+            FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

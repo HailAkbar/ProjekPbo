@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfilPengelola));
             label1 = new Label();
             lblNama = new Label();
             lblNamaAtas = new Label();
@@ -36,87 +37,147 @@
             btnLogout = new Button();
             btnUbahPassword = new Button();
             btnKembali = new Button();
+            btnKeProfil = new Button();
+            btnKeStatistik = new Button();
+            btnKeKelola = new Button();
+            btnKeVerifikasi = new Button();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(81, 73);
+            label1.Location = new Point(107, 60);
             label1.Name = "label1";
-            label1.Size = new Size(102, 20);
+            label1.Size = new Size(112, 31);
             label1.TabIndex = 0;
             label1.Text = "Halo Donatur,";
             // 
             // lblNama
             // 
-            lblNama.AutoSize = true;
-            lblNama.Location = new Point(51, 139);
+            lblNama.Location = new Point(93, 325);
             lblNama.Name = "lblNama";
-            lblNama.Size = new Size(50, 20);
+            lblNama.Size = new Size(235, 31);
             lblNama.TabIndex = 1;
             lblNama.Text = "label2";
             // 
             // lblNamaAtas
             // 
-            lblNamaAtas.AutoSize = true;
-            lblNamaAtas.Location = new Point(186, 73);
+            lblNamaAtas.Location = new Point(225, 60);
             lblNamaAtas.Name = "lblNamaAtas";
-            lblNamaAtas.Size = new Size(50, 20);
+            lblNamaAtas.Size = new Size(70, 31);
             lblNamaAtas.TabIndex = 2;
             lblNamaAtas.Text = "label3";
             // 
             // lblEmail
             // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(51, 173);
+            lblEmail.Location = new Point(93, 401);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(50, 20);
+            lblEmail.Size = new Size(235, 31);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "label4";
             // 
             // lblNoHp
             // 
-            lblNoHp.AutoSize = true;
-            lblNoHp.Location = new Point(51, 210);
+            lblNoHp.Location = new Point(93, 479);
             lblNoHp.Name = "lblNoHp";
-            lblNoHp.Size = new Size(50, 20);
+            lblNoHp.Size = new Size(235, 31);
             lblNoHp.TabIndex = 4;
             lblNoHp.Text = "label5";
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(51, 286);
+            btnLogout.BackColor = Color.Transparent;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Location = new Point(29, 552);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(94, 29);
+            btnLogout.Size = new Size(104, 39);
             btnLogout.TabIndex = 5;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // btnUbahPassword
             // 
-            btnUbahPassword.Location = new Point(226, 286);
+            btnUbahPassword.BackColor = Color.Transparent;
+            btnUbahPassword.FlatAppearance.BorderSize = 0;
+            btnUbahPassword.FlatStyle = FlatStyle.Flat;
+            btnUbahPassword.Location = new Point(261, 552);
             btnUbahPassword.Name = "btnUbahPassword";
-            btnUbahPassword.Size = new Size(94, 29);
+            btnUbahPassword.Size = new Size(111, 39);
             btnUbahPassword.TabIndex = 6;
-            btnUbahPassword.Text = "Ganti PW";
-            btnUbahPassword.UseVisualStyleBackColor = true;
+            btnUbahPassword.UseVisualStyleBackColor = false;
             btnUbahPassword.Click += btnUbahPassword_Click;
             // 
             // btnKembali
             // 
-            btnKembali.Location = new Point(130, 361);
+            btnKembali.BackColor = Color.Transparent;
+            btnKembali.FlatAppearance.BorderSize = 0;
+            btnKembali.FlatStyle = FlatStyle.Flat;
+            btnKembali.Location = new Point(153, 612);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(94, 29);
+            btnKembali.Size = new Size(95, 30);
             btnKembali.TabIndex = 7;
-            btnKembali.Text = "Kembali";
-            btnKembali.UseVisualStyleBackColor = true;
+            btnKembali.UseVisualStyleBackColor = false;
+            btnKembali.Click += btnKembali_Click;
+            // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(289, 678);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(72, 51);
+            btnKeProfil.TabIndex = 18;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
+            // 
+            // btnKeStatistik
+            // 
+            btnKeStatistik.BackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatStyle = FlatStyle.Flat;
+            btnKeStatistik.Location = new Point(198, 678);
+            btnKeStatistik.Name = "btnKeStatistik";
+            btnKeStatistik.Size = new Size(72, 51);
+            btnKeStatistik.TabIndex = 17;
+            btnKeStatistik.UseVisualStyleBackColor = false;
+            btnKeStatistik.Click += btnKeStatistik_Click;
+            // 
+            // btnKeKelola
+            // 
+            btnKeKelola.BackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatStyle = FlatStyle.Flat;
+            btnKeKelola.Location = new Point(120, 678);
+            btnKeKelola.Name = "btnKeKelola";
+            btnKeKelola.Size = new Size(72, 51);
+            btnKeKelola.TabIndex = 16;
+            btnKeKelola.UseVisualStyleBackColor = false;
+            btnKeKelola.Click += btnKeKelola_Click;
+            // 
+            // btnKeVerifikasi
+            // 
+            btnKeVerifikasi.BackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
+            btnKeVerifikasi.Location = new Point(27, 678);
+            btnKeVerifikasi.Name = "btnKeVerifikasi";
+            btnKeVerifikasi.Size = new Size(85, 51);
+            btnKeVerifikasi.TabIndex = 15;
+            btnKeVerifikasi.UseVisualStyleBackColor = false;
+            btnKeVerifikasi.Click += btnKeVerifikasi_Click;
             // 
             // FrmProfilPengelola
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(379, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeStatistik);
+            Controls.Add(btnKeKelola);
+            Controls.Add(btnKeVerifikasi);
             Controls.Add(btnKembali);
             Controls.Add(btnUbahPassword);
             Controls.Add(btnLogout);
@@ -125,11 +186,11 @@
             Controls.Add(lblNamaAtas);
             Controls.Add(lblNama);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "FrmProfilPengelola";
             Text = "FrmProfilPengelola";
             Load += FrmProfilPengelola_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -142,5 +203,9 @@
         private Button btnLogout;
         private Button btnUbahPassword;
         private Button btnKembali;
+        private Button btnKeProfil;
+        private Button btnKeStatistik;
+        private Button btnKeKelola;
+        private Button btnKeVerifikasi;
     }
 }

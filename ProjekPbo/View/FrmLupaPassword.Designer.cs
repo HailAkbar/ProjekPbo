@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLupaPassword));
             txtEmail = new TextBox();
             txtPasswordBaru = new TextBox();
             txtKonfirmasi = new TextBox();
@@ -38,87 +36,80 @@
             btnKembali = new Button();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(37, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Email";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(37, 137);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Password Baru";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(37, 218);
-            label3.Name = "label3";
-            label3.Size = new Size(140, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Ulangi Passwordnya";
-            // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(37, 90);
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Location = new Point(60, 243);
+            txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(307, 27);
+            txtEmail.PlaceholderText = "Masukkan Email";
+            txtEmail.Size = new Size(258, 31);
             txtEmail.TabIndex = 3;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPasswordBaru
             // 
-            txtPasswordBaru.Location = new Point(37, 172);
+            txtPasswordBaru.BorderStyle = BorderStyle.None;
+            txtPasswordBaru.Location = new Point(69, 352);
+            txtPasswordBaru.Multiline = true;
             txtPasswordBaru.Name = "txtPasswordBaru";
-            txtPasswordBaru.Size = new Size(307, 27);
+            txtPasswordBaru.PlaceholderText = "Masukkan Password Baru";
+            txtPasswordBaru.Size = new Size(249, 36);
             txtPasswordBaru.TabIndex = 4;
             // 
             // txtKonfirmasi
             // 
-            txtKonfirmasi.Location = new Point(37, 253);
+            txtKonfirmasi.BorderStyle = BorderStyle.None;
+            txtKonfirmasi.Location = new Point(60, 461);
+            txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
-            txtKonfirmasi.Size = new Size(307, 27);
+            txtKonfirmasi.PlaceholderText = "Ulangi Password Baru";
+            txtKonfirmasi.Size = new Size(258, 29);
             txtKonfirmasi.TabIndex = 5;
             // 
             // btnSimpan
             // 
-            btnSimpan.Location = new Point(142, 308);
+            btnSimpan.BackColor = Color.Transparent;
+            btnSimpan.FlatAppearance.BorderSize = 0;
+            btnSimpan.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            btnSimpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSimpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnSimpan.FlatStyle = FlatStyle.Flat;
+            btnSimpan.Location = new Point(233, 536);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(94, 29);
+            btnSimpan.Size = new Size(100, 37);
             btnSimpan.TabIndex = 6;
-            btnSimpan.Text = "Simpan";
-            btnSimpan.UseVisualStyleBackColor = true;
+            btnSimpan.UseVisualStyleBackColor = false;
             btnSimpan.Click += btnSimpan_Click;
             // 
             // btnKembali
             // 
-            btnKembali.Location = new Point(37, 384);
+            btnKembali.BackColor = Color.Transparent;
+            btnKembali.FlatAppearance.BorderSize = 0;
+            btnKembali.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            btnKembali.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnKembali.FlatStyle = FlatStyle.Flat;
+            btnKembali.Location = new Point(47, 536);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(94, 29);
+            btnKembali.Size = new Size(97, 37);
             btnKembali.TabIndex = 7;
-            btnKembali.Text = "Kembali";
-            btnKembali.UseVisualStyleBackColor = true;
+            btnKembali.UseVisualStyleBackColor = false;
             btnKembali.Click += btnKembali_Click;
             // 
             // FrmLupaPassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(384, 741);
             Controls.Add(btnKembali);
             Controls.Add(btnSimpan);
             Controls.Add(txtKonfirmasi);
             Controls.Add(txtPasswordBaru);
             Controls.Add(txtEmail);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "FrmLupaPassword";
             Text = "FrmLupaPassword";
             Load += FrmLupaPassword_Load;
@@ -127,10 +118,6 @@
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
         private TextBox txtEmail;
         private TextBox txtPasswordBaru;
         private TextBox txtKonfirmasi;

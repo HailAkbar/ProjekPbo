@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TextBox txtEmail;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             txtPassword = new TextBox();
             btnLogin = new Button();
@@ -37,47 +36,41 @@
             txtEmail = new TextBox();
             SuspendLayout();
             // 
-            // txtEmail
-            // 
-            txtEmail.BackColor = Color.White;
-            txtEmail.Location = new Point(47, 255);
-            txtEmail.Margin = new Padding(3, 2, 3, 2);
-            txtEmail.Multiline = true;
-            txtEmail.Name = "txtEmail";
-            txtEmail.ShortcutsEnabled = false;
-            txtEmail.Size = new Size(293, 43);
-            txtEmail.TabIndex = 0;
-            txtEmail.TextChanged += txtEmail_TextChanged;
-            // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(47, 319);
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Segoe UI", 12F);
+            txtPassword.Location = new Point(53, 315);
             txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(293, 47);
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(287, 44);
             txtPassword.TabIndex = 1;
             // 
             // btnLogin
             // 
             btnLogin.BackColor = Color.Transparent;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = Color.Transparent;
-            btnLogin.Location = new Point(46, 420);
+            btnLogin.Location = new Point(43, 418);
             btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(299, 51);
+            btnLogin.Size = new Size(310, 48);
             btnLogin.TabIndex = 2;
-            btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // lblDaftar
             // 
             lblDaftar.AutoSize = true;
+            lblDaftar.BackColor = Color.Transparent;
             lblDaftar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDaftar.Location = new Point(239, 492);
+            lblDaftar.LinkColor = Color.Transparent;
+            lblDaftar.Location = new Point(235, 482);
             lblDaftar.Name = "lblDaftar";
-            lblDaftar.Size = new Size(73, 17);
+            lblDaftar.Size = new Size(96, 23);
             lblDaftar.TabIndex = 3;
             lblDaftar.TabStop = true;
             lblDaftar.Text = "Daftar dulu";
@@ -86,27 +79,40 @@
             // lblLupaPassword
             // 
             lblLupaPassword.AutoSize = true;
+            lblLupaPassword.BackColor = Color.Transparent;
             lblLupaPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLupaPassword.Location = new Point(216, 385);
+            lblLupaPassword.LinkColor = Color.Transparent;
+            lblLupaPassword.Location = new Point(204, 373);
             lblLupaPassword.Name = "lblLupaPassword";
-            lblLupaPassword.Size = new Size(121, 21);
+            lblLupaPassword.Size = new Size(149, 28);
             lblLupaPassword.TabIndex = 4;
             lblLupaPassword.TabStop = true;
             lblLupaPassword.Text = "Lupa Password?";
             lblLupaPassword.LinkClicked += lblLupaPassword_LinkClicked;
             // 
+            // txtEmail
+            // 
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Segoe UI", 12F);
+            txtEmail.Location = new Point(53, 254);
+            txtEmail.Multiline = true;
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
+            txtEmail.Size = new Size(278, 40);
+            txtEmail.TabIndex = 5;
+            // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(386, 749);
+            ClientSize = new Size(384, 741);
+            Controls.Add(txtEmail);
             Controls.Add(lblLupaPassword);
             Controls.Add(lblDaftar);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
-            Controls.Add(txtEmail);
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmLogin";
@@ -117,11 +123,10 @@
         }
 
         #endregion
-
-        private TextBox txtEmail;
         private TextBox txtPassword;
         private Button btnLogin;
         private LinkLabel lblDaftar;
         private LinkLabel lblLupaPassword;
+        private TextBox txtEmail;
     }
 }

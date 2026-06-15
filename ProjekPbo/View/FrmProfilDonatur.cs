@@ -20,11 +20,10 @@ namespace ProjekPbo.View
 
         private void FrmProfilDonatur_Load(object sender, EventArgs e)
         {
-            lblNamaAtas.Text = "Nama Anda: " + donatur.nama.ToString();
-            lblNama.Text = "Nama Anda: " + donatur.nama.ToString();
-            lblEmail.Text = "Email: " + donatur.email.ToString();
-            lblNoHP.Text = "Nomor HP: " + donatur.nomorHp.ToString();
-            lblAlamat.Text = "Alamat: " + donatur.Alamat.ToString();
+            lblNama.Text = donatur.nama.ToString();
+            lblEmail.Text = donatur.email.ToString();
+            lblNoHP.Text = donatur.nomorHp.ToString();
+            lblAlamat.Text = donatur.Alamat.ToString();
 
         }
 
@@ -46,6 +45,34 @@ namespace ProjekPbo.View
         {
             FrmDonatur frm = new FrmDonatur(donatur);
             frm.Show();
+            this.Close();
+        }
+
+        private void btnKeProfil_Click(object sender, EventArgs e)
+        {
+            FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnKeberanda_Click(object sender, EventArgs e)
+        {
+            FrmDonatur frm = new FrmDonatur(donatur);
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnKeUpload_Click(object sender, EventArgs e)
+        {
+            FrmUploadBarang frm = new FrmUploadBarang(donatur);
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnKeRiwayat_Click(object sender, EventArgs e)
+        {
+            FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
+            frm.ShowDialog();
             this.Close();
         }
     }

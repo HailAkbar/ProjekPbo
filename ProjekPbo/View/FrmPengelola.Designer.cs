@@ -37,15 +37,18 @@
             btnKelola = new Button();
             btnProfil = new Button();
             lblMenunggu = new Label();
+            btnKeProfil = new Button();
+            btnKeStatistik = new Button();
+            btnKeKelola = new Button();
+            btnKeVerifikasi = new Button();
             SuspendLayout();
             // 
             // lblNama
             // 
-            lblNama.AutoSize = true;
             lblNama.Font = new Font("Segoe UI", 10F);
-            lblNama.Location = new Point(35, 128);
+            lblNama.Location = new Point(42, 120);
             lblNama.Name = "lblNama";
-            lblNama.Size = new Size(60, 23);
+            lblNama.Size = new Size(92, 36);
             lblNama.TabIndex = 1;
             lblNama.Text = "NAMA";
             // 
@@ -61,7 +64,7 @@
             // lblDitolak
             // 
             lblDitolak.AutoSize = true;
-            lblDitolak.Location = new Point(150, 361);
+            lblDitolak.Location = new Point(139, 360);
             lblDitolak.Name = "lblDitolak";
             lblDitolak.Size = new Size(17, 20);
             lblDitolak.TabIndex = 2;
@@ -138,11 +141,59 @@
             // lblMenunggu
             // 
             lblMenunggu.AutoSize = true;
-            lblMenunggu.Location = new Point(174, 217);
+            lblMenunggu.Location = new Point(172, 215);
             lblMenunggu.Name = "lblMenunggu";
             lblMenunggu.Size = new Size(17, 20);
             lblMenunggu.TabIndex = 0;
             lblMenunggu.Text = "0";
+            // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(286, 673);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(72, 51);
+            btnKeProfil.TabIndex = 18;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
+            // 
+            // btnKeStatistik
+            // 
+            btnKeStatistik.BackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatStyle = FlatStyle.Flat;
+            btnKeStatistik.Location = new Point(195, 673);
+            btnKeStatistik.Name = "btnKeStatistik";
+            btnKeStatistik.Size = new Size(72, 51);
+            btnKeStatistik.TabIndex = 17;
+            btnKeStatistik.UseVisualStyleBackColor = false;
+            btnKeStatistik.Click += btnKeStatistik_Click;
+            // 
+            // btnKeKelola
+            // 
+            btnKeKelola.BackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatStyle = FlatStyle.Flat;
+            btnKeKelola.Location = new Point(117, 673);
+            btnKeKelola.Name = "btnKeKelola";
+            btnKeKelola.Size = new Size(72, 51);
+            btnKeKelola.TabIndex = 16;
+            btnKeKelola.UseVisualStyleBackColor = false;
+            btnKeKelola.Click += btnKeKelola_Click;
+            // 
+            // btnKeVerifikasi
+            // 
+            btnKeVerifikasi.BackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
+            btnKeVerifikasi.Location = new Point(24, 673);
+            btnKeVerifikasi.Name = "btnKeVerifikasi";
+            btnKeVerifikasi.Size = new Size(85, 51);
+            btnKeVerifikasi.TabIndex = 15;
+            btnKeVerifikasi.UseVisualStyleBackColor = false;
+            btnKeVerifikasi.Click += btnKeVerifikasi_Click;
             // 
             // FrmPengelola
             // 
@@ -151,6 +202,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeStatistik);
+            Controls.Add(btnKeKelola);
+            Controls.Add(btnKeVerifikasi);
             Controls.Add(lblMenunggu);
             Controls.Add(lblDiterima);
             Controls.Add(lblDitolak);
@@ -177,5 +232,9 @@
         private Button btnKelola;
         private Button btnProfil;
         private Label lblMenunggu;
+        private Button btnKeProfil;
+        private Button btnKeStatistik;
+        private Button btnKeKelola;
+        private Button btnKeVerifikasi;
     }
 }

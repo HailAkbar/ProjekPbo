@@ -46,7 +46,6 @@ namespace ProjekPbo
                         {
                             Donatur donatur = new Donatur();
                             donatur.id = Convert.ToInt32(dr["id_donatur"]);
-
                             donatur.nama = dr["nama"].ToString();
                             donatur.email = dr["email"].ToString();
                             donatur.sandi = dr["sandi"].ToString();

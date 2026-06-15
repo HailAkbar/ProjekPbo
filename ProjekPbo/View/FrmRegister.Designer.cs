@@ -44,103 +44,121 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 28);
+            label1.Location = new Point(37, 38);
             label1.Name = "label1";
-            label1.Size = new Size(0, 15);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 72);
+            label2.Location = new Point(37, 96);
             label2.Name = "label2";
-            label2.Size = new Size(0, 15);
+            label2.Size = new Size(0, 20);
             label2.TabIndex = 1;
             // 
             // txtNama
             // 
-            txtNama.Location = new Point(45, 240);
+            txtNama.BackColor = SystemColors.Window;
+            txtNama.BorderStyle = BorderStyle.None;
+            txtNama.Location = new Point(51, 240);
             txtNama.Margin = new Padding(3, 2, 3, 2);
             txtNama.Multiline = true;
             txtNama.Name = "txtNama";
-            txtNama.Size = new Size(296, 46);
+            txtNama.PlaceholderText = "Nama";
+            txtNama.Size = new Size(286, 37);
             txtNama.TabIndex = 6;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(45, 301);
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Location = new Point(51, 302);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(296, 46);
+            txtEmail.PlaceholderText = "Email";
+            txtEmail.Size = new Size(286, 37);
             txtEmail.TabIndex = 7;
             // 
             // txtNoHP
             // 
-            txtNoHP.Location = new Point(45, 365);
+            txtNoHP.BorderStyle = BorderStyle.None;
+            txtNoHP.Location = new Point(51, 366);
             txtNoHP.Margin = new Padding(3, 2, 3, 2);
             txtNoHP.Multiline = true;
             txtNoHP.Name = "txtNoHP";
-            txtNoHP.Size = new Size(296, 45);
+            txtNoHP.PlaceholderText = "No HP";
+            txtNoHP.Size = new Size(286, 37);
             txtNoHP.TabIndex = 8;
             txtNoHP.TextChanged += txtNoHP_TextChanged;
             // 
             // txtAlamat
             // 
-            txtAlamat.Location = new Point(45, 425);
+            txtAlamat.BorderStyle = BorderStyle.None;
+            txtAlamat.Location = new Point(51, 424);
             txtAlamat.Margin = new Padding(3, 2, 3, 2);
             txtAlamat.Name = "txtAlamat";
-            txtAlamat.Size = new Size(296, 72);
+            txtAlamat.Size = new Size(286, 66);
             txtAlamat.TabIndex = 9;
             txtAlamat.Text = "";
             // 
             // txtSandi
             // 
-            txtSandi.Location = new Point(45, 516);
+            txtSandi.BorderStyle = BorderStyle.None;
+            txtSandi.Location = new Point(51, 512);
             txtSandi.Margin = new Padding(3, 2, 3, 2);
             txtSandi.Multiline = true;
             txtSandi.Name = "txtSandi";
-            txtSandi.Size = new Size(296, 40);
+            txtSandi.PlaceholderText = "Password";
+            txtSandi.Size = new Size(286, 37);
             txtSandi.TabIndex = 10;
             // 
             // txtKonfirmasi
             // 
-            txtKonfirmasi.Location = new Point(45, 578);
+            txtKonfirmasi.BorderStyle = BorderStyle.None;
+            txtKonfirmasi.Location = new Point(51, 572);
             txtKonfirmasi.Margin = new Padding(3, 2, 3, 2);
             txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
-            txtKonfirmasi.Size = new Size(296, 43);
+            txtKonfirmasi.PlaceholderText = "Konfirmasi Password";
+            txtKonfirmasi.Size = new Size(286, 38);
             txtKonfirmasi.TabIndex = 11;
+            txtKonfirmasi.TextChanged += txtKonfirmasi_TextChanged;
             // 
             // btnDaftar
             // 
-            btnDaftar.Location = new Point(43, 636);
+            btnDaftar.BackColor = Color.Transparent;
+            btnDaftar.FlatAppearance.BorderSize = 0;
+            btnDaftar.FlatStyle = FlatStyle.Flat;
+            btnDaftar.Location = new Point(37, 627);
             btnDaftar.Margin = new Padding(3, 2, 3, 2);
             btnDaftar.Name = "btnDaftar";
-            btnDaftar.Size = new Size(300, 52);
+            btnDaftar.Size = new Size(308, 61);
             btnDaftar.TabIndex = 13;
-            btnDaftar.Text = "DAFTAR";
-            btnDaftar.UseVisualStyleBackColor = true;
+            btnDaftar.UseVisualStyleBackColor = false;
             btnDaftar.Click += btnDaftar_Click;
             // 
             // lblLogin
             // 
             lblLogin.AutoSize = true;
+            lblLogin.BackColor = Color.Transparent;
+            lblLogin.DisabledLinkColor = Color.Transparent;
             lblLogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLogin.Location = new Point(239, 704);
+            lblLogin.LinkColor = Color.Transparent;
+            lblLogin.Location = new Point(237, 690);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(46, 20);
+            lblLogin.Size = new Size(59, 25);
             lblLogin.TabIndex = 14;
             lblLogin.TabStop = true;
             lblLogin.Text = "Login";
             // 
             // FrmRegister
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(386, 749);
+            ClientSize = new Size(384, 741);
             Controls.Add(lblLogin);
             Controls.Add(btnDaftar);
             Controls.Add(txtKonfirmasi);

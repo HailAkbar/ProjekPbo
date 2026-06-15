@@ -35,107 +35,135 @@
             lblAlamat = new Label();
             btnLogout = new Button();
             btnKembali = new Button();
-            lblNamaAtas = new Label();
-            label2 = new Label();
+            btnKeberanda = new Button();
+            btnKeUpload = new Button();
+            btnKeRiwayat = new Button();
+            btnKeProfil = new Button();
             SuspendLayout();
             // 
             // lblNama
             // 
-            lblNama.AutoSize = true;
-            lblNama.Location = new Point(173, 247);
+            lblNama.Location = new Point(149, 238);
             lblNama.Name = "lblNama";
-            lblNama.Size = new Size(38, 15);
+            lblNama.Size = new Size(88, 34);
             lblNama.TabIndex = 0;
             lblNama.Text = "label1";
             // 
             // lblEmail
             // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(120, 342);
+            lblEmail.Location = new Point(101, 332);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(38, 15);
+            lblEmail.Size = new Size(103, 30);
             lblEmail.TabIndex = 2;
             lblEmail.Text = "label3";
             // 
             // lblNoHP
             // 
-            lblNoHP.AutoSize = true;
-            lblNoHP.Location = new Point(120, 417);
+            lblNoHP.Location = new Point(101, 406);
             lblNoHP.Name = "lblNoHP";
-            lblNoHP.Size = new Size(38, 15);
+            lblNoHP.Size = new Size(103, 31);
             lblNoHP.TabIndex = 4;
             lblNoHP.Text = "label5";
             // 
             // lblAlamat
             // 
-            lblAlamat.AutoSize = true;
-            lblAlamat.Location = new Point(120, 513);
+            lblAlamat.Location = new Point(101, 497);
             lblAlamat.Name = "lblAlamat";
-            lblAlamat.Size = new Size(38, 15);
+            lblAlamat.Size = new Size(103, 35);
             lblAlamat.TabIndex = 5;
             lblAlamat.Text = "label6";
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(43, 595);
-            btnLogout.Margin = new Padding(3, 2, 3, 2);
+            btnLogout.BackColor = Color.Transparent;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Location = new Point(41, 585);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(296, 60);
+            btnLogout.Size = new Size(302, 67);
             btnLogout.TabIndex = 6;
-            btnLogout.Text = "Log Out";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // btnKembali
             // 
-            btnKembali.Location = new Point(29, 693);
-            btnKembali.Margin = new Padding(3, 2, 3, 2);
+            btnKembali.Location = new Point(33, 924);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(82, 22);
+            btnKembali.Size = new Size(94, 29);
             btnKembali.TabIndex = 7;
             btnKembali.Text = "Kembali";
             btnKembali.UseVisualStyleBackColor = true;
             btnKembali.Click += btnKembali_Click;
             // 
-            // lblNamaAtas
+            // btnKeberanda
             // 
-            lblNamaAtas.AutoSize = true;
-            lblNamaAtas.Location = new Point(206, 87);
-            lblNamaAtas.Name = "lblNamaAtas";
-            lblNamaAtas.Size = new Size(38, 15);
-            lblNamaAtas.TabIndex = 3;
-            lblNamaAtas.Text = "label4";
+            btnKeberanda.BackColor = Color.Transparent;
+            btnKeberanda.FlatAppearance.BorderSize = 0;
+            btnKeberanda.FlatStyle = FlatStyle.Flat;
+            btnKeberanda.Location = new Point(41, 676);
+            btnKeberanda.Name = "btnKeberanda";
+            btnKeberanda.Size = new Size(60, 53);
+            btnKeberanda.TabIndex = 8;
+            btnKeberanda.UseVisualStyleBackColor = false;
+            btnKeberanda.Click += btnKeberanda_Click;
             // 
-            // label2
+            // btnKeUpload
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(132, 87);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 15);
-            label2.TabIndex = 1;
-            label2.Text = "HALO,";
+            btnKeUpload.BackColor = Color.Transparent;
+            btnKeUpload.FlatAppearance.BorderSize = 0;
+            btnKeUpload.FlatStyle = FlatStyle.Flat;
+            btnKeUpload.Location = new Point(130, 676);
+            btnKeUpload.Name = "btnKeUpload";
+            btnKeUpload.Size = new Size(52, 53);
+            btnKeUpload.TabIndex = 9;
+            btnKeUpload.UseVisualStyleBackColor = false;
+            btnKeUpload.Click += btnKeUpload_Click;
+            // 
+            // btnKeRiwayat
+            // 
+            btnKeRiwayat.BackColor = Color.Transparent;
+            btnKeRiwayat.FlatAppearance.BorderSize = 0;
+            btnKeRiwayat.FlatStyle = FlatStyle.Flat;
+            btnKeRiwayat.Location = new Point(207, 676);
+            btnKeRiwayat.Name = "btnKeRiwayat";
+            btnKeRiwayat.Size = new Size(71, 53);
+            btnKeRiwayat.TabIndex = 10;
+            btnKeRiwayat.UseVisualStyleBackColor = false;
+            btnKeRiwayat.Click += btnKeRiwayat_Click;
+            // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(284, 676);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(71, 53);
+            btnKeProfil.TabIndex = 11;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
             // 
             // FrmProfilDonatur
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(386, 749);
+            ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeRiwayat);
+            Controls.Add(btnKeUpload);
+            Controls.Add(btnKeberanda);
             Controls.Add(btnKembali);
             Controls.Add(btnLogout);
             Controls.Add(lblAlamat);
             Controls.Add(lblNoHP);
-            Controls.Add(lblNamaAtas);
             Controls.Add(lblEmail);
-            Controls.Add(label2);
             Controls.Add(lblNama);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmProfilDonatur";
             Text = "FrmProfil";
             Load += FrmProfilDonatur_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -146,7 +174,9 @@
         private Label lblAlamat;
         private Button btnLogout;
         private Button btnKembali;
-        private Label lblNamaAtas;
-        private Label label2;
+        private Button btnKeberanda;
+        private Button btnKeUpload;
+        private Button btnKeRiwayat;
+        private Button btnKeProfil;
     }
 }

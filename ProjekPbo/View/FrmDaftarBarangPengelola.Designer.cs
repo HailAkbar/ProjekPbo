@@ -33,14 +33,19 @@
             btnRefresh = new Button();
             btnKembali = new Button();
             flpBarang = new FlowLayoutPanel();
+            btnKeVerifikasi = new Button();
+            btnKeKelola = new Button();
+            btnKeStatistik = new Button();
+            btnKeProfil = new Button();
             SuspendLayout();
             // 
             // txtCari
             // 
             txtCari.BorderStyle = BorderStyle.None;
-            txtCari.Location = new Point(49, 141);
+            txtCari.Location = new Point(40, 133);
+            txtCari.Multiline = true;
             txtCari.Name = "txtCari";
-            txtCari.Size = new Size(288, 20);
+            txtCari.Size = new Size(300, 31);
             txtCari.TabIndex = 0;
             // 
             // btnCari
@@ -94,10 +99,59 @@
             // flpBarang
             // 
             flpBarang.AutoScroll = true;
+            flpBarang.BackColor = SystemColors.Window;
             flpBarang.Location = new Point(-1, 232);
             flpBarang.Name = "flpBarang";
             flpBarang.Size = new Size(389, 431);
             flpBarang.TabIndex = 4;
+            // 
+            // btnKeVerifikasi
+            // 
+            btnKeVerifikasi.BackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
+            btnKeVerifikasi.Location = new Point(20, 678);
+            btnKeVerifikasi.Name = "btnKeVerifikasi";
+            btnKeVerifikasi.Size = new Size(85, 51);
+            btnKeVerifikasi.TabIndex = 5;
+            btnKeVerifikasi.UseVisualStyleBackColor = false;
+            btnKeVerifikasi.Click += btnKeVerifikasi_Click;
+            // 
+            // btnKeKelola
+            // 
+            btnKeKelola.BackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatStyle = FlatStyle.Flat;
+            btnKeKelola.Location = new Point(113, 678);
+            btnKeKelola.Name = "btnKeKelola";
+            btnKeKelola.Size = new Size(72, 51);
+            btnKeKelola.TabIndex = 6;
+            btnKeKelola.UseVisualStyleBackColor = false;
+            btnKeKelola.Click += btnKeKelola_Click;
+            // 
+            // btnKeStatistik
+            // 
+            btnKeStatistik.BackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatStyle = FlatStyle.Flat;
+            btnKeStatistik.Location = new Point(191, 678);
+            btnKeStatistik.Name = "btnKeStatistik";
+            btnKeStatistik.Size = new Size(72, 51);
+            btnKeStatistik.TabIndex = 7;
+            btnKeStatistik.UseVisualStyleBackColor = false;
+            btnKeStatistik.Click += btnKeStatistik_Click;
+            // 
+            // btnKeProfil
+            // 
+            btnKeProfil.BackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatStyle = FlatStyle.Flat;
+            btnKeProfil.Location = new Point(282, 678);
+            btnKeProfil.Name = "btnKeProfil";
+            btnKeProfil.Size = new Size(72, 51);
+            btnKeProfil.TabIndex = 8;
+            btnKeProfil.UseVisualStyleBackColor = false;
+            btnKeProfil.Click += btnKeProfil_Click;
             // 
             // FrmDaftarBarangPengelola
             // 
@@ -106,6 +160,10 @@
             BackgroundImage = Properties.Resources.Pengelola__Verifikasi__4_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(384, 741);
+            Controls.Add(btnKeProfil);
+            Controls.Add(btnKeStatistik);
+            Controls.Add(btnKeKelola);
+            Controls.Add(btnKeVerifikasi);
             Controls.Add(btnRefresh);
             Controls.Add(flpBarang);
             Controls.Add(btnKembali);
@@ -126,5 +184,9 @@
         private Button btnRefresh;
         private Button btnKembali;
         private FlowLayoutPanel flpBarang;
+        private Button btnKeVerifikasi;
+        private Button btnKeKelola;
+        private Button btnKeStatistik;
+        private Button btnKeProfil;
     }
 }

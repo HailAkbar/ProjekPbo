@@ -38,66 +38,75 @@
             // 
             // btnSimpan
             // 
-            btnSimpan.Location = new Point(202, 448);
-            btnSimpan.Margin = new Padding(3, 2, 3, 2);
+            btnSimpan.BackColor = Color.Transparent;
+            btnSimpan.FlatAppearance.BorderSize = 0;
+            btnSimpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSimpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnSimpan.FlatStyle = FlatStyle.Flat;
+            btnSimpan.Location = new Point(194, 442);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(143, 50);
+            btnSimpan.Size = new Size(153, 56);
             btnSimpan.TabIndex = 0;
-            btnSimpan.Text = "Simpan";
-            btnSimpan.UseVisualStyleBackColor = true;
+            btnSimpan.UseVisualStyleBackColor = false;
             btnSimpan.Click += btnSimpan_Click;
             // 
             // btnKembali
             // 
-            btnKembali.Location = new Point(41, 448);
-            btnKembali.Margin = new Padding(3, 2, 3, 2);
+            btnKembali.BackColor = Color.Transparent;
+            btnKembali.FlatAppearance.BorderSize = 0;
+            btnKembali.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnKembali.FlatStyle = FlatStyle.Flat;
+            btnKembali.Location = new Point(42, 442);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(146, 50);
+            btnKembali.Size = new Size(146, 56);
             btnKembali.TabIndex = 4;
-            btnKembali.Text = "Kembali";
-            btnKembali.UseVisualStyleBackColor = true;
+            btnKembali.UseVisualStyleBackColor = false;
             btnKembali.Click += btnKembali_Click;
             // 
             // txtPasswordLama
             // 
-            txtPasswordLama.Location = new Point(45, 195);
-            txtPasswordLama.Margin = new Padding(3, 2, 3, 2);
+            txtPasswordLama.BorderStyle = BorderStyle.None;
+            txtPasswordLama.Location = new Point(51, 202);
             txtPasswordLama.Multiline = true;
             txtPasswordLama.Name = "txtPasswordLama";
-            txtPasswordLama.Size = new Size(291, 47);
+            txtPasswordLama.PlaceholderText = "Masukkan Password Lama";
+            txtPasswordLama.Size = new Size(286, 29);
             txtPasswordLama.TabIndex = 5;
             // 
             // txtPasswordBaru
             // 
-            txtPasswordBaru.Location = new Point(45, 289);
-            txtPasswordBaru.Margin = new Padding(3, 2, 3, 2);
+            txtPasswordBaru.BorderStyle = BorderStyle.None;
+            txtPasswordBaru.Location = new Point(51, 289);
             txtPasswordBaru.Multiline = true;
             txtPasswordBaru.Name = "txtPasswordBaru";
-            txtPasswordBaru.Size = new Size(291, 44);
+            txtPasswordBaru.PlaceholderText = "Masukkan Password Baru";
+            txtPasswordBaru.Size = new Size(286, 35);
             txtPasswordBaru.TabIndex = 6;
             // 
             // txtKonfirmasi
             // 
-            txtKonfirmasi.Location = new Point(45, 382);
-            txtKonfirmasi.Margin = new Padding(3, 2, 3, 2);
+            txtKonfirmasi.BorderStyle = BorderStyle.None;
+            txtKonfirmasi.Location = new Point(51, 383);
             txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
-            txtKonfirmasi.Size = new Size(291, 46);
+            txtKonfirmasi.PlaceholderText = "Konfirmasi Password Baru";
+            txtKonfirmasi.Size = new Size(286, 37);
             txtKonfirmasi.TabIndex = 7;
+            txtKonfirmasi.TextChanged += txtKonfirmasi_TextChanged;
             // 
             // FrmGantiPassword
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(386, 749);
+            ClientSize = new Size(384, 741);
             Controls.Add(txtKonfirmasi);
             Controls.Add(txtPasswordBaru);
             Controls.Add(txtPasswordLama);
             Controls.Add(btnKembali);
             Controls.Add(btnSimpan);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmGantiPassword";
             Text = "FrmGantiPassword";
             Load += FrmGantiPassword_Load;
