@@ -32,80 +32,78 @@
             txtEmail = new TextBox();
             txtPasswordBaru = new TextBox();
             txtKonfirmasi = new TextBox();
-            btnSimpan = new Button();
             btnKembali = new Button();
+            btnSimpan = new Button();
             SuspendLayout();
             // 
             // txtEmail
             // 
             txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Location = new Point(60, 243);
+            txtEmail.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
+            txtEmail.Location = new Point(93, 204);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Masukkan Email";
-            txtEmail.Size = new Size(258, 31);
+            txtEmail.Size = new Size(240, 28);
             txtEmail.TabIndex = 3;
-            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPasswordBaru
             // 
             txtPasswordBaru.BorderStyle = BorderStyle.None;
-            txtPasswordBaru.Location = new Point(69, 352);
+            txtPasswordBaru.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
+            txtPasswordBaru.Location = new Point(50, 293);
             txtPasswordBaru.Multiline = true;
             txtPasswordBaru.Name = "txtPasswordBaru";
             txtPasswordBaru.PlaceholderText = "Masukkan Password Baru";
-            txtPasswordBaru.Size = new Size(249, 36);
+            txtPasswordBaru.Size = new Size(283, 29);
             txtPasswordBaru.TabIndex = 4;
             // 
             // txtKonfirmasi
             // 
             txtKonfirmasi.BorderStyle = BorderStyle.None;
-            txtKonfirmasi.Location = new Point(60, 461);
+            txtKonfirmasi.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
+            txtKonfirmasi.Location = new Point(50, 385);
             txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
             txtKonfirmasi.PlaceholderText = "Ulangi Password Baru";
-            txtKonfirmasi.Size = new Size(258, 29);
+            txtKonfirmasi.Size = new Size(283, 32);
             txtKonfirmasi.TabIndex = 5;
-            // 
-            // btnSimpan
-            // 
-            btnSimpan.BackColor = Color.Transparent;
-            btnSimpan.FlatAppearance.BorderSize = 0;
-            btnSimpan.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            btnSimpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnSimpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btnSimpan.FlatStyle = FlatStyle.Flat;
-            btnSimpan.Location = new Point(233, 536);
-            btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(100, 37);
-            btnSimpan.TabIndex = 6;
-            btnSimpan.UseVisualStyleBackColor = false;
-            btnSimpan.Click += btnSimpan_Click;
             // 
             // btnKembali
             // 
             btnKembali.BackColor = Color.Transparent;
             btnKembali.FlatAppearance.BorderSize = 0;
-            btnKembali.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            btnKembali.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnKembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKembali.FlatStyle = FlatStyle.Flat;
-            btnKembali.Location = new Point(47, 536);
+            btnKembali.Font = new Font("Inter ExtraBold", 10.8F, FontStyle.Bold);
+            btnKembali.Location = new Point(44, 440);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(97, 37);
-            btnKembali.TabIndex = 7;
+            btnKembali.Size = new Size(145, 58);
+            btnKembali.TabIndex = 8;
             btnKembali.UseVisualStyleBackColor = false;
             btnKembali.Click += btnKembali_Click;
+            // 
+            // btnSimpan
+            // 
+            btnSimpan.BackColor = Color.Transparent;
+            btnSimpan.FlatAppearance.BorderSize = 0;
+            btnSimpan.FlatStyle = FlatStyle.Flat;
+            btnSimpan.Font = new Font("Inter ExtraBold", 10.8F, FontStyle.Bold);
+            btnSimpan.Location = new Point(197, 440);
+            btnSimpan.Name = "btnSimpan";
+            btnSimpan.Size = new Size(145, 58);
+            btnSimpan.TabIndex = 9;
+            btnSimpan.UseVisualStyleBackColor = false;
+            btnSimpan.Click += btnSimpan_Click;
             // 
             // FrmLupaPassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(384, 741);
-            Controls.Add(btnKembali);
             Controls.Add(btnSimpan);
+            Controls.Add(btnKembali);
             Controls.Add(txtKonfirmasi);
             Controls.Add(txtPasswordBaru);
             Controls.Add(txtEmail);
@@ -121,7 +119,7 @@
         private TextBox txtEmail;
         private TextBox txtPasswordBaru;
         private TextBox txtKonfirmasi;
-        private Button btnSimpan;
         private Button btnKembali;
+        private Button btnSimpan;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDaftarBarangPengelola));
             txtCari = new TextBox();
             btnCari = new Button();
             btnRefresh = new Button();
@@ -37,15 +38,18 @@
             btnKeKelola = new Button();
             btnKeStatistik = new Button();
             btnKeProfil = new Button();
+            btnKeBeranda = new Button();
             SuspendLayout();
             // 
             // txtCari
             // 
             txtCari.BorderStyle = BorderStyle.None;
-            txtCari.Location = new Point(40, 133);
+            txtCari.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtCari.Location = new Point(57, 136);
             txtCari.Multiline = true;
             txtCari.Name = "txtCari";
-            txtCari.Size = new Size(300, 31);
+            txtCari.PlaceholderText = "Cari Kategori";
+            txtCari.Size = new Size(268, 26);
             txtCari.TabIndex = 0;
             // 
             // btnCari
@@ -56,9 +60,9 @@
             btnCari.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnCari.FlatStyle = FlatStyle.Flat;
             btnCari.ForeColor = Color.Transparent;
-            btnCari.Location = new Point(40, 182);
+            btnCari.Location = new Point(48, 182);
             btnCari.Name = "btnCari";
-            btnCari.Size = new Size(78, 29);
+            btnCari.Size = new Size(83, 34);
             btnCari.TabIndex = 1;
             btnCari.TabStop = false;
             btnCari.UseVisualStyleBackColor = false;
@@ -74,7 +78,7 @@
             btnRefresh.ForeColor = Color.Transparent;
             btnRefresh.Location = new Point(145, 182);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(94, 29);
+            btnRefresh.Size = new Size(92, 34);
             btnRefresh.TabIndex = 2;
             btnRefresh.TabStop = false;
             btnRefresh.UseVisualStyleBackColor = false;
@@ -88,9 +92,9 @@
             btnKembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKembali.FlatStyle = FlatStyle.Flat;
             btnKembali.ForeColor = Color.Transparent;
-            btnKembali.Location = new Point(266, 182);
+            btnKembali.Location = new Point(254, 182);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(88, 29);
+            btnKembali.Size = new Size(87, 34);
             btnKembali.TabIndex = 3;
             btnKembali.TabStop = false;
             btnKembali.UseVisualStyleBackColor = false;
@@ -99,20 +103,23 @@
             // flpBarang
             // 
             flpBarang.AutoScroll = true;
-            flpBarang.BackColor = SystemColors.Window;
+            flpBarang.BackColor = Color.White;
             flpBarang.Location = new Point(-1, 232);
             flpBarang.Name = "flpBarang";
-            flpBarang.Size = new Size(389, 431);
+            flpBarang.Size = new Size(387, 431);
             flpBarang.TabIndex = 4;
+            flpBarang.Paint += flpBarang_Paint;
             // 
             // btnKeVerifikasi
             // 
             btnKeVerifikasi.BackColor = Color.Transparent;
             btnKeVerifikasi.FlatAppearance.BorderSize = 0;
+            btnKeVerifikasi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeVerifikasi.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeVerifikasi.FlatStyle = FlatStyle.Flat;
-            btnKeVerifikasi.Location = new Point(20, 678);
+            btnKeVerifikasi.Location = new Point(98, 671);
             btnKeVerifikasi.Name = "btnKeVerifikasi";
-            btnKeVerifikasi.Size = new Size(85, 51);
+            btnKeVerifikasi.Size = new Size(47, 56);
             btnKeVerifikasi.TabIndex = 5;
             btnKeVerifikasi.UseVisualStyleBackColor = false;
             btnKeVerifikasi.Click += btnKeVerifikasi_Click;
@@ -121,10 +128,12 @@
             // 
             btnKeKelola.BackColor = Color.Transparent;
             btnKeKelola.FlatAppearance.BorderSize = 0;
+            btnKeKelola.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeKelola.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeKelola.FlatStyle = FlatStyle.Flat;
-            btnKeKelola.Location = new Point(113, 678);
+            btnKeKelola.Location = new Point(169, 669);
             btnKeKelola.Name = "btnKeKelola";
-            btnKeKelola.Size = new Size(72, 51);
+            btnKeKelola.Size = new Size(48, 51);
             btnKeKelola.TabIndex = 6;
             btnKeKelola.UseVisualStyleBackColor = false;
             btnKeKelola.Click += btnKeKelola_Click;
@@ -133,10 +142,12 @@
             // 
             btnKeStatistik.BackColor = Color.Transparent;
             btnKeStatistik.FlatAppearance.BorderSize = 0;
+            btnKeStatistik.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeStatistik.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeStatistik.FlatStyle = FlatStyle.Flat;
-            btnKeStatistik.Location = new Point(191, 678);
+            btnKeStatistik.Location = new Point(243, 669);
             btnKeStatistik.Name = "btnKeStatistik";
-            btnKeStatistik.Size = new Size(72, 51);
+            btnKeStatistik.Size = new Size(46, 60);
             btnKeStatistik.TabIndex = 7;
             btnKeStatistik.UseVisualStyleBackColor = false;
             btnKeStatistik.Click += btnKeStatistik_Click;
@@ -145,21 +156,38 @@
             // 
             btnKeProfil.BackColor = Color.Transparent;
             btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeProfil.FlatStyle = FlatStyle.Flat;
-            btnKeProfil.Location = new Point(282, 678);
+            btnKeProfil.Location = new Point(310, 669);
             btnKeProfil.Name = "btnKeProfil";
-            btnKeProfil.Size = new Size(72, 51);
+            btnKeProfil.Size = new Size(44, 60);
             btnKeProfil.TabIndex = 8;
             btnKeProfil.UseVisualStyleBackColor = false;
             btnKeProfil.Click += btnKeProfil_Click;
+            // 
+            // btnKeBeranda
+            // 
+            btnKeBeranda.BackColor = Color.Transparent;
+            btnKeBeranda.FlatAppearance.BorderSize = 0;
+            btnKeBeranda.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeBeranda.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnKeBeranda.FlatStyle = FlatStyle.Flat;
+            btnKeBeranda.Location = new Point(23, 673);
+            btnKeBeranda.Name = "btnKeBeranda";
+            btnKeBeranda.Size = new Size(47, 56);
+            btnKeBeranda.TabIndex = 9;
+            btnKeBeranda.UseVisualStyleBackColor = false;
+            btnKeBeranda.Click += btnKeBeranda_Click;
             // 
             // FrmDaftarBarangPengelola
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Pengelola__Verifikasi__4_;
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(384, 741);
+            Controls.Add(btnKeBeranda);
             Controls.Add(btnKeProfil);
             Controls.Add(btnKeStatistik);
             Controls.Add(btnKeKelola);
@@ -188,5 +216,6 @@
         private Button btnKeKelola;
         private Button btnKeStatistik;
         private Button btnKeProfil;
+        private Button btnKeBeranda;
     }
 }

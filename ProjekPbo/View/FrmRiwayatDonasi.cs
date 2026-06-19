@@ -1,4 +1,5 @@
-﻿using ProjekPbo.Models;
+﻿using System.IO;
+using ProjekPbo.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,9 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Npgsql;
-using ProjekPbo.Database;
 using ProjekPbo.Controllers;
+using System.Drawing.Drawing2D;
 
 namespace ProjekPbo.View
 {
@@ -17,17 +17,13 @@ namespace ProjekPbo.View
         public Donatur donatur;
         private string filterStatus = "";
         private C_RiwayatDonasiDonatur controller;
+        private Button tombolaktif = null;
 
         public FrmRiwayatDonasi(Donatur d)
         {
             InitializeComponent();
             donatur = d;
             controller = new C_RiwayatDonasiDonatur();
-        }
-
-        private void FrmRiwayatDonasi_Load(object sender, EventArgs e)
-        {
-            TampilinRiwayatDonasi();
         }
 
         private void TampilinRiwayatDonasi()
@@ -51,8 +47,16 @@ namespace ProjekPbo.View
 
                 foreach (DataRow dr in dt.Rows)
                 {
+                    byte[] foto = null;
+
+                    if (dr["foto_barang"] != DBNull.Value)
+                    {
+                        foto = (byte[])dr["foto_barang"];
+                    }
+
                     Nambah(
                             Convert.ToInt32(dr["id_barang"]),
+                            foto,
                             dr["nama_barang"].ToString(),
                             dr["nama_kategori"].ToString(),
                             dr["kondisi"].ToString(),
@@ -68,37 +72,51 @@ namespace ProjekPbo.View
             }
         }
 
-        private void Nambah(int idBarang, string nama, string kategori, string kondisi, string status, string catatan, string tanggal)
+
+
+        private void Nambah(int idBarang, byte[] fotoBytes, string nama, string kategori, string kondisi, string status, string catatan, string tanggal)
         {
-            Panel card = new Panel();
-            card.Width = 300;
-            card.Height = 180;
-            card.BorderStyle = BorderStyle.FixedSingle;
+
+            ModernCard card = new ModernCard();
+            card.Size = new Size(350, 180);
+            card.Margin = new Padding(10);
+
+            Panel content = new Panel();
+            content.Dock = DockStyle.Fill;
+            content.BackColor = Color.White;
+            content.Padding = new Padding(10);
 
             Label lblNama = new Label();
             lblNama.Text = nama;
-            lblNama.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            lblNama.Location = new Point(10, 10);
+            lblNama.Font = new Font("Inter", 10, FontStyle.Bold);
+            lblNama.Location = new Point(85, 10);
             lblNama.AutoSize = true;
 
             Label lblKategori = new Label();
             lblKategori.Text = "Kategori : " + kategori;
-            lblKategori.Location = new Point(10, 35);
+            lblKategori.Location = new Point(85, 35);
             lblKategori.AutoSize = true;
 
-            Label lblKondisi = new Label();
-            lblKondisi.Text = "Kondisi : " + kondisi;
-            lblKondisi.Location = new Point(10, 55);
-            lblKondisi.AutoSize = true;
-
-            Label lblStatus = new Label();
-            lblStatus.Text = "Status : " + status;
-            lblStatus.Location = new Point(10, 75);
-            lblStatus.AutoSize = true;
+            PictureBox picStatus = new PictureBox();
+            picStatus.Size = new Size(70, 150);
+            picStatus.Location = new Point(250, -40);
+            picStatus.SizeMode = PictureBoxSizeMode.Zoom;
+            if (status == "Diterima")
+            {
+                picStatus.Image = Properties.Resources.diterima;
+            }
+            else if (status == "Ditolak")
+            {
+                picStatus.Image = Properties.Resources.Ditolak;
+            }
+            else
+            {
+                picStatus.Image = Properties.Resources.menunggu;
+            }
 
             Label lblTanggal = new Label();
             lblTanggal.Text = tanggal;
-            lblTanggal.Location = new Point(210, 120);
+            lblTanggal.Location = new Point(85, 120);
             lblTanggal.AutoSize = true;
 
             if (String.IsNullOrEmpty(catatan))
@@ -109,14 +127,16 @@ namespace ProjekPbo.View
             lblCatatan.Text = "Catatan : " + catatan;
             lblCatatan.MaximumSize = new Size(270, 0);
             lblCatatan.AutoSize = true;
-            lblCatatan.Location = new Point(10, 95);
+            lblCatatan.Location = new Point(85, 95);
 
             Button btnHapus = new Button();
             btnHapus.Text = "Hapus";
             btnHapus.Width = 80;
             btnHapus.Height = 30;
-            btnHapus.Location = new Point(200, 130);
-            btnHapus.BackColor = Color.Red;
+            btnHapus.Location = new Point(230, 130);
+            btnHapus.FlatStyle = FlatStyle.Flat;
+            btnHapus.FlatAppearance.BorderSize = 0;
+            btnHapus.BackColor = ColorTranslator.FromHtml("#199255");
             btnHapus.ForeColor = Color.White;
             if (status != "Menunggu Verifikasi")
                 if (status != "Menunggu Verifikasi")
@@ -129,13 +149,39 @@ namespace ProjekPbo.View
                 HapusBarang(idBarang, status);
             };
 
-            card.Controls.Add(lblNama);
-            card.Controls.Add(lblKategori);
-            card.Controls.Add(lblKondisi);
-            card.Controls.Add(lblStatus);
-            card.Controls.Add(lblTanggal);
-            card.Controls.Add(lblCatatan);
-            card.Controls.Add(btnHapus);
+            btnHapus.MouseEnter += (s, e) =>
+            {
+                btnHapus.BackColor = Color.Red;
+            };
+
+            btnHapus.MouseLeave += (s, e) =>
+            {
+                btnHapus.BackColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            PictureBox pic = new PictureBox();
+            pic.Width = 70;
+            pic.Height = 70;
+            pic.Location = new Point(10, 10);
+            pic.SizeMode = PictureBoxSizeMode.Zoom;
+            pic.BorderStyle = BorderStyle.FixedSingle;
+            if (fotoBytes != null)
+            {
+                using (MemoryStream ms = new MemoryStream(fotoBytes))
+                {
+                    pic.Image = Image.FromStream(ms);
+                }
+            }
+
+            content.Controls.Add(lblNama);
+            content.Controls.Add(lblKategori);
+            content.Controls.Add(lblTanggal);
+            content.Controls.Add(lblCatatan);
+            content.Controls.Add(btnHapus);
+            content.Controls.Add(picStatus);
+            content.Controls.Add(pic);
+
+            card.Controls.Add(content);
 
             flpRiwayat.Controls.Add(card);
         }
@@ -172,6 +218,19 @@ namespace ProjekPbo.View
             }
         }
 
+        private void settombolAktif(Button btn)
+        {
+            if (tombolaktif != null)
+            {
+                tombolaktif.BackColor = Color.White;
+                tombolaktif.ForeColor = Color.Black;
+            }
+
+            tombolaktif = btn;
+            tombolaktif.BackColor = ColorTranslator.FromHtml("#199255");
+            tombolaktif.ForeColor= Color.White;
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             TampilinRiwayatDonasi();
@@ -179,38 +238,121 @@ namespace ProjekPbo.View
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
-            FrmRiwayatDonasi frmDonatur = new FrmRiwayatDonasi(donatur);
-            frmDonatur.Show();
+            FrmUploadBarang frm = new FrmUploadBarang(donatur);
+            frm.Show();
             this.Close();
         }
 
         private void FrmRiwayatDonasi_Load_1(object sender, EventArgs e)
         {
+            settombolAktif(btnSemua);
+
+            btnSemua.FlatStyle = FlatStyle.Flat;
+            btnSemua.FlatAppearance.BorderSize = 0;
+            btnSemua.Paint += (s, e) =>
+            {
+                int radius = 20;
+                GraphicsPath path = new GraphicsPath();
+
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnSemua.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnSemua.Width - radius, btnSemua.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnSemua.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+                btnSemua.Region = new Region(path);
+            };
+
+            btnMenunggu.FlatStyle = FlatStyle.Flat;
+            btnMenunggu.FlatAppearance.BorderSize = 0;
+            btnMenunggu.Paint += (s, e) =>
+            {
+                int radius = 20;
+                GraphicsPath path = new GraphicsPath();
+
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnMenunggu.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnMenunggu.Width - radius, btnMenunggu.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnMenunggu.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+                btnMenunggu.Region = new Region(path);
+            };
+
+            btnDitolak.FlatStyle = FlatStyle.Flat;
+            btnDitolak.FlatAppearance.BorderSize = 0;
+            btnDitolak.Paint += (s, e) =>
+            {
+                int radius = 20;
+                GraphicsPath path = new GraphicsPath();
+
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnDitolak.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnDitolak.Width - radius, btnDitolak.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnDitolak.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+                btnDitolak.Region = new Region(path);
+            };
+
+            btnDiterima.FlatStyle = FlatStyle.Flat;
+            btnDiterima.FlatAppearance.BorderSize = 0;
+            btnDiterima.Paint += (s, e) =>
+            {
+                int radius = 20;
+                GraphicsPath path = new GraphicsPath();
+
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnDiterima.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnDiterima.Width - radius, btnDiterima.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnDiterima.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+                btnDiterima.Region = new Region(path);
+            };
             TampilinRiwayatDonasi();
         }
 
         private void btnSemua_Click(object sender, EventArgs e)
         {
             filterStatus = "";
+            settombolAktif(btnSemua);
             TampilinRiwayatDonasi();
         }
 
         private void btnDiterima_Click(object sender, EventArgs e)
         {
             filterStatus = "Diterima";
+            settombolAktif(btnDiterima);
             TampilinRiwayatDonasi();
         }
 
         private void btnDitolak_Click(object sender, EventArgs e)
         {
             filterStatus = "Ditolak";
+            settombolAktif(btnDitolak);
             TampilinRiwayatDonasi();
         }
 
         private void btnMenunggu_Click(object sender, EventArgs e)
         {
             filterStatus = "Menunggu Verifikasi";
+            settombolAktif(btnMenunggu);
             TampilinRiwayatDonasi();
+        }
+
+        private void btnKeProfil_Click(object sender, EventArgs e)
+        {
+            FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnKeRiwayat_Click(object sender, EventArgs e)
+        {
+            FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

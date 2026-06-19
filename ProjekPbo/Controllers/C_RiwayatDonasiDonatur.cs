@@ -25,14 +25,14 @@ namespace ProjekPbo.Controllers
                         " k.nama_kategori," +
                         " b.kondisi," +
                         " b.status," +
-                        " b.tanggal_upload, " +
+                        " b.tanggal_upload," +
+                        " fb.foto_barang, " +
                         " COALESCE(v.catatan, 'Tidak ada Catatan') AS catatan " +
                  "FROM barang b " +
                  "JOIN kategori k ON b.id_kategori = k.id_kategori " +
                  "LEFT JOIN verifikasi v ON b.id_barang = v.id_barang " +
-                 "WHERE b.id_donatur = @id " +
-                 "AND b.status = @status " +
-                 "ORDER BY b.tanggal_upload DESC";
+                 "LEFT JOIN foto_barang fb ON b.id_barang = fb.id_barang " +
+                 "WHERE b.id_donatur = @id ";
 
                 if (!string.IsNullOrEmpty(status))
                 {
@@ -86,7 +86,7 @@ namespace ProjekPbo.Controllers
                         trans.Commit();
                         return true;
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         trans.Rollback();
                         return false;

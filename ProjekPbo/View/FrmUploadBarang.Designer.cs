@@ -42,40 +42,42 @@
             btnKeProfil = new Button();
             btnKeRiwayat = new Button();
             btnKeUpload = new Button();
-            btnKeberanda = new Button();
             ((System.ComponentModel.ISupportInitialize)picFotoBarang).BeginInit();
             SuspendLayout();
             // 
             // cbKategori
             // 
             cbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbKategori.Font = new Font("Segoe UI", 12F);
+            cbKategori.FlatStyle = FlatStyle.Flat;
+            cbKategori.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbKategori.FormattingEnabled = true;
-            cbKategori.Location = new Point(47, 126);
+            cbKategori.Location = new Point(78, 127);
             cbKategori.Margin = new Padding(3, 2, 3, 2);
             cbKategori.Name = "cbKategori";
-            cbKategori.Size = new Size(283, 36);
+            cbKategori.Size = new Size(258, 32);
             cbKategori.TabIndex = 0;
             cbKategori.Click += FrmUploadBarang_Load;
             // 
             // txtNamaBarang
             // 
             txtNamaBarang.BorderStyle = BorderStyle.None;
-            txtNamaBarang.Location = new Point(47, 201);
+            txtNamaBarang.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
+            txtNamaBarang.Location = new Point(47, 202);
             txtNamaBarang.Margin = new Padding(3, 2, 3, 2);
             txtNamaBarang.Multiline = true;
             txtNamaBarang.Name = "txtNamaBarang";
-            txtNamaBarang.Size = new Size(283, 33);
+            txtNamaBarang.Size = new Size(283, 32);
             txtNamaBarang.TabIndex = 1;
             // 
             // rbBaik
             // 
             rbBaik.AutoSize = true;
             rbBaik.BackColor = Color.Transparent;
+            rbBaik.FlatStyle = FlatStyle.Flat;
             rbBaik.Location = new Point(47, 283);
             rbBaik.Margin = new Padding(3, 2, 3, 2);
             rbBaik.Name = "rbBaik";
-            rbBaik.Size = new Size(17, 16);
+            rbBaik.Size = new Size(16, 15);
             rbBaik.TabIndex = 2;
             rbBaik.TabStop = true;
             rbBaik.UseVisualStyleBackColor = false;
@@ -84,10 +86,11 @@
             // 
             rbCukup.AutoSize = true;
             rbCukup.BackColor = Color.Transparent;
+            rbCukup.FlatStyle = FlatStyle.Flat;
             rbCukup.Location = new Point(158, 283);
             rbCukup.Margin = new Padding(3, 2, 3, 2);
             rbCukup.Name = "rbCukup";
-            rbCukup.Size = new Size(17, 16);
+            rbCukup.Size = new Size(16, 15);
             rbCukup.TabIndex = 3;
             rbCukup.TabStop = true;
             rbCukup.UseVisualStyleBackColor = false;
@@ -96,10 +99,11 @@
             // 
             rbRusak.AutoSize = true;
             rbRusak.BackColor = Color.Transparent;
+            rbRusak.FlatStyle = FlatStyle.Flat;
             rbRusak.Location = new Point(274, 283);
             rbRusak.Margin = new Padding(3, 2, 3, 2);
             rbRusak.Name = "rbRusak";
-            rbRusak.Size = new Size(17, 16);
+            rbRusak.Size = new Size(16, 15);
             rbRusak.TabIndex = 4;
             rbRusak.TabStop = true;
             rbRusak.UseVisualStyleBackColor = false;
@@ -107,6 +111,7 @@
             // txtDeskripsi
             // 
             txtDeskripsi.BorderStyle = BorderStyle.None;
+            txtDeskripsi.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             txtDeskripsi.Location = new Point(47, 353);
             txtDeskripsi.Margin = new Padding(3, 2, 3, 2);
             txtDeskripsi.Name = "txtDeskripsi";
@@ -117,10 +122,10 @@
             // picFotoBarang
             // 
             picFotoBarang.BorderStyle = BorderStyle.FixedSingle;
-            picFotoBarang.Location = new Point(47, 562);
+            picFotoBarang.Location = new Point(40, 561);
             picFotoBarang.Margin = new Padding(3, 2, 3, 2);
             picFotoBarang.Name = "picFotoBarang";
-            picFotoBarang.Size = new Size(54, 47);
+            picFotoBarang.Size = new Size(65, 50);
             picFotoBarang.SizeMode = PictureBoxSizeMode.Zoom;
             picFotoBarang.TabIndex = 7;
             picFotoBarang.TabStop = false;
@@ -129,11 +134,13 @@
             // 
             btnPilihFoto.BackColor = Color.Transparent;
             btnPilihFoto.FlatAppearance.BorderSize = 0;
+            btnPilihFoto.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnPilihFoto.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnPilihFoto.FlatStyle = FlatStyle.Flat;
-            btnPilihFoto.Location = new Point(35, 472);
+            btnPilihFoto.Location = new Point(47, 473);
             btnPilihFoto.Margin = new Padding(3, 2, 3, 2);
             btnPilihFoto.Name = "btnPilihFoto";
-            btnPilihFoto.Size = new Size(301, 76);
+            btnPilihFoto.Size = new Size(289, 71);
             btnPilihFoto.TabIndex = 8;
             btnPilihFoto.UseVisualStyleBackColor = false;
             btnPilihFoto.Click += btnPilihFoto_Click;
@@ -144,10 +151,11 @@
             btnSimpan.BackgroundImageLayout = ImageLayout.Stretch;
             btnSimpan.FlatAppearance.BorderSize = 0;
             btnSimpan.FlatStyle = FlatStyle.Flat;
-            btnSimpan.Location = new Point(35, 629);
+            btnSimpan.Font = new Font("Inter ExtraBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSimpan.Location = new Point(40, 634);
             btnSimpan.Margin = new Padding(3, 2, 3, 2);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(312, 42);
+            btnSimpan.Size = new Size(302, 36);
             btnSimpan.TabIndex = 9;
             btnSimpan.UseVisualStyleBackColor = false;
             btnSimpan.Click += btnSimpan_Click;
@@ -160,10 +168,12 @@
             // 
             btnKeProfil.BackColor = Color.Transparent;
             btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeProfil.FlatStyle = FlatStyle.Flat;
-            btnKeProfil.Location = new Point(277, 676);
+            btnKeProfil.Location = new Point(294, 676);
             btnKeProfil.Name = "btnKeProfil";
-            btnKeProfil.Size = new Size(71, 53);
+            btnKeProfil.Size = new Size(48, 53);
             btnKeProfil.TabIndex = 15;
             btnKeProfil.UseVisualStyleBackColor = false;
             btnKeProfil.Click += btnKeProfil_Click;
@@ -172,10 +182,12 @@
             // 
             btnKeRiwayat.BackColor = Color.Transparent;
             btnKeRiwayat.FlatAppearance.BorderSize = 0;
+            btnKeRiwayat.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeRiwayat.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeRiwayat.FlatStyle = FlatStyle.Flat;
-            btnKeRiwayat.Location = new Point(200, 676);
+            btnKeRiwayat.Location = new Point(169, 676);
             btnKeRiwayat.Name = "btnKeRiwayat";
-            btnKeRiwayat.Size = new Size(71, 53);
+            btnKeRiwayat.Size = new Size(54, 53);
             btnKeRiwayat.TabIndex = 14;
             btnKeRiwayat.UseVisualStyleBackColor = false;
             btnKeRiwayat.Click += btnKeRiwayat_Click;
@@ -184,25 +196,15 @@
             // 
             btnKeUpload.BackColor = Color.Transparent;
             btnKeUpload.FlatAppearance.BorderSize = 0;
+            btnKeUpload.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeUpload.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeUpload.FlatStyle = FlatStyle.Flat;
-            btnKeUpload.Location = new Point(123, 676);
+            btnKeUpload.Location = new Point(47, 676);
             btnKeUpload.Name = "btnKeUpload";
-            btnKeUpload.Size = new Size(59, 53);
+            btnKeUpload.Size = new Size(52, 53);
             btnKeUpload.TabIndex = 13;
             btnKeUpload.UseVisualStyleBackColor = false;
             btnKeUpload.Click += btnKeUpload_Click;
-            // 
-            // btnKeberanda
-            // 
-            btnKeberanda.BackColor = Color.Transparent;
-            btnKeberanda.FlatAppearance.BorderSize = 0;
-            btnKeberanda.FlatStyle = FlatStyle.Flat;
-            btnKeberanda.Location = new Point(34, 676);
-            btnKeberanda.Name = "btnKeberanda";
-            btnKeberanda.Size = new Size(60, 53);
-            btnKeberanda.TabIndex = 12;
-            btnKeberanda.UseVisualStyleBackColor = false;
-            btnKeberanda.Click += btnKeberanda_Click;
             // 
             // FrmUploadBarang
             // 
@@ -214,7 +216,6 @@
             Controls.Add(btnKeProfil);
             Controls.Add(btnKeRiwayat);
             Controls.Add(btnKeUpload);
-            Controls.Add(btnKeberanda);
             Controls.Add(btnSimpan);
             Controls.Add(btnPilihFoto);
             Controls.Add(picFotoBarang);
@@ -249,6 +250,5 @@
         private Button btnKeProfil;
         private Button btnKeRiwayat;
         private Button btnKeUpload;
-        private Button btnKeberanda;
     }
 }

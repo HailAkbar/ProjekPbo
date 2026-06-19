@@ -26,6 +26,9 @@ namespace ProjekPbo.View
 
         private void FrmPengelola_Load(object sender, EventArgs e)
         {
+            lblMenunggu.BackColor = ColorTranslator.FromHtml("#FFE9C7");
+            lblDiterima.BackColor = ColorTranslator.FromHtml("#C9E4FF");
+            lblDitolak.BackColor = ColorTranslator.FromHtml("#FFB3B3");
             lblNama.Text = pengelola.nama;
 
             TampilkanBarangnya();
@@ -73,7 +76,7 @@ namespace ProjekPbo.View
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Hide(); 
+            this.Hide();
             return;
         }
 
@@ -101,6 +104,13 @@ namespace ProjekPbo.View
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnkeBeranda_Click(object sender, EventArgs e)
+        {
+            FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
             this.Close();
         }

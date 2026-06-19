@@ -3,6 +3,8 @@ using ProjekPbo.Models;
 using ProjekPbo.Database;
 using ProjekPbo.View;
 using ProjekPbo.Controllers;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 
 namespace ProjekPbo
 {
@@ -13,6 +15,38 @@ namespace ProjekPbo
         {
             InitializeComponent();
             controller = new C_Login();
+
+            btnLogin.BackColor = ColorTranslator.FromHtml("#8E8E8E"); 
+            btnLogin.ForeColor = Color.White;       
+            btnLogin.Text = "Masuk";                
+
+            btnLogin.MouseEnter += (s, e) => {
+                btnLogin.BackColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            btnLogin.MouseLeave += (s, e) => {
+                btnLogin.BackColor = ColorTranslator.FromHtml("#8E8E8E");
+            };
+
+            lblDaftar.MouseEnter += (s, e) =>
+            {
+                lblDaftar.LinkColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            lblDaftar.MouseLeave += (s, e) =>
+            {
+                lblDaftar.LinkColor = ColorTranslator.FromHtml("#8E8E8E");
+            };
+
+            lblLupaPassword.MouseEnter += (s, e) =>
+            {
+                lblLupaPassword.LinkColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            lblLupaPassword.MouseLeave += (s, e) =>
+            {
+                lblLupaPassword.LinkColor = ColorTranslator.FromHtml("#8E8E8E");
+            };
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -74,6 +108,26 @@ namespace ProjekPbo
             frm.Show();
             this.Hide();
             return;
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.FlatAppearance.BorderSize = 0;
+
+            btnLogin.Paint += (s, e) => {
+                int radius = 20; 
+                GraphicsPath path = new GraphicsPath();
+
+                
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnLogin.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnLogin.Width - radius, btnLogin.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnLogin.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+
+                btnLogin.Region = new Region(path);
+            };
         }
     }
 }

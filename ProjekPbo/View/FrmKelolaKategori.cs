@@ -35,9 +35,9 @@ namespace ProjekPbo.View
             try
             {
                 DataTable dt = controller.ambilkategori();
-                    dgvKategori.DataSource = dt;
-                    dgvKategori.Columns[0].HeaderText = "ID";
-                    dgvKategori.Columns[1].HeaderText = "Nama Kategori";
+                dgvKategori.DataSource = dt;
+                dgvKategori.Columns[0].HeaderText = "ID";
+                dgvKategori.Columns[1].HeaderText = "Nama Kategori";
             }
             catch (Exception ex)
             {
@@ -154,6 +154,13 @@ namespace ProjekPbo.View
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeBeranda_Click(object sender, EventArgs e)
+        {
+            FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
             this.Close();
         }

@@ -10,6 +10,7 @@ using Npgsql;
 using ProjekPbo.Database;
 using ProjekPbo.View;
 using ProjekPbo.Controllers;
+using System.Drawing.Drawing2D;
 
 namespace ProjekPbo.View
 {
@@ -20,6 +21,30 @@ namespace ProjekPbo.View
         {
             InitializeComponent();
             controller = new C_Register();
+
+            btnDaftar.BackColor = ColorTranslator.FromHtml("#8E8E8E");
+            btnDaftar.ForeColor = Color.White;
+            btnDaftar.Text = "Register";
+
+            btnDaftar.MouseEnter += (s, e) =>
+            {
+                btnDaftar.BackColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            btnDaftar.MouseLeave += (s, e) =>
+            {
+                btnDaftar.BackColor = ColorTranslator.FromHtml("#8E8E8E");
+            };
+
+            lblLogin.MouseEnter += (s, e) =>
+            {
+                lblLogin.LinkColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            lblLogin.MouseLeave += (s, e) =>
+            {
+                lblLogin.LinkColor = ColorTranslator.FromHtml("#8E8E8E");
+            };
         }
 
         private void btnDaftar_Click(object sender, EventArgs e)
@@ -108,6 +133,35 @@ namespace ProjekPbo.View
         private void FrmRegister_Load(object sender, EventArgs e)
         {
             txtNoHP.MaxLength = 12;
+            btnDaftar.FlatStyle = FlatStyle.Flat;
+            btnDaftar.FlatAppearance.BorderSize = 0;
+
+            btnDaftar.Paint += (s, e) =>
+            {
+                int radius = 20;
+                GraphicsPath path = new GraphicsPath();
+
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnDaftar.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnDaftar.Width - radius, btnDaftar.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnDaftar.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+
+                btnDaftar.Region = new Region(path);
+            };
+        }
+
+        private void txtNama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmLogin frmLogi = new FrmLogin();
+            frmLogi.ShowDialog();
+            this.Hide();
         }
     }
 }

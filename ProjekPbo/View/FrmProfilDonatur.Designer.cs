@@ -43,7 +43,9 @@
             // 
             // lblNama
             // 
-            lblNama.Location = new Point(149, 238);
+            lblNama.BackColor = Color.White;
+            lblNama.Font = new Font("Inter ExtraBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNama.Location = new Point(153, 237);
             lblNama.Name = "lblNama";
             lblNama.Size = new Size(88, 34);
             lblNama.TabIndex = 0;
@@ -51,25 +53,31 @@
             // 
             // lblEmail
             // 
+            lblEmail.BackColor = Color.White;
+            lblEmail.Font = new Font("Inter Medium", 10.8F, FontStyle.Bold);
             lblEmail.Location = new Point(101, 332);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(103, 30);
+            lblEmail.Size = new Size(231, 30);
             lblEmail.TabIndex = 2;
             lblEmail.Text = "label3";
             // 
             // lblNoHP
             // 
-            lblNoHP.Location = new Point(101, 406);
+            lblNoHP.BackColor = Color.White;
+            lblNoHP.Font = new Font("Inter Medium", 10.8F, FontStyle.Bold);
+            lblNoHP.Location = new Point(101, 410);
             lblNoHP.Name = "lblNoHP";
-            lblNoHP.Size = new Size(103, 31);
+            lblNoHP.Size = new Size(231, 31);
             lblNoHP.TabIndex = 4;
             lblNoHP.Text = "label5";
             // 
             // lblAlamat
             // 
-            lblAlamat.Location = new Point(101, 497);
+            lblAlamat.BackColor = Color.White;
+            lblAlamat.Font = new Font("Inter Medium", 10.8F, FontStyle.Bold);
+            lblAlamat.Location = new Point(101, 498);
             lblAlamat.Name = "lblAlamat";
-            lblAlamat.Size = new Size(103, 35);
+            lblAlamat.Size = new Size(231, 35);
             lblAlamat.TabIndex = 5;
             lblAlamat.Text = "label6";
             // 
@@ -148,7 +156,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(384, 741);
             Controls.Add(btnKeProfil);
             Controls.Add(btnKeRiwayat);

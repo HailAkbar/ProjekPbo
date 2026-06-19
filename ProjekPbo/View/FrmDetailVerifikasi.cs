@@ -40,12 +40,12 @@ namespace ProjekPbo.View
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
-                    lblNamaBarang.Text = "Nama Barang: " + dr["nama_barang"].ToString();
-                    lblNamaDonatur.Text = "Nama Donatur: " + dr["donatur"].ToString();
-                    lblKategori.Text = "Kategori: " + dr["nama_kategori"].ToString();
-                    lblKondisi.Text = "kondisi: " + dr["kondisi"].ToString();
-                    lblTanggal.Text = "Tanggal Upload: " + Convert.ToDateTime(dr["tanggal_upload"]).ToString("dd/MM/yyyy");
-                    rtbDeskripsi.Text = "Deskripsi: " + dr["deskripsi"].ToString();
+                    lblNamaBarang.Text = dr["nama_barang"].ToString();
+                    lblNamaDonatur.Text = dr["donatur"].ToString();
+                    lblKategori.Text = dr["nama_kategori"].ToString();
+                    lblKondisi.Text = dr["kondisi"].ToString();
+                    lblTanggal.Text = Convert.ToDateTime(dr["tanggal_upload"]).ToString("dd/MM/yyyy");
+                    rtbDeskripsi.Text = dr["deskripsi"].ToString();
 
                     if (dr["foto_barang"] != DBNull.Value)
                     {
@@ -53,6 +53,7 @@ namespace ProjekPbo.View
                         using (var ms = new System.IO.MemoryStream(fotoBytes))
                         {
                             picBarang.Image = Image.FromStream(ms);
+                            picBarang.SizeMode = PictureBoxSizeMode.Zoom;
                         }
                     }
                 }
@@ -112,6 +113,18 @@ namespace ProjekPbo.View
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKembali_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKeHome_Click(object sender, EventArgs e)
+        {
+            FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
             this.Close();
         }

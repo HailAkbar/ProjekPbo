@@ -25,12 +25,15 @@ namespace ProjekPbo.Controllers
                             " b.kondisi, " +
                             " b.tanggal_upload, " +
                             " d.nama, " +
-                            " k.nama_kategori " +
+                            " k.nama_kategori, " +
+                            " MIN(f.foto_barang) AS foto_barang " +
                         "FROM barang b " +
                         "JOIN donatur d ON b.id_donatur = d.id_donatur " +
                         "JOIN kategori k ON b.id_kategori = k.id_kategori " +
+                        "JOIN foto_barang f ON b.id_barang = f.id_barang " +
                         "WHERE b.status = 'Menunggu Verifikasi' " +
-                        " ORDER BY b.tanggal_upload desc ";
+                        "GROUP BY b.id_barang, d.nama, k.nama_kategori " +
+                        "ORDER BY b.tanggal_upload desc ";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -60,13 +63,19 @@ namespace ProjekPbo.Controllers
                     string query =
                         @"SELECT" +
                             " b.id_barang, " +
-                            " b.nama_barang," +
-                            " d.nama," +
-                            " k.nama_kategori " +
+                            " b.nama_barang, " +
+                            " b.kondisi, " +
+                            " b.tanggal_upload, " +
+                            " d.nama, " +
+                            " k.nama_kategori, " +
+                            " MIN(f.foto_barang) AS foto_barang " +
                         "FROM barang b " +
-                        "JOIN donatur d ON b.id_donatur=d.id_donatur " +
-                        "JOIN kategori k ON b.id_kategori=k.id_kategori " +
-                        "WHERE b.status='Menunggu Verifikasi' AND LOWER(k.nama_kategori) LIKE LOWER(@nama_kategori) ";
+                        "JOIN donatur d ON b.id_donatur = d.id_donatur " +
+                        "JOIN kategori k ON b.id_kategori = k.id_kategori " +
+                        "JOIN foto_barang f ON b.id_barang = f.id_barang " +
+                        "WHERE b.status='Menunggu Verifikasi' AND LOWER(k.nama_kategori) LIKE LOWER(@nama_kategori) " +
+                        "GROUP BY b.id_barang, d.nama, k.nama_kategori " +
+                        "ORDER BY b.tanggal_upload desc ";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                     {

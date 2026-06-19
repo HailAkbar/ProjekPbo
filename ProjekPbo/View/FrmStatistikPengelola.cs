@@ -44,28 +44,27 @@ namespace ProjekPbo.View
 
         private void MunculinStatusnya(string judul, int jumlah)
         {
-            Panel pnl = new Panel();
+            ModernCard pnl = new ModernCard();
 
-            pnl.Width = 140;
+            pnl.Width = 120;
             pnl.Height = 100;
-            pnl.BorderStyle = BorderStyle.FixedSingle;
             pnl.Margin = new Padding(10);
 
             Label lblJudul = new Label();
             lblJudul.Text = judul;
-            lblJudul.Font = new Font( "Segoe UI", 10, FontStyle.Bold);
-            lblJudul.Width = 120;
+            lblJudul.Font = new Font("Inter", 9, FontStyle.Bold);
+            lblJudul.Width = 90;
             lblJudul.Height = 30;
             lblJudul.TextAlign = ContentAlignment.MiddleCenter;
             lblJudul.Location = new Point(10, 10);
 
             Label lblJumlah = new Label();
             lblJumlah.Text = jumlah.ToString();
-            lblJumlah.Font = new Font("Segoe UI", 18, FontStyle.Bold);
-            lblJumlah.Width = 120;
+            lblJumlah.Font = new Font("Inter", 16, FontStyle.Bold);
+            lblJumlah.Width = 90;
             lblJumlah.Height = 40;
             lblJumlah.TextAlign = ContentAlignment.MiddleCenter;
-            lblJumlah.Location = new Point(10, 45);
+            lblJumlah.Location = new Point(10, 35);
 
             pnl.Controls.Add(lblJudul);
             pnl.Controls.Add(lblJumlah);
@@ -92,32 +91,29 @@ namespace ProjekPbo.View
 
         private void MunculinKategorinya(string kategori, int jumlah)
         {
-            Panel pnl = new Panel();
+            ModernCard pnl = new ModernCard();
 
-            pnl.Width = 140;
+            pnl.Width = 120;
             pnl.Height = 100;
-
-            pnl.BorderStyle = BorderStyle.FixedSingle;
-
             pnl.Margin = new Padding(10);
 
             Label lblKategori = new Label();
             lblKategori.Text = kategori;
-            lblKategori.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            lblKategori.Font = new Font("Inter", 10, FontStyle.Bold);
             lblKategori.AutoSize = false;
-            lblKategori.Width = 120;
-            lblKategori.Height = 40;
+            lblKategori.Width = 90;
+            lblKategori.Height = 30;
             lblKategori.TextAlign = ContentAlignment.MiddleCenter;
             lblKategori.Location = new Point(10, 10);
 
             Label lblJumlah = new Label();
             lblJumlah.Text = jumlah + " Donasi";
-            lblJumlah.Font = new Font("Segoe UI", 11, FontStyle.Regular);
+            lblJumlah.Font = new Font("Inter", 9, FontStyle.Bold);
             lblJumlah.AutoSize = false;
-            lblJumlah.Width = 120;
-            lblJumlah.Height = 25;
+            lblJumlah.Width = 90;
+            lblJumlah.Height = 40;
             lblJumlah.TextAlign = ContentAlignment.MiddleCenter;
-            lblJumlah.Location = new Point(10, 55);
+            lblJumlah.Location = new Point(10, 35);
 
             pnl.Controls.Add(lblKategori);
             pnl.Controls.Add(lblJumlah);
@@ -155,6 +151,13 @@ namespace ProjekPbo.View
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnKeHome_Click(object sender, EventArgs e)
+        {
+            FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
             this.Close();
         }

@@ -130,4 +130,13 @@
   <data name="Pengelola, Kelola" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pengelola, Kelola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="menunggu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menunggu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diterima" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diterima.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ditolak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Group 36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

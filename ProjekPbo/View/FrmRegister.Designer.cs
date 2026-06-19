@@ -34,11 +34,11 @@
             txtNama = new TextBox();
             txtEmail = new TextBox();
             txtNoHP = new TextBox();
-            txtAlamat = new RichTextBox();
             txtSandi = new TextBox();
             txtKonfirmasi = new TextBox();
             btnDaftar = new Button();
             lblLogin = new LinkLabel();
+            txtAlamat = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -61,79 +61,74 @@
             // 
             txtNama.BackColor = SystemColors.Window;
             txtNama.BorderStyle = BorderStyle.None;
-            txtNama.Location = new Point(51, 240);
+            txtNama.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
+            txtNama.Location = new Point(57, 245);
             txtNama.Margin = new Padding(3, 2, 3, 2);
             txtNama.Multiline = true;
             txtNama.Name = "txtNama";
             txtNama.PlaceholderText = "Nama";
-            txtNama.Size = new Size(286, 37);
+            txtNama.Size = new Size(276, 29);
             txtNama.TabIndex = 6;
+            txtNama.TextChanged += txtNama_TextChanged;
             // 
             // txtEmail
             // 
             txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Location = new Point(51, 302);
+            txtEmail.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
+            txtEmail.Location = new Point(97, 310);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
-            txtEmail.Size = new Size(286, 37);
+            txtEmail.Size = new Size(236, 27);
             txtEmail.TabIndex = 7;
             // 
             // txtNoHP
             // 
             txtNoHP.BorderStyle = BorderStyle.None;
-            txtNoHP.Location = new Point(51, 366);
+            txtNoHP.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
+            txtNoHP.Location = new Point(97, 371);
             txtNoHP.Margin = new Padding(3, 2, 3, 2);
             txtNoHP.Multiline = true;
             txtNoHP.Name = "txtNoHP";
             txtNoHP.PlaceholderText = "No HP";
-            txtNoHP.Size = new Size(286, 37);
+            txtNoHP.Size = new Size(236, 32);
             txtNoHP.TabIndex = 8;
-            txtNoHP.TextChanged += txtNoHP_TextChanged;
-            // 
-            // txtAlamat
-            // 
-            txtAlamat.BorderStyle = BorderStyle.None;
-            txtAlamat.Location = new Point(51, 424);
-            txtAlamat.Margin = new Padding(3, 2, 3, 2);
-            txtAlamat.Name = "txtAlamat";
-            txtAlamat.Size = new Size(286, 66);
-            txtAlamat.TabIndex = 9;
-            txtAlamat.Text = "";
             // 
             // txtSandi
             // 
             txtSandi.BorderStyle = BorderStyle.None;
-            txtSandi.Location = new Point(51, 512);
+            txtSandi.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
+            txtSandi.Location = new Point(97, 516);
             txtSandi.Margin = new Padding(3, 2, 3, 2);
             txtSandi.Multiline = true;
             txtSandi.Name = "txtSandi";
             txtSandi.PlaceholderText = "Password";
-            txtSandi.Size = new Size(286, 37);
+            txtSandi.Size = new Size(236, 32);
             txtSandi.TabIndex = 10;
             // 
             // txtKonfirmasi
             // 
             txtKonfirmasi.BorderStyle = BorderStyle.None;
-            txtKonfirmasi.Location = new Point(51, 572);
+            txtKonfirmasi.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
+            txtKonfirmasi.Location = new Point(97, 579);
             txtKonfirmasi.Margin = new Padding(3, 2, 3, 2);
             txtKonfirmasi.Multiline = true;
             txtKonfirmasi.Name = "txtKonfirmasi";
             txtKonfirmasi.PlaceholderText = "Konfirmasi Password";
-            txtKonfirmasi.Size = new Size(286, 38);
+            txtKonfirmasi.Size = new Size(236, 30);
             txtKonfirmasi.TabIndex = 11;
-            txtKonfirmasi.TextChanged += txtKonfirmasi_TextChanged;
             // 
             // btnDaftar
             // 
             btnDaftar.BackColor = Color.Transparent;
             btnDaftar.FlatAppearance.BorderSize = 0;
             btnDaftar.FlatStyle = FlatStyle.Flat;
-            btnDaftar.Location = new Point(37, 627);
+            btnDaftar.Font = new Font("Inter ExtraBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDaftar.Location = new Point(43, 629);
             btnDaftar.Margin = new Padding(3, 2, 3, 2);
             btnDaftar.Name = "btnDaftar";
-            btnDaftar.Size = new Size(308, 61);
+            btnDaftar.Size = new Size(297, 52);
             btnDaftar.TabIndex = 13;
             btnDaftar.UseVisualStyleBackColor = false;
             btnDaftar.Click += btnDaftar_Click;
@@ -143,27 +138,40 @@
             lblLogin.AutoSize = true;
             lblLogin.BackColor = Color.Transparent;
             lblLogin.DisabledLinkColor = Color.Transparent;
-            lblLogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLogin.LinkColor = Color.Transparent;
-            lblLogin.Location = new Point(237, 690);
+            lblLogin.Font = new Font("Inter", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.LinkBehavior = LinkBehavior.NeverUnderline;
+            lblLogin.LinkColor = Color.FromArgb(142, 142, 142);
+            lblLogin.Location = new Point(246, 694);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(59, 25);
+            lblLogin.Size = new Size(57, 24);
             lblLogin.TabIndex = 14;
             lblLogin.TabStop = true;
             lblLogin.Text = "Login";
+            lblLogin.LinkClicked += lblLogin_LinkClicked;
+            // 
+            // txtAlamat
+            // 
+            txtAlamat.BorderStyle = BorderStyle.None;
+            txtAlamat.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
+            txtAlamat.Location = new Point(97, 429);
+            txtAlamat.Multiline = true;
+            txtAlamat.Name = "txtAlamat";
+            txtAlamat.PlaceholderText = "Alamat";
+            txtAlamat.Size = new Size(236, 61);
+            txtAlamat.TabIndex = 15;
             // 
             // FrmRegister
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(384, 741);
+            Controls.Add(txtAlamat);
             Controls.Add(lblLogin);
             Controls.Add(btnDaftar);
             Controls.Add(txtKonfirmasi);
             Controls.Add(txtSandi);
-            Controls.Add(txtAlamat);
             Controls.Add(txtNoHP);
             Controls.Add(txtEmail);
             Controls.Add(txtNama);
@@ -184,10 +192,10 @@
         private TextBox txtNama;
         private TextBox txtEmail;
         private TextBox txtNoHP;
-        private RichTextBox txtAlamat;
         private TextBox txtSandi;
         private TextBox txtKonfirmasi;
         private Button btnDaftar;
         private LinkLabel lblLogin;
+        private TextBox txtAlamat;
     }
 }

@@ -20,6 +20,8 @@ namespace ProjekPbo.View
 
         private void FrmProfilDonatur_Load(object sender, EventArgs e)
         {
+            lblNama.ForeColor = ColorTranslator.FromHtml("#8E8E93");
+
             lblNama.Text = donatur.nama.ToString();
             lblEmail.Text = donatur.email.ToString();
             lblNoHP.Text = donatur.nomorHp.ToString();

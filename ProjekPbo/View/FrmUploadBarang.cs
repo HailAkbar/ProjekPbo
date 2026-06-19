@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using ProjekPbo.Controllers;
+using System.Drawing.Drawing2D;
 
 namespace ProjekPbo.View
 {
@@ -24,18 +25,47 @@ namespace ProjekPbo.View
             InitializeComponent();
             donatur = d;
             controller = new C_UploadBarangDonatur();
+
+            btnSimpan.BackColor = ColorTranslator.FromHtml("#8E8E8E");
+            btnSimpan.ForeColor = Color.White;
+            btnSimpan.Text = "Masuk";
+
+            btnSimpan.MouseEnter += (s, e) => {
+                btnSimpan.BackColor = ColorTranslator.FromHtml("#199255");
+            };
+
+            btnSimpan.MouseLeave += (s, e) => {
+                btnSimpan.BackColor = ColorTranslator.FromHtml("#8E8E8E");
+            };
         }
 
         private void FrmUploadBarang_Load(object sender, EventArgs e)
         {
-            AmbilKategori();
+            AmbilKategorinya();
+
+            btnSimpan.FlatStyle = FlatStyle.Flat;
+            btnSimpan.FlatAppearance.BorderSize = 0;
+
+            btnSimpan.Paint += (s, e) =>
+            {
+                int radius = 20;
+                GraphicsPath path = new GraphicsPath();
+
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btnSimpan.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btnSimpan.Width - radius, btnSimpan.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btnSimpan.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+                btnSimpan.Region = new Region(path);
+            };
         }
 
-        private void AmbilKategori()
+        private void AmbilKategorinya()
         {
             try
             {
-                DataTable dt = new DataTable();
+                DataTable dt = controller.AmbilKategori();
                 cbKategori.DisplayMember = "nama_kategori";
                 cbKategori.ValueMember = "id_kategori";
                 cbKategori.DataSource = dt;
@@ -114,8 +144,8 @@ namespace ProjekPbo.View
             {
                 controller.SimpanBarang(txtNamaBarang.Text.Trim(), ambilKondisi(), txtDeskripsi.Text.Trim(), donatur.id, Convert.ToInt32(cbKategori.SelectedValue), fotoPath);
                 MessageBox.Show("Barang berhasil diupload!");
-                FrmDonatur frmDonatur = new FrmDonatur(donatur);
-                frmDonatur.Show();
+                FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
+                frm.Show();
                 this.Close();
             }
             catch (Exception ex)
@@ -133,13 +163,6 @@ namespace ProjekPbo.View
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
-            frm.ShowDialog();
-            this.Close();
-        }
-
-        private void btnKeberanda_Click(object sender, EventArgs e)
-        {
-            FrmDonatur frm = new FrmDonatur(donatur);
             frm.ShowDialog();
             this.Close();
         }
