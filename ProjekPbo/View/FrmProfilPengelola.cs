@@ -122,9 +122,16 @@ namespace ProjekPbo.View
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            FrmLogin frm = new FrmLogin();
-            frm.ShowDialog();
-            this.Hide();
+            DialogResult hasil = MessageBox.Show("Yakin Mau Logout? ", "Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (hasil == DialogResult.Yes)
+            {
+                FrmLogin frm = new FrmLogin();
+                frm.Show();
+                this.Hide();
+            }
         }
 
         private void btnUbahPassword_Click(object sender, EventArgs e)

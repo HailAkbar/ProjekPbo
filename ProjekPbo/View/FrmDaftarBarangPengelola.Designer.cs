@@ -200,7 +200,7 @@
             DoubleBuffered = true;
             Name = "FrmDaftarBarangPengelola";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "REUSEHUB";
+            Text = " REUSEHUB";
             Load += FrmDaftarBarangPengelola_Load;
             ResumeLayout(false);
             PerformLayout();

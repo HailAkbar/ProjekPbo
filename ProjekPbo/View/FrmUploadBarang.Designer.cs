@@ -74,7 +74,7 @@
             rbBaik.AutoSize = true;
             rbBaik.BackColor = Color.Transparent;
             rbBaik.FlatStyle = FlatStyle.Flat;
-            rbBaik.Location = new Point(47, 283);
+            rbBaik.Location = new Point(48, 284);
             rbBaik.Margin = new Padding(3, 2, 3, 2);
             rbBaik.Name = "rbBaik";
             rbBaik.Size = new Size(16, 15);
@@ -87,7 +87,7 @@
             rbCukup.AutoSize = true;
             rbCukup.BackColor = Color.Transparent;
             rbCukup.FlatStyle = FlatStyle.Flat;
-            rbCukup.Location = new Point(158, 283);
+            rbCukup.Location = new Point(158, 284);
             rbCukup.Margin = new Padding(3, 2, 3, 2);
             rbCukup.Name = "rbCukup";
             rbCukup.Size = new Size(16, 15);
@@ -100,7 +100,7 @@
             rbRusak.AutoSize = true;
             rbRusak.BackColor = Color.Transparent;
             rbRusak.FlatStyle = FlatStyle.Flat;
-            rbRusak.Location = new Point(274, 283);
+            rbRusak.Location = new Point(276, 284);
             rbRusak.Margin = new Padding(3, 2, 3, 2);
             rbRusak.Name = "rbRusak";
             rbRusak.Size = new Size(16, 15);
@@ -125,7 +125,7 @@
             picFotoBarang.Location = new Point(40, 561);
             picFotoBarang.Margin = new Padding(3, 2, 3, 2);
             picFotoBarang.Name = "picFotoBarang";
-            picFotoBarang.Size = new Size(65, 50);
+            picFotoBarang.Size = new Size(305, 50);
             picFotoBarang.SizeMode = PictureBoxSizeMode.Zoom;
             picFotoBarang.TabIndex = 7;
             picFotoBarang.TabStop = false;

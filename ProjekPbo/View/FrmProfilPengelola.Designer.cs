@@ -103,7 +103,7 @@
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
-            btnLogout.Location = new Point(36, 552);
+            btnLogout.Location = new Point(36, 553);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(92, 39);
             btnLogout.TabIndex = 5;
@@ -116,9 +116,9 @@
             btnUbahPassword.FlatAppearance.BorderSize = 0;
             btnUbahPassword.FlatStyle = FlatStyle.Flat;
             btnUbahPassword.Font = new Font("Inter Medium", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUbahPassword.Location = new Point(255, 552);
+            btnUbahPassword.Location = new Point(250, 547);
             btnUbahPassword.Name = "btnUbahPassword";
-            btnUbahPassword.Size = new Size(84, 39);
+            btnUbahPassword.Size = new Size(90, 45);
             btnUbahPassword.TabIndex = 6;
             btnUbahPassword.UseVisualStyleBackColor = false;
             btnUbahPassword.Click += btnUbahPassword_Click;
@@ -129,9 +129,9 @@
             btnKembali.FlatAppearance.BorderSize = 0;
             btnKembali.FlatStyle = FlatStyle.Flat;
             btnKembali.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
-            btnKembali.Location = new Point(152, 611);
+            btnKembali.Location = new Point(148, 610);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(82, 31);
+            btnKembali.Size = new Size(90, 35);
             btnKembali.TabIndex = 7;
             btnKembali.UseVisualStyleBackColor = false;
             btnKembali.Click += btnKembali_Click;

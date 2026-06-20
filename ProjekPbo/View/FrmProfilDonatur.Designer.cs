@@ -84,6 +84,8 @@
             // 
             btnLogout.BackColor = Color.Transparent;
             btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Location = new Point(41, 585);
             btnLogout.Name = "btnLogout";
@@ -106,6 +108,8 @@
             // 
             btnKeUpload.BackColor = Color.Transparent;
             btnKeUpload.FlatAppearance.BorderSize = 0;
+            btnKeUpload.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeUpload.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeUpload.FlatStyle = FlatStyle.Flat;
             btnKeUpload.Location = new Point(57, 676);
             btnKeUpload.Name = "btnKeUpload";
@@ -118,6 +122,8 @@
             // 
             btnKeRiwayat.BackColor = Color.Transparent;
             btnKeRiwayat.FlatAppearance.BorderSize = 0;
+            btnKeRiwayat.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeRiwayat.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeRiwayat.FlatStyle = FlatStyle.Flat;
             btnKeRiwayat.Location = new Point(170, 676);
             btnKeRiwayat.Name = "btnKeRiwayat";
@@ -130,6 +136,8 @@
             // 
             btnKeProfil.BackColor = Color.Transparent;
             btnKeProfil.FlatAppearance.BorderSize = 0;
+            btnKeProfil.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKeProfil.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKeProfil.FlatStyle = FlatStyle.Flat;
             btnKeProfil.Location = new Point(284, 676);
             btnKeProfil.Name = "btnKeProfil";

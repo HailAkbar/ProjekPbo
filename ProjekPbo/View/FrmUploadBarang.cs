@@ -28,7 +28,7 @@ namespace ProjekPbo.View
 
             btnSimpan.BackColor = ColorTranslator.FromHtml("#8E8E8E");
             btnSimpan.ForeColor = Color.White;
-            btnSimpan.Text = "Masuk";
+            btnSimpan.Text = "Simpan";
 
             btnSimpan.MouseEnter += (s, e) => {
                 btnSimpan.BackColor = ColorTranslator.FromHtml("#199255");

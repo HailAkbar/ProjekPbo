@@ -42,5 +42,21 @@ namespace ProjekPbo.Controllers
                 cmd.ExecuteNonQuery();
             }
         }
+        public bool cekemail(string email)
+        {
+            using (NpgsqlConnection conn = Koneksi.GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM donatur WHERE email = @email";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+
+                int jumlah = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return jumlah > 0;
+            }
+        }
     }
 }

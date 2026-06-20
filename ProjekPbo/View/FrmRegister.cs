@@ -109,6 +109,14 @@ namespace ProjekPbo.View
         {
             try
             {
+                if (controller.cekemail(txtEmail.Text.Trim()))
+                {
+                    MessageBox.Show("Email sudah terdaftar, silakan gunakan email lain.");
+                    txtEmail.Clear();
+                    txtEmail.Focus();
+                    return;
+                }
+
                 Donatur donatur = new Donatur()
                 {
                     nama = txtNama.Text.Trim(),
