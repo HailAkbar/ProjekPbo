@@ -59,7 +59,7 @@ namespace ProjekPbo.View
 
         private void btnKeberanda_Click(object sender, EventArgs e)
         {
-            FrmDonatur frm = new FrmDonatur(donatur);
+            FrmUploadBarang frm = new FrmUploadBarang(donatur);
             frm.ShowDialog();
             this.Close();
         }

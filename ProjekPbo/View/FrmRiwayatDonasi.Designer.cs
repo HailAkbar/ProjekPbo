@@ -40,6 +40,7 @@
             btnKeRiwayat = new Button();
             button1 = new Button();
             button2 = new Button();
+            btnKembaliAtas = new Button();
             SuspendLayout();
             // 
             // btnRefresh
@@ -61,7 +62,7 @@
             btnKembali.FlatStyle = FlatStyle.Flat;
             btnKembali.Location = new Point(55, 676);
             btnKembali.Name = "btnKembali";
-            btnKembali.Size = new Size(55, 53);
+            btnKembali.Size = new Size(46, 53);
             btnKembali.TabIndex = 2;
             btnKembali.UseVisualStyleBackColor = false;
             btnKembali.Click += btnKembali_Click;
@@ -167,6 +168,7 @@
             button1.Size = new Size(48, 53);
             button1.TabIndex = 19;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += btnKeProfil_Click;
             // 
             // button2
             // 
@@ -177,9 +179,22 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(170, 676);
             button2.Name = "button2";
-            button2.Size = new Size(54, 53);
+            button2.Size = new Size(47, 53);
             button2.TabIndex = 18;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += btnKeRiwayat_Click;
+            // 
+            // btnKembaliAtas
+            // 
+            btnKembaliAtas.BackColor = Color.Transparent;
+            btnKembaliAtas.FlatAppearance.BorderSize = 0;
+            btnKembaliAtas.FlatStyle = FlatStyle.Flat;
+            btnKembaliAtas.Location = new Point(38, 66);
+            btnKembaliAtas.Name = "btnKembaliAtas";
+            btnKembaliAtas.Size = new Size(38, 36);
+            btnKembaliAtas.TabIndex = 20;
+            btnKembaliAtas.UseVisualStyleBackColor = false;
+            btnKembaliAtas.Click += btnKembali_Click;
             // 
             // FrmRiwayatDonasi
             // 
@@ -188,6 +203,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(384, 741);
+            Controls.Add(btnKembaliAtas);
             Controls.Add(button1);
             Controls.Add(button2);
             Controls.Add(btnKeProfil);
@@ -218,5 +234,6 @@
         private Button btnKeRiwayat;
         private Button button1;
         private Button button2;
+        private Button btnKembaliAtas;
     }
 }

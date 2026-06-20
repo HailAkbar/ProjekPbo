@@ -62,12 +62,12 @@
             txtNama.BackColor = SystemColors.Window;
             txtNama.BorderStyle = BorderStyle.None;
             txtNama.Font = new Font("Inter Medium", 10.2F, FontStyle.Bold);
-            txtNama.Location = new Point(57, 245);
+            txtNama.Location = new Point(97, 245);
             txtNama.Margin = new Padding(3, 2, 3, 2);
             txtNama.Multiline = true;
             txtNama.Name = "txtNama";
             txtNama.PlaceholderText = "Nama";
-            txtNama.Size = new Size(276, 29);
+            txtNama.Size = new Size(236, 29);
             txtNama.TabIndex = 6;
             txtNama.TextChanged += txtNama_TextChanged;
             // 
@@ -138,12 +138,12 @@
             lblLogin.AutoSize = true;
             lblLogin.BackColor = Color.Transparent;
             lblLogin.DisabledLinkColor = Color.Transparent;
-            lblLogin.Font = new Font("Inter", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.LinkBehavior = LinkBehavior.NeverUnderline;
             lblLogin.LinkColor = Color.FromArgb(142, 142, 142);
-            lblLogin.Location = new Point(246, 694);
+            lblLogin.Location = new Point(226, 693);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(57, 24);
+            lblLogin.Size = new Size(49, 22);
             lblLogin.TabIndex = 14;
             lblLogin.TabStop = true;
             lblLogin.Text = "Login";

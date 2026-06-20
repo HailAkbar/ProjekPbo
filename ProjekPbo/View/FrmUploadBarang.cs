@@ -155,7 +155,7 @@ namespace ProjekPbo.View
         }
         private void btnKembaliKeHome_Click(object sender, EventArgs e)
         {
-            FrmDonatur frmDonatur = new FrmDonatur(donatur);
+            FrmUploadBarang frmDonatur = new FrmUploadBarang(donatur);
             frmDonatur.Show();
             this.Close();
         }

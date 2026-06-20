@@ -35,7 +35,6 @@
             lblAlamat = new Label();
             btnLogout = new Button();
             btnKembali = new Button();
-            btnKeberanda = new Button();
             btnKeUpload = new Button();
             btnKeRiwayat = new Button();
             btnKeProfil = new Button();
@@ -103,24 +102,12 @@
             btnKembali.UseVisualStyleBackColor = true;
             btnKembali.Click += btnKembali_Click;
             // 
-            // btnKeberanda
-            // 
-            btnKeberanda.BackColor = Color.Transparent;
-            btnKeberanda.FlatAppearance.BorderSize = 0;
-            btnKeberanda.FlatStyle = FlatStyle.Flat;
-            btnKeberanda.Location = new Point(41, 676);
-            btnKeberanda.Name = "btnKeberanda";
-            btnKeberanda.Size = new Size(60, 53);
-            btnKeberanda.TabIndex = 8;
-            btnKeberanda.UseVisualStyleBackColor = false;
-            btnKeberanda.Click += btnKeberanda_Click;
-            // 
             // btnKeUpload
             // 
             btnKeUpload.BackColor = Color.Transparent;
             btnKeUpload.FlatAppearance.BorderSize = 0;
             btnKeUpload.FlatStyle = FlatStyle.Flat;
-            btnKeUpload.Location = new Point(130, 676);
+            btnKeUpload.Location = new Point(57, 676);
             btnKeUpload.Name = "btnKeUpload";
             btnKeUpload.Size = new Size(52, 53);
             btnKeUpload.TabIndex = 9;
@@ -132,9 +119,9 @@
             btnKeRiwayat.BackColor = Color.Transparent;
             btnKeRiwayat.FlatAppearance.BorderSize = 0;
             btnKeRiwayat.FlatStyle = FlatStyle.Flat;
-            btnKeRiwayat.Location = new Point(207, 676);
+            btnKeRiwayat.Location = new Point(170, 676);
             btnKeRiwayat.Name = "btnKeRiwayat";
-            btnKeRiwayat.Size = new Size(71, 53);
+            btnKeRiwayat.Size = new Size(50, 53);
             btnKeRiwayat.TabIndex = 10;
             btnKeRiwayat.UseVisualStyleBackColor = false;
             btnKeRiwayat.Click += btnKeRiwayat_Click;
@@ -146,7 +133,7 @@
             btnKeProfil.FlatStyle = FlatStyle.Flat;
             btnKeProfil.Location = new Point(284, 676);
             btnKeProfil.Name = "btnKeProfil";
-            btnKeProfil.Size = new Size(71, 53);
+            btnKeProfil.Size = new Size(59, 53);
             btnKeProfil.TabIndex = 11;
             btnKeProfil.UseVisualStyleBackColor = false;
             btnKeProfil.Click += btnKeProfil_Click;
@@ -161,7 +148,6 @@
             Controls.Add(btnKeProfil);
             Controls.Add(btnKeRiwayat);
             Controls.Add(btnKeUpload);
-            Controls.Add(btnKeberanda);
             Controls.Add(btnKembali);
             Controls.Add(btnLogout);
             Controls.Add(lblAlamat);
@@ -182,7 +168,6 @@
         private Label lblAlamat;
         private Button btnLogout;
         private Button btnKembali;
-        private Button btnKeberanda;
         private Button btnKeUpload;
         private Button btnKeRiwayat;
         private Button btnKeProfil;

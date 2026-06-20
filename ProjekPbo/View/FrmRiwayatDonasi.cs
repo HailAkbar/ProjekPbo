@@ -36,7 +36,7 @@ namespace ProjekPbo.View
                 {
                     Label lblKosong = new Label();
                     lblKosong.Text = "Belum ada riwayat donasi.";
-                    lblKosong.Font = new Font("Segoe UI", 11, FontStyle.Italic);
+                    lblKosong.Font = new Font("Inter", 11, FontStyle.Bold);
                     lblKosong.ForeColor = Color.Gray;
                     lblKosong.AutoSize = true;
                     lblKosong.Margin = new Padding(20, 20, 0, 0);
@@ -94,12 +94,13 @@ namespace ProjekPbo.View
 
             Label lblKategori = new Label();
             lblKategori.Text = "Kategori : " + kategori;
+            lblKategori.Font = new Font("Inter", 8, FontStyle.Regular);
             lblKategori.Location = new Point(85, 35);
             lblKategori.AutoSize = true;
 
             PictureBox picStatus = new PictureBox();
             picStatus.Size = new Size(70, 150);
-            picStatus.Location = new Point(250, -40);
+            picStatus.Location = new Point(250, -55);
             picStatus.SizeMode = PictureBoxSizeMode.Zoom;
             if (status == "Diterima")
             {
@@ -116,6 +117,7 @@ namespace ProjekPbo.View
 
             Label lblTanggal = new Label();
             lblTanggal.Text = tanggal;
+            lblTanggal.Font = new Font("Inter", 9, FontStyle.Regular);
             lblTanggal.Location = new Point(85, 120);
             lblTanggal.AutoSize = true;
 
@@ -125,12 +127,14 @@ namespace ProjekPbo.View
             }
             Label lblCatatan = new Label();
             lblCatatan.Text = "Catatan : " + catatan;
+            lblCatatan.Font = new Font("Inter", 8, FontStyle.Regular);
             lblCatatan.MaximumSize = new Size(270, 0);
             lblCatatan.AutoSize = true;
             lblCatatan.Location = new Point(85, 95);
 
             Button btnHapus = new Button();
             btnHapus.Text = "Hapus";
+            btnHapus.Font = new Font("Inter", 9, FontStyle.Bold);
             btnHapus.Width = 80;
             btnHapus.Height = 30;
             btnHapus.Location = new Point(230, 130);

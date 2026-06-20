@@ -149,9 +149,9 @@
             btnTolak.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnTolak.FlatStyle = FlatStyle.Flat;
             btnTolak.ForeColor = Color.Transparent;
-            btnTolak.Location = new Point(246, 597);
+            btnTolak.Location = new Point(250, 597);
             btnTolak.Name = "btnTolak";
-            btnTolak.Size = new Size(93, 29);
+            btnTolak.Size = new Size(90, 25);
             btnTolak.TabIndex = 8;
             btnTolak.TabStop = false;
             btnTolak.UseVisualStyleBackColor = false;
@@ -221,7 +221,7 @@
             btnKeKelola.FlatStyle = FlatStyle.Flat;
             btnKeKelola.Location = new Point(170, 673);
             btnKeKelola.Name = "btnKeKelola";
-            btnKeKelola.Size = new Size(45, 51);
+            btnKeKelola.Size = new Size(45, 56);
             btnKeKelola.TabIndex = 12;
             btnKeKelola.UseVisualStyleBackColor = false;
             btnKeKelola.Click += btnKeKelola_Click;

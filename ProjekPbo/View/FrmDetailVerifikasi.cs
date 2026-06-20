@@ -68,11 +68,17 @@ namespace ProjekPbo.View
         private void button1_Click(object sender, EventArgs e)
         {
             SimpanVerif("Diterima");
+            FrmPengelola frm = new FrmPengelola(pengelola);
+            frm.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SimpanVerif("Ditolak");
+            FrmPengelola frm = new FrmPengelola(pengelola);
+            frm.ShowDialog();
+            this.Close(); 
         }
 
         private void SimpanVerif(string status)
@@ -86,6 +92,7 @@ namespace ProjekPbo.View
             else
             {
                 MessageBox.Show("Gagal Menyimpan Data Verifikasi");
+                this.Close();
             }
         }
 

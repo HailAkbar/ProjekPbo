@@ -103,9 +103,11 @@
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(239, 31);
             txtEmail.TabIndex = 5;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // FrmLogin
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");

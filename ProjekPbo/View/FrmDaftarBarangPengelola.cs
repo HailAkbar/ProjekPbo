@@ -118,7 +118,7 @@ namespace ProjekPbo.View
                 FrmDetailVerifikasi frm = new FrmDetailVerifikasi(idBarang, pengelola);
                 frm.ShowDialog();
                 TampilkanBarang();
-                this.Hide();
+                this.Close();
             };
 
             card.Controls.Add(lblNama);

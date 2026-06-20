@@ -173,7 +173,7 @@
             btnKeProfil.FlatStyle = FlatStyle.Flat;
             btnKeProfil.Location = new Point(294, 676);
             btnKeProfil.Name = "btnKeProfil";
-            btnKeProfil.Size = new Size(48, 53);
+            btnKeProfil.Size = new Size(42, 53);
             btnKeProfil.TabIndex = 15;
             btnKeProfil.UseVisualStyleBackColor = false;
             btnKeProfil.Click += btnKeProfil_Click;
@@ -187,7 +187,7 @@
             btnKeRiwayat.FlatStyle = FlatStyle.Flat;
             btnKeRiwayat.Location = new Point(169, 676);
             btnKeRiwayat.Name = "btnKeRiwayat";
-            btnKeRiwayat.Size = new Size(54, 53);
+            btnKeRiwayat.Size = new Size(53, 53);
             btnKeRiwayat.TabIndex = 14;
             btnKeRiwayat.UseVisualStyleBackColor = false;
             btnKeRiwayat.Click += btnKeRiwayat_Click;

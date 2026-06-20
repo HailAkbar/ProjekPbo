@@ -16,15 +16,17 @@ namespace ProjekPbo
             InitializeComponent();
             controller = new C_Login();
 
-            btnLogin.BackColor = ColorTranslator.FromHtml("#8E8E8E"); 
-            btnLogin.ForeColor = Color.White;       
-            btnLogin.Text = "Masuk";                
+            btnLogin.BackColor = ColorTranslator.FromHtml("#8E8E8E");
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Text = "Masuk";
 
-            btnLogin.MouseEnter += (s, e) => {
+            btnLogin.MouseEnter += (s, e) =>
+            {
                 btnLogin.BackColor = ColorTranslator.FromHtml("#199255");
             };
 
-            btnLogin.MouseLeave += (s, e) => {
+            btnLogin.MouseLeave += (s, e) =>
+            {
                 btnLogin.BackColor = ColorTranslator.FromHtml("#8E8E8E");
             };
 
@@ -74,7 +76,7 @@ namespace ProjekPbo
                     MessageBox.Show("Login Berhasil! Selamat Datang, " + donatur.GetRole());
                     FrmUploadBarang frm = new FrmUploadBarang(donatur);
                     frm.ShowDialog();
-                    this.Hide();
+                    this.Close();
                 }
 
                 else if (user is Pengelola pengelola)
@@ -82,7 +84,7 @@ namespace ProjekPbo
                     MessageBox.Show("Login Berhasil! Selamat Datang, " + pengelola.GetRole());
                     FrmPengelola frm = new FrmPengelola(pengelola);
                     frm.ShowDialog();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -98,7 +100,7 @@ namespace ProjekPbo
         {
             FrmRegister frm = new FrmRegister();
             frm.Show();
-            this.Hide();
+            this.Close();
             return;
         }
 
@@ -106,7 +108,7 @@ namespace ProjekPbo
         {
             FrmLupaPassword frm = new FrmLupaPassword();
             frm.Show();
-            this.Hide();
+            this.Close();
             return;
         }
 
@@ -115,11 +117,12 @@ namespace ProjekPbo
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.FlatAppearance.BorderSize = 0;
 
-            btnLogin.Paint += (s, e) => {
-                int radius = 20; 
+            btnLogin.Paint += (s, e) =>
+            {
+                int radius = 20;
                 GraphicsPath path = new GraphicsPath();
 
-                
+
                 path.AddArc(0, 0, radius, radius, 180, 90);
                 path.AddArc(btnLogin.Width - radius, 0, radius, radius, 270, 90);
                 path.AddArc(btnLogin.Width - radius, btnLogin.Height - radius, radius, radius, 0, 90);
@@ -128,6 +131,11 @@ namespace ProjekPbo
 
                 btnLogin.Region = new Region(path);
             };
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -161,7 +161,7 @@ namespace ProjekPbo.View
         {
             FrmLogin frmLogi = new FrmLogin();
             frmLogi.ShowDialog();
-            this.Hide();
+            this.Close();
         }
     }
 }

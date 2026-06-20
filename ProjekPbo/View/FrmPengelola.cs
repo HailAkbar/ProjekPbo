@@ -60,7 +60,7 @@ namespace ProjekPbo.View
         {
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.ShowDialog();
-            this.Hide();
+            this.Close();
             return;
         }
 
@@ -68,7 +68,7 @@ namespace ProjekPbo.View
         {
             FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
             frm.Show();
-            this.Hide();
+            this.Close();
             return;
         }
 
@@ -76,7 +76,7 @@ namespace ProjekPbo.View
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Hide();
+            this.Close(); 
             return;
         }
 
