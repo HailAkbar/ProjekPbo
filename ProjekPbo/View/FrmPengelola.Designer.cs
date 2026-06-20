@@ -172,7 +172,8 @@
             DoubleBuffered = true;
             Name = "FrmPengelola";
             RightToLeft = RightToLeft.No;
-            Text = "FrmPengelola";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmPengelola_Load;
             ResumeLayout(false);
             PerformLayout();

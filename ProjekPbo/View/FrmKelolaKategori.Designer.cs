@@ -224,7 +224,8 @@
             Controls.Add(dgvKategori);
             DoubleBuffered = true;
             Name = "FrmKelolaKategori";
-            Text = "FrmKelolaKategori";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmKelolaKategori_Load;
             ((System.ComponentModel.ISupportInitialize)dgvKategori).EndInit();
             ResumeLayout(false);

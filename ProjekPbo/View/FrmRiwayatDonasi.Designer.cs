@@ -217,7 +217,8 @@
             Controls.Add(btnKembali);
             DoubleBuffered = true;
             Name = "FrmRiwayatDonasi";
-            Text = "/";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmRiwayatDonasi_Load_1;
             ResumeLayout(false);
         }

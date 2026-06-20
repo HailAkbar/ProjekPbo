@@ -158,7 +158,8 @@
             Controls.Add(btnRefresh);
             DoubleBuffered = true;
             Name = "FrmStatistikPengelola";
-            Text = "FrmStatistikPengelola";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmStatistikPengelola_Load;
             ResumeLayout(false);
         }

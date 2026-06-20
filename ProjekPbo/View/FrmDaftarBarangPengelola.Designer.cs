@@ -199,7 +199,8 @@
             Controls.Add(txtCari);
             DoubleBuffered = true;
             Name = "FrmDaftarBarangPengelola";
-            Text = "FrmDaftarBarangPengelola";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmDaftarBarangPengelola_Load;
             ResumeLayout(false);
             PerformLayout();

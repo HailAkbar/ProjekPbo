@@ -279,7 +279,8 @@
             Controls.Add(picBarang);
             DoubleBuffered = true;
             Name = "FrmDetailVerifikasi";
-            Text = "FrmVerivikasi";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmVerivikasi_Load;
             ((System.ComponentModel.ISupportInitialize)picBarang).EndInit();
             ResumeLayout(false);

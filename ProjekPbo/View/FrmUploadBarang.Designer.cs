@@ -228,7 +228,8 @@
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmUploadBarang";
-            Text = "UploadBarang";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmUploadBarang_Load;
             ((System.ComponentModel.ISupportInitialize)picFotoBarang).EndInit();
             ResumeLayout(false);

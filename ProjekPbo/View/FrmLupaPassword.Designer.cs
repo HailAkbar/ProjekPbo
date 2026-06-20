@@ -109,7 +109,8 @@
             Controls.Add(txtEmail);
             DoubleBuffered = true;
             Name = "FrmLupaPassword";
-            Text = "FrmLupaPassword";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmLupaPassword_Load;
             ResumeLayout(false);
             PerformLayout();

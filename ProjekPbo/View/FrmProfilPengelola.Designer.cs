@@ -228,7 +228,8 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Name = "FrmProfilPengelola";
-            Text = "FrmProfilPengelola";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmProfilPengelola_Load;
             ResumeLayout(false);
         }

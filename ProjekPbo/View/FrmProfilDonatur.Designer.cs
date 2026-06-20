@@ -155,7 +155,8 @@
             Controls.Add(lblEmail);
             Controls.Add(lblNama);
             Name = "FrmProfilDonatur";
-            Text = "FrmProfil";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmProfilDonatur_Load;
             ResumeLayout(false);
         }

@@ -121,7 +121,8 @@
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmLogin";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();

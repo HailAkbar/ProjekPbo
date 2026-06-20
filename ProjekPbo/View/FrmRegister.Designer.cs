@@ -179,7 +179,8 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmRegister";
-            Text = "FrmRegister";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmRegister_Load;
             ResumeLayout(false);
             PerformLayout();

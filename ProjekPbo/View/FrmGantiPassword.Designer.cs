@@ -108,7 +108,8 @@
             Controls.Add(txtPasswordBaru);
             Controls.Add(txtPasswordLama);
             Name = "FrmGantiPassword";
-            Text = "FrmGantiPassword";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "REUSEHUB";
             Load += FrmGantiPassword_Load;
             ResumeLayout(false);
             PerformLayout();
