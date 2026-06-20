@@ -244,7 +244,7 @@ namespace ProjekPbo.View
         {
             FrmUploadBarang frm = new FrmUploadBarang(donatur);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void FrmRiwayatDonasi_Load_1(object sender, EventArgs e)
@@ -349,14 +349,14 @@ namespace ProjekPbo.View
         {
             FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeRiwayat_Click(object sender, EventArgs e)
         {
             FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

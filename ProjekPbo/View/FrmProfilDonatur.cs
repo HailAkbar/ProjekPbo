@@ -39,7 +39,7 @@ namespace ProjekPbo.View
             {
                 FrmLogin frm = new FrmLogin();
                 frm.Show();
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -47,35 +47,35 @@ namespace ProjekPbo.View
         {
             FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeberanda_Click(object sender, EventArgs e)
         {
             FrmUploadBarang frm = new FrmUploadBarang(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeUpload_Click(object sender, EventArgs e)
         {
             FrmUploadBarang frm = new FrmUploadBarang(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeRiwayat_Click(object sender, EventArgs e)
         {
             FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

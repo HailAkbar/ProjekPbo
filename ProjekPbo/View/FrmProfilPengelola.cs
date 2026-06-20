@@ -124,48 +124,48 @@ namespace ProjekPbo.View
         {
             FrmLogin frm = new FrmLogin();
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnUbahPassword_Click(object sender, EventArgs e)
         {
             FrmGantiPassword frm = new FrmGantiPassword(pengelola);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
         private void btnKeVerifikasi_Click(object sender, EventArgs e)
         {
             FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeKelola_Click(object sender, EventArgs e)
         {
             FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeStatistik_Click(object sender, EventArgs e)
         {
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -182,7 +182,7 @@ namespace ProjekPbo.View
         {
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide(); 
         }
     }
 }

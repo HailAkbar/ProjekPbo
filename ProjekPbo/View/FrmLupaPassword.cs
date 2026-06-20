@@ -93,7 +93,7 @@ namespace ProjekPbo.View
                 MessageBox.Show("Password Berhasil Diubah!");
                 FrmLogin frm = new FrmLogin();
                 frm.Show();
-                this.Close();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace ProjekPbo.View
         {
             FrmLogin frm = new FrmLogin();
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void FrmLupaPassword_Load(object sender, EventArgs e)

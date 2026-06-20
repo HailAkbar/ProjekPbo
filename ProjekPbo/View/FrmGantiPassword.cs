@@ -100,7 +100,7 @@ namespace ProjekPbo.View
 
                 FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
                 frm.Show();
-                this.Close();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -112,7 +112,7 @@ namespace ProjekPbo.View
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void FrmGantiPassword_Load(object sender, EventArgs e)

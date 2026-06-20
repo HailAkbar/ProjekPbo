@@ -76,7 +76,7 @@ namespace ProjekPbo
                     MessageBox.Show("Login Berhasil! Selamat Datang, " + donatur.GetRole());
                     FrmUploadBarang frm = new FrmUploadBarang(donatur);
                     frm.ShowDialog();
-                    this.Close();
+                    this.Hide();
                 }
 
                 else if (user is Pengelola pengelola)
@@ -84,7 +84,7 @@ namespace ProjekPbo
                     MessageBox.Show("Login Berhasil! Selamat Datang, " + pengelola.GetRole());
                     FrmPengelola frm = new FrmPengelola(pengelola);
                     frm.ShowDialog();
-                    this.Close();
+                    this.Hide();
                 }
                 else
                 {
@@ -100,16 +100,14 @@ namespace ProjekPbo
         {
             FrmRegister frm = new FrmRegister();
             frm.Show();
-            this.Close();
-            return;
+            this.Hide();
         }
 
         private void lblLupaPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmLupaPassword frm = new FrmLupaPassword();
             frm.Show();
-            this.Close();
-            return;
+            this.Hide();
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

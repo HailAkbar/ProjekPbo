@@ -145,8 +145,8 @@ namespace ProjekPbo.View
                 controller.SimpanBarang(txtNamaBarang.Text.Trim(), ambilKondisi(), txtDeskripsi.Text.Trim(), donatur.id, Convert.ToInt32(cbKategori.SelectedValue), fotoPath);
                 MessageBox.Show("Barang berhasil diupload!");
                 FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
-                frm.Show();
-                this.Close();
+                frm.ShowDialog();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -155,30 +155,30 @@ namespace ProjekPbo.View
         }
         private void btnKembaliKeHome_Click(object sender, EventArgs e)
         {
-            FrmUploadBarang frmDonatur = new FrmUploadBarang(donatur);
-            frmDonatur.Show();
-            this.Close();
+            FrmUploadBarang frm = new FrmUploadBarang(donatur);
+            frm.ShowDialog();
+            this.Hide();
         }
 
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilDonatur frm = new FrmProfilDonatur(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeUpload_Click(object sender, EventArgs e)
         {
             FrmUploadBarang frm = new FrmUploadBarang(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeRiwayat_Click(object sender, EventArgs e)
         {
             FrmRiwayatDonasi frm = new FrmRiwayatDonasi(donatur);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

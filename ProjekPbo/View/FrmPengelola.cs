@@ -52,7 +52,7 @@ namespace ProjekPbo.View
         {
             FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
             TampilkanBarangnya();
         }
 
@@ -60,59 +60,56 @@ namespace ProjekPbo.View
         {
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.ShowDialog();
-            this.Close();
-            return;
+            this.Hide();
         }
 
         private void btnkelola_Click(object sender, EventArgs e)
         {
             FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
             frm.Show();
-            this.Close();
-            return;
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Close(); 
-            return;
+            this.Hide();
         }
 
         private void btnKeVerifikasi_Click(object sender, EventArgs e)
         {
             FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeKelola_Click(object sender, EventArgs e)
         {
             FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeStatistik_Click(object sender, EventArgs e)
         {
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnkeBeranda_Click(object sender, EventArgs e)
         {
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

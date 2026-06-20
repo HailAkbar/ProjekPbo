@@ -70,7 +70,7 @@ namespace ProjekPbo.View
             SimpanVerif("Diterima");
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace ProjekPbo.View
             SimpanVerif("Ditolak");
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.ShowDialog();
-            this.Close(); 
+            this.Hide();
         }
 
         private void SimpanVerif(string status)
@@ -87,12 +87,12 @@ namespace ProjekPbo.View
             if (berhasil)
             {
                 MessageBox.Show("Verifikasi Berhasil");
-                this.Close();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Gagal Menyimpan Data Verifikasi");
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -100,28 +100,28 @@ namespace ProjekPbo.View
         {
             FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeKelola_Click(object sender, EventArgs e)
         {
             FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeStatistik_Click(object sender, EventArgs e)
         {
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKembali_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace ProjekPbo.View
         {
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

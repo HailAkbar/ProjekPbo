@@ -118,7 +118,7 @@ namespace ProjekPbo.View
                 FrmDetailVerifikasi frm = new FrmDetailVerifikasi(idBarang, pengelola);
                 frm.ShowDialog();
                 TampilkanBarang();
-                this.Close();
+                this.Hide();
             };
 
             card.Controls.Add(lblNama);
@@ -164,35 +164,35 @@ namespace ProjekPbo.View
         {
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeVerifikasi_Click(object sender, EventArgs e)
         {
             FrmDaftarBarangPengelola frm = new FrmDaftarBarangPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeKelola_Click(object sender, EventArgs e)
         {
             FrmKelolaKategori frm = new FrmKelolaKategori(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeStatistik_Click(object sender, EventArgs e)
         {
             FrmStatistikPengelola frm = new FrmStatistikPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnKeProfil_Click(object sender, EventArgs e)
         {
             FrmProfilPengelola frm = new FrmProfilPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void flpBarang_Paint(object sender, PaintEventArgs e)
@@ -204,7 +204,7 @@ namespace ProjekPbo.View
         {
             FrmPengelola frm = new FrmPengelola(pengelola);
             frm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

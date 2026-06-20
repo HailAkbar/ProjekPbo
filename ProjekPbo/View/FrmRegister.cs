@@ -122,7 +122,7 @@ namespace ProjekPbo.View
                 MessageBox.Show("Register Berhasil!");
                 FrmLogin frmLogin = new FrmLogin();
                 frmLogin.Show();
-                this.Close();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -161,7 +161,7 @@ namespace ProjekPbo.View
         {
             FrmLogin frmLogi = new FrmLogin();
             frmLogi.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }
