@@ -88,6 +88,7 @@ namespace ProjekPbo.View
                 if (!berhasil)
                 {
                     MessageBox.Show("Email Tidak Ditemukan!");
+                    return;
                 }
 
                 MessageBox.Show("Password Berhasil Diubah!");

@@ -47,6 +47,8 @@
             // 
             btnRefresh.BackColor = Color.Transparent;
             btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnRefresh.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Location = new Point(309, 66);
             btnRefresh.Name = "btnRefresh";
@@ -59,6 +61,8 @@
             // 
             btnKembali.BackColor = Color.Transparent;
             btnKembali.FlatAppearance.BorderSize = 0;
+            btnKembali.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKembali.FlatStyle = FlatStyle.Flat;
             btnKembali.Location = new Point(55, 676);
             btnKembali.Name = "btnKembali";
@@ -188,6 +192,8 @@
             // 
             btnKembaliAtas.BackColor = Color.Transparent;
             btnKembaliAtas.FlatAppearance.BorderSize = 0;
+            btnKembaliAtas.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnKembaliAtas.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnKembaliAtas.FlatStyle = FlatStyle.Flat;
             btnKembaliAtas.Location = new Point(38, 66);
             btnKembaliAtas.Name = "btnKembaliAtas";
