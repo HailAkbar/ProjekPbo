@@ -37,6 +37,11 @@ namespace ProjekPbo.Models
             set { NomorHp = value; }
         }
 
-        public abstract string GetRole(); 
+        public abstract string GetRole();
+        public string GetRole(string nama)
+        {
+            return $"Selamat datang, {nama} ({GetRole()})";
+        }
+
     }
 }

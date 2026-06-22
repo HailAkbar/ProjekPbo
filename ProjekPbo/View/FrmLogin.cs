@@ -73,7 +73,7 @@ namespace ProjekPbo
 
                 if (user is Donatur donatur)
                 {
-                    MessageBox.Show("Login Berhasil! Selamat Datang, " + donatur.GetRole());
+                    MessageBox.Show(donatur.GetRole(donatur.nama));
                     FrmUploadBarang frm = new FrmUploadBarang(donatur);
                     frm.ShowDialog();
                     this.Hide();
@@ -81,7 +81,7 @@ namespace ProjekPbo
 
                 else if (user is Pengelola pengelola)
                 {
-                    MessageBox.Show("Login Berhasil! Selamat Datang, " + pengelola.GetRole());
+                    MessageBox.Show(pengelola.GetRole(pengelola.nama));
                     FrmPengelola frm = new FrmPengelola(pengelola);
                     frm.ShowDialog();
                     this.Hide();

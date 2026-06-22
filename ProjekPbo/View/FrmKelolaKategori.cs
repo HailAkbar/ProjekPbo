@@ -17,7 +17,7 @@ namespace ProjekPbo.View
     {
         private int idKategori = 0;
         private Pengelola pengelola;
-        private C_KelolaKategoriPengelola controller;
+        private IKategoriService controller;
         public FrmKelolaKategori(Pengelola p)
         {
             InitializeComponent();

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ProjekPbo.Controllers
 {
-    public class C_KelolaKategoriPengelola
+    public class C_KelolaKategoriPengelola : IKategoriService
     {
         public DataTable ambilkategori()
         {

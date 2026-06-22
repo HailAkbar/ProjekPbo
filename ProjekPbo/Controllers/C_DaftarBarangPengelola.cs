@@ -9,7 +9,7 @@ namespace ProjekPbo.Controllers
 {
     public class C_DaftarBarangPengelola
     {
-        public DataTable Tampilkanbarangnya()
+        public DataTable AmbilBarang()
         {
             DataTable dt = new DataTable();
             try
@@ -51,7 +51,7 @@ namespace ProjekPbo.Controllers
             return dt;
         }
 
-        public DataTable CariBarangnya(string namaKategoriBarang)
+        public DataTable AmbilBarang(string namaKategoriBarang)
         {
             DataTable dt = new DataTable();
             try

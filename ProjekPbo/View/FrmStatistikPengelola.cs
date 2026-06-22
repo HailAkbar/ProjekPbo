@@ -121,7 +121,7 @@ namespace ProjekPbo.View
             flpKategori.Controls.Add(pnl);
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e) // refereshnya manggil method 
         {
             MunculinStatus();
             MunculinKategori();

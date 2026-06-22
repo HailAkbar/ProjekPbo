@@ -9,7 +9,7 @@ namespace ProjekPbo.Controllers
 {
     public class C_StatistikPengelola
     {
-        public int HitungJumlah(string status)
+        public int HitungJumlah(string status) // ngehitung jumlah barang donasi berdasarkan status dalam database, kayanya ini pake konsep oop 
         {
             using (NpgsqlConnection conn = Koneksi.GetConnection())
             {
@@ -23,7 +23,7 @@ namespace ProjekPbo.Controllers
             }
         }
 
-        public int HitungTotal()
+        public int HitungTotal() //ngehitung total buat barang donasi yang ada di database
         {
             using (NpgsqlConnection conn = Koneksi.GetConnection())
             {

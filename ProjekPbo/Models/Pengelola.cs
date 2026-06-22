@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjekPbo.Models
 {
-    public class Pengelola : User
+    public class Pengelola : User, IUser
     {
         public override string GetRole()
         {

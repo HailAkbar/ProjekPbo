@@ -25,15 +25,15 @@ namespace ProjekPbo.View
 
         private void FrmDaftarBarangPengelola_Load(object sender, EventArgs e)
         {
-            TampilkanBarang();
+            AmbilBarang();
         }
 
-        private void TampilkanBarang()
+        private void AmbilBarang()
         {
             try
             {
                 flpBarang.Controls.Clear();
-                DataTable dt = controler.Tampilkanbarangnya();
+                DataTable dt = controler.AmbilBarang();
                 foreach (DataRow row in dt.Rows)
                 {
                     Cardnya(row);
@@ -117,7 +117,7 @@ namespace ProjekPbo.View
             {
                 FrmDetailVerifikasi frm = new FrmDetailVerifikasi(idBarang, pengelola);
                 frm.ShowDialog();
-                TampilkanBarang();
+                AmbilBarang();
                 this.Hide();
             };
 
@@ -134,20 +134,20 @@ namespace ProjekPbo.View
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             txtCari.Clear();
-            TampilkanBarang();
+            AmbilBarang();
         }
 
         private void btnCari_Click(object sender, EventArgs e)
         {
-            CariBarang();
+            AmbilBarang(txtCari.Text);
         }
 
-        private void CariBarang()
+        private void AmbilBarang(string namaKategoriBarang)
         {
             try
             {
                 flpBarang.Controls.Clear();
-                DataTable dt = controler.CariBarangnya(txtCari.Text);
+                DataTable dt = controler.AmbilBarang(namaKategoriBarang);
 
                 foreach (DataRow row in dt.Rows)
                 {
